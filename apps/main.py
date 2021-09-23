@@ -1,6 +1,6 @@
 from flask import escape
 
-def hello_http(request):
+def fibbonaci(request):
     """HTTP Cloud Function.
     Args:
         request (flask.Request): The request object.
