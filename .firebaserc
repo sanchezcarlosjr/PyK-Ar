@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "arsus-production"
+  },
+  "targets": {
+    "arsus-production": {
+      "hosting": {
+        "pyk-ar": [
+          "pyk-ar"
+        ]
+      }
+    }
   }
 }
