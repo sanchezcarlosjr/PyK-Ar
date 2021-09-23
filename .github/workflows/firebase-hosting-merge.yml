@@ -19,11 +19,11 @@ jobs:
           projectId: arsus-production
       - name: Deploy a Cloud Function
         id: deploy-function
-        uses: google-github-actions/deploy-cloud-functions@v0.1.0
+        uses: google-github-actions/deploy-cloud-functions@main
         with:
           name: fibbonaci
           runtime: python
           region: us-west4
           source_dir: apps
           project_id: arsus-production
-          credentials: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARSUS_PRODUCTION }}'
+          credentials: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARSUS_PRODUCTION }}
