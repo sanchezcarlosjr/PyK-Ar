@@ -22,7 +22,8 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@main
         with:
           name: fibbonaci
-          runtime: python
+          runtime: python39
+          region: us-west4
           source_dir: apps
           project_id: arsus-production
           credentials: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_ARSUS_PRODUCTION}}
