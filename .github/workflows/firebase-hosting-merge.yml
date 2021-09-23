@@ -26,4 +26,4 @@ jobs:
           region: us-west4
           source_dir: apps
           project_id: arsus-production
-          credentials: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARSUS_PRODUCTION }}
+          credentials: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_ARSUS_PRODUCTION}}
