@@ -25,5 +25,6 @@ jobs:
           runtime: python39
           region: us-west4
           source_dir: apps
+          memory_mb: 8192MB
           project_id: arsus-production
           credentials: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_ARSUS_PRODUCTION}}
