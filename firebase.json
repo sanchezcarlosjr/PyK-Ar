@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "predeploy": "cd web && npm run build",
+    "predeploy": "cd web && npm i && npm run build",
     "site": "pyk-ar",
     "public": "web/public",
     "ignore": [
