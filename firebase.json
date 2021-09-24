@@ -1,7 +1,8 @@
 {
   "hosting": {
+    "predeploy": "cd web && npm run build",
     "site": "pyk-ar",
-    "public": "web",
+    "public": "web/public",
     "ignore": [
       "firebase.json",
       "**/.*",
