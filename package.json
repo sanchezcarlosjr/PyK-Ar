@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "prop-types": "^15.7.2",
-    "ra-data-json-server": "^3.18.2",
-    "react-admin": "^3.18.2"
-  }
-}
