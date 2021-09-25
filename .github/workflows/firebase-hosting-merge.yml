@@ -17,6 +17,15 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARSUS_PRODUCTION }}'
           channelId: live
           projectId: arsus-production
+        env:
+          GATSBY_API_KEY: ${{ secrets.GATSBY_API_KEY }}
+          GATSBY_AUTH_DOMAIN: ${{ secrets.GATSBY_AUTH_DOMAIN }}
+          GATSBY_DATABASE_URL: ${{ secrets.GATSBY_DATABASE_URL }}
+          GATSBY_PROJECT_ID: ${{ secrets.GATSBY_PROJECT_ID }}
+          GATSBY_STORAGE_BUCKET: ${{ secrets.GATSBY_STORAGE_BUCKET }}
+          GATSBY_MESSAGING_SEND_ID: ${{ secrets.GATSBY_MESSAGING_SEND_ID }}
+          GATSBY_APP_ID: ${{ secrets.GATSBY_APP_ID }}
+          GATSBY_MEASUREMENT_ID: ${{ secrets.GATSBY_MEASUREMENT_ID }}
       - name: Deploy a Cloud Function
         id: deploy-function
         uses: google-github-actions/deploy-cloud-functions@main
