@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://pykar.sanchezcarlosjr.com",
@@ -32,5 +36,5 @@ module.exports = {
       },
       __key: "pages",
     }
-  ],
+  ]
 };
