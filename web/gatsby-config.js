@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://pykar.sanchezcarlosjr.com",
-    title: "pykar",
+    title: "PyK-Ar",
   },
   plugins: [
     "gatsby-plugin-image",
