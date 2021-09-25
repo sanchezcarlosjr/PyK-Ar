@@ -16,7 +16,7 @@ const CustomLoginPage = loadable(() => import("../components/login"))
 
 const firebaseConfig = {
     apiKey: "AIzaSyCmKXcXUV0DBP0dpThKHqW481qtUL3ebhs",
-    authDomain: "arsus-production.firebaseapp.com",
+    authDomain: "sanchezcarlosjr.com",
     databaseURL: "https://arsus-production.firebaseio.com",
     projectId: "arsus-production",
     storageBucket: "arsus-production.appspot.com",
