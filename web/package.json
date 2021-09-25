@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "start": "PORT=9998 gatsby develop",
+    "start": "cross-env PORT=9998 gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
