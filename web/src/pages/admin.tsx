@@ -15,7 +15,7 @@ const Resource = loadable(() => import("../components/Resource"))
 const CustomLoginPage = loadable(() => import("../components/login"))
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCmKXcXUV0DBP0dpThKHqW481qtUL3ebhs",
+    apiKey: "AIzaSyCtCyeVOQuFaqLng9KvOzwM61bIjiS2cGU",
     authDomain: "sanchezcarlosjr.com",
     databaseURL: "https://arsus-production.firebaseio.com",
     projectId: "arsus-production",
@@ -40,7 +40,7 @@ const IndexPage = () => (<GoogleReCaptchaProvider
             dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}>
             <Resource
-                name="users"
+                name="id"
             />
         </Admin>
         }
