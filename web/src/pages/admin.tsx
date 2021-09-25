@@ -5,7 +5,7 @@ import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
 
 const options: RAFirebaseOptions = {
-    logging: false
+    logging: process.env.NODE_ENV === "development"
 };
 
 const Firebase = loadable.lib(() => import('react-admin-firebase'));
@@ -15,14 +15,14 @@ const Resource = loadable(() => import("../components/Resource"))
 const CustomLoginPage = loadable(() => import("../components/login"))
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCtCyeVOQuFaqLng9KvOzwM61bIjiS2cGU",
-    authDomain: "sanchezcarlosjr.com",
-    databaseURL: "https://arsus-production.firebaseio.com",
-    projectId: "arsus-production",
-    storageBucket: "arsus-production.appspot.com",
-    messagingSenderId: "809156660768",
-    appId: "1:809156660768:web:63ae0da3eec3f507f9f645",
-    measurementId: "G-3RCE8VK82F"
+    apiKey: process.env.GATSBY_API_KEY,
+    authDomain: process.env.GATSBY_AUTH_DOMAIN,
+    databaseURL: process.env.GATSBY_DATABASE_URL,
+    projectId: process.env.GATSBY_PROJECT_ID,
+    storageBucket: process.env.GATSBY_STORAGE_BUCKET,
+    messagingSenderId: process.env.GATSBY_MESSAGING_SEND_ID,
+    appId: process.env.GATSBY_APP_ID,
+    measurementId: process.env.GATSBY_MEASUREMENT_ID
 };
 
 const IndexPage = () => (<GoogleReCaptchaProvider
@@ -35,14 +35,15 @@ const IndexPage = () => (<GoogleReCaptchaProvider
     }}
 >
     <Firebase>
-        {({default: firebase}) => <Admin
-            loginPage={CustomLoginPage}
-            dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
-            authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}>
-            <Resource
-                name="id"
-            />
-        </Admin>
+        {({default: firebase}) =>
+            <Admin
+                loginPage={CustomLoginPage}
+                dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
+                authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}>
+                <Resource
+                    name="id"
+                />
+            </Admin>
         }
     </Firebase>
 </GoogleReCaptchaProvider>);
