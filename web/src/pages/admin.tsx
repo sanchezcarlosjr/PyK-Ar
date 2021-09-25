@@ -2,17 +2,7 @@ import React from "react"
 import loadable from "@loadable/component"
 
 import {RAFirebaseOptions} from "react-admin-firebase";
-
-const firebaseConfig = {
-    apiKey: process.env.GATSBY_firebase_api_key,
-    authDomain: process.env.GATSBY_firebase_authDomain,
-    databaseURL: process.env.GATSBY_databaseURL,
-    projectId: process.env.GATSBY_projectId,
-    storageBucket: process.env.GATSBY_storageBucket,
-    messagingSenderId: process.env.GATSBY_messagingSenderId,
-    appId: process.env.GATSBY_appId,
-    measurementId: process.env.GATSBY_measurementId
-};
+import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
 
 const options: RAFirebaseOptions = {
     logging: false
@@ -24,20 +14,37 @@ const Admin = loadable(() => import("../components/Admin"))
 const Resource = loadable(() => import("../components/Resource"))
 const CustomLoginPage = loadable(() => import("../components/login"))
 
-const IndexPage = () => (
-    <div>
-        <Firebase>
-            {({default: firebase}) => <Admin
-                loginPage={CustomLoginPage}
-                dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
-                authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}>
-                <Resource
-                    name="users"
-                />
-            </Admin>
-            }
-        </Firebase>
-    </div>
-)
+const firebaseConfig = {
+    apiKey: "AIzaSyCmKXcXUV0DBP0dpThKHqW481qtUL3ebhs",
+    authDomain: "arsus-production.firebaseapp.com",
+    databaseURL: "https://arsus-production.firebaseio.com",
+    projectId: "arsus-production",
+    storageBucket: "arsus-production.appspot.com",
+    messagingSenderId: "809156660768",
+    appId: "1:809156660768:web:63ae0da3eec3f507f9f645",
+    measurementId: "G-3RCE8VK82F"
+};
+
+const IndexPage = () => (<GoogleReCaptchaProvider
+    reCaptchaKey="6LcuZowcAAAAAGqrmumerjhdJFu6Gfwa-2kWZUAg"
+    scriptProps={{
+        async: false, // optional, default to false,
+        defer: false, // optional, default to false
+        appendTo: 'head', // optional, default to "head", can be "head" or "body",
+        nonce: undefined // optional, default undefined
+    }}
+>
+    <Firebase>
+        {({default: firebase}) => <Admin
+            loginPage={CustomLoginPage}
+            dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
+            authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}>
+            <Resource
+                name="users"
+            />
+        </Admin>
+        }
+    </Firebase>
+</GoogleReCaptchaProvider>);
 
 export default IndexPage

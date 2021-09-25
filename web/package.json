@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "NODE_ENV=development BROWSER=none PORT=3333 gatsby develop",
-    "build": "echo $secrets.$FIREBASE_CONF > .env && NODE_ENV=production gatsby build && rm .env",
+    "start": "PORT=3333 gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -37,6 +37,7 @@
     "react-admin-firebase": "^3.2.24",
     "react-dom": "^17.0.1",
     "react-firebaseui": "^5.0.0",
+    "react-google-recaptcha-v3": "^1.9.5",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
