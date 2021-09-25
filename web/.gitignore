@@ -3,4 +3,4 @@ node_modules/
 public
 FIREBASE_CONFIG.json
 .env
-.env.development
+**/.env.development/**
