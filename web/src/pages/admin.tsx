@@ -4,15 +4,13 @@ import loadable from "@loadable/component"
 import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
 import {PostList, PostShow, PostCreate,PostEdit} from "../components/Post";
-import {i18nProvider} from "../components/i18";
-import PostIcon from '@material-ui/icons/Book';
 
 const options: RAFirebaseOptions = {
     logging: process.env.NODE_ENV === "development",
     lazyLoading: {
         enabled: true,
     },
-    persistence: 'local',
+    persistence: 'session'
 };
 
 const Firebase = loadable.lib(() => import('react-admin-firebase'));
@@ -35,22 +33,20 @@ const firebaseConfig = {
 const IndexPage = () => (<GoogleReCaptchaProvider
     reCaptchaKey="6LcuZowcAAAAAGqrmumerjhdJFu6Gfwa-2kWZUAg"
     scriptProps={{
-        async: false, // optional, default to false,
-        defer: false, // optional, default to false
-        appendTo: 'head', // optional, default to "head", can be "head" or "body",
-        nonce: undefined // optional, default undefined
+        async: true,
+        defer: true,
+        appendTo: 'body',
+        nonce: undefined
     }}
 >
     <Firebase>
         {({default: firebase}) =>
             <Admin
-                locale="es"
-                i18nProvider={i18nProvider}
                 loginPage={CustomLoginPage}
                 authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             >
-                <Resource name="content" icon={PostIcon} list={PostList} show={PostShow} create={PostCreate} edit={PostEdit}/>
+                <Resource name="posts" list={PostList} show={PostShow} create={PostCreate} edit={PostEdit}/>
             </Admin>
         }
     </Firebase>
