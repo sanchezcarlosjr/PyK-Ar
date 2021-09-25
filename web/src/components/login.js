@@ -1,45 +1,36 @@
-import {Component} from "react"
+// LoginPage.js
+import React from "react";
+import { Login, LoginForm } from "react-admin";
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase';
 
+// Configure FirebaseUI.
+const uiConfig = {
+    // Popup signin flow rather than redirect flow.
+    signInFlow: 'redirect',
+    // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+    signInSuccessUrl: '/admin/#/login',
+    // We will display Google and Facebook as auth providers.
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        firebase.auth.TwitterAuthProvider.PROVIDER_ID
+    ]
+};
 
-class Login extends Component {
-    state = {
-        username: ``,
-        password: ``,
-    }
-    handleUpdate = event => {
-        this.setState({
-            [event.target.name]: event.target.value,
-        })
-    }
-    handleSubmit = event => {
-        event.preventDefault()
-    }
-    render() {
-        return (
-            <>
-                <h1>Log in</h1>
-                <form
-                    method="post"
-                    onSubmit={event => {
-                        this.handleSubmit(event)
-                    }}
-                >
-                    <label>
-                        Username
-                        <input type="text" name="username" onChange={this.handleUpdate} />
-                    </label>
-                    <label>
-                        Password
-                        <input
-                            type="password"
-                            name="password"
-                            onChange={this.handleUpdate}
-                        />
-                    </label>
-                    <input type="submit" value="Log In" />
-                </form>
-            </>
-        )
-    }
-}
-export default Login
+const SignInScreen = () => <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>;
+
+const CustomLoginForm = props => (
+    <div>
+        <LoginForm {...props} />
+        <SignInScreen />
+    </div>
+);
+
+const CustomLoginPage = props => (
+    <Login {...props}>
+        <CustomLoginForm {...props}/>
+    </Login>
+);
+
+export default CustomLoginPage;

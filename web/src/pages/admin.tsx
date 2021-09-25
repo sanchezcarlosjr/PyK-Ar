@@ -1,17 +1,35 @@
 import React from "react"
-import { ListGuesser } from "react-admin"
 import loadable from "@loadable/component"
-import jsonServerProvider from 'ra-data-json-server';
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+import {RAFirebaseOptions} from "react-admin-firebase";
+
+// @ts-ignore
+const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG);
+
+const options: RAFirebaseOptions = {
+    logging: false
+};
+
+const Firebase = loadable.lib(() => import('react-admin-firebase'));
 
 const Admin = loadable(() => import("../components/Admin"))
 const Resource = loadable(() => import("../components/Resource"))
+const CustomLoginPage = loadable(() => import("../components/login"))
 
 const IndexPage = () => (
-    <Admin dataProvider={dataProvider}>
-        <Resource name="users" list={ListGuesser} />
-    </Admin>
+    <div>
+        <Firebase>
+            {({default: firebase}) => <Admin
+                loginPage={CustomLoginPage}
+                dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
+                authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}>
+                <Resource
+                    name="users"
+                />
+            </Admin>
+            }
+        </Firebase>
+    </div>
 )
 
 export default IndexPage
