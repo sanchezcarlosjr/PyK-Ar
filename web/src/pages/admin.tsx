@@ -3,9 +3,16 @@ import loadable from "@loadable/component"
 
 import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
+import {PostList, PostShow, PostCreate,PostEdit} from "../components/Post";
+import {i18nProvider} from "../components/i18";
+import PostIcon from '@material-ui/icons/Book';
 
 const options: RAFirebaseOptions = {
-    logging: process.env.NODE_ENV === "development"
+    logging: process.env.NODE_ENV === "development",
+    lazyLoading: {
+        enabled: true,
+    },
+    persistence: 'local',
 };
 
 const Firebase = loadable.lib(() => import('react-admin-firebase'));
@@ -37,12 +44,13 @@ const IndexPage = () => (<GoogleReCaptchaProvider
     <Firebase>
         {({default: firebase}) =>
             <Admin
+                locale="es"
+                i18nProvider={i18nProvider}
                 loginPage={CustomLoginPage}
+                authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
-                authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}>
-                <Resource
-                    name="id"
-                />
+            >
+                <Resource name="content" icon={PostIcon} list={PostList} show={PostShow} create={PostCreate} edit={PostEdit}/>
             </Admin>
         }
     </Firebase>

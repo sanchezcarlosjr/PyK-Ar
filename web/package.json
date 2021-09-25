@@ -8,12 +8,13 @@
     "gatsby"
   ],
   "scripts": {
-    "start": "PORT=9998 gatsby develop",
+    "start": "cross-env PORT=9998 gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@blackbox-vision/ra-language-spanish": "^3.16.2",
     "@loadable/component": "^5.15.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
