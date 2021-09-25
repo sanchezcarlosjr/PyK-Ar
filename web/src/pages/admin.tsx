@@ -3,8 +3,16 @@ import loadable from "@loadable/component"
 
 import {RAFirebaseOptions} from "react-admin-firebase";
 
-// @ts-ignore
-const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG);
+const firebaseConfig = {
+    apiKey: process.env.GATSBY_firebase_api_key,
+    authDomain: process.env.GATSBY_firebase_authDomain,
+    databaseURL: process.env.GATSBY_databaseURL,
+    projectId: process.env.GATSBY_projectId,
+    storageBucket: process.env.GATSBY_storageBucket,
+    messagingSenderId: process.env.GATSBY_messagingSenderId,
+    appId: process.env.GATSBY_appId,
+    measurementId: process.env.GATSBY_measurementId
+};
 
 const options: RAFirebaseOptions = {
     logging: false

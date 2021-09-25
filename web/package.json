@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "REACT_APP_FIREBASE_CONFIG=`cat ./FIREBASE_CONFIG.json` NODE_ENV=development BROWSER=none PORT=3333 gatsby develop",
-    "build": "REACT_APP_FIREBASE_CONFIG=${{ secrets.FIREBASE_JSON }} gatsby build",
+    "start": "NODE_ENV=development BROWSER=none PORT=3333 gatsby develop",
+    "build": "echo $secrets.$FIREBASE_CONF > .env && NODE_ENV=production gatsby build && rm .env",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -49,6 +49,7 @@
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "babel-eslint": "^10.1.0",
+    "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.10.0",
