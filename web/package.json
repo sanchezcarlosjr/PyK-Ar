@@ -1,6 +1,6 @@
 {
   "name": "pykar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "pykar",
   "author": "Carlos Eduardo Sanchez Torres (sanchezcarlosjr)",
@@ -8,8 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "PORT=3333 gatsby develop",
+    "start": "PORT=9998 gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
@@ -29,9 +28,7 @@
     "gatsby-plugin-sitemap": "^4.10.0",
     "gatsby-source-filesystem": "^3.14.0",
     "gatsby-transformer-sharp": "^3.14.0",
-    "history": "^4.10.1",
     "prop-types": "^15.7.2",
-    "ra-data-json-server": "^3.18.2",
     "react": "^17.0.1",
     "react-admin": "^3.18.2",
     "react-admin-firebase": "^3.2.24",
@@ -41,7 +38,6 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@types/history": "^4.7.9",
     "@types/loadable__component": "^5.13.4",
     "@types/node": "^16.9.6",
     "@types/react": "^17.0.24",
