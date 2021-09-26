@@ -1,15 +1,19 @@
 import * as React from "react";
-import Layout from "../components/layout";
-import Banner from "../sections/banner";
-import SEO from "../components/seo";
+import SEO from "../components/core/seo";
+import "../components/layout.css";
+import { center, container, title, button } from './index.module.css';
+import {Link} from "gatsby";
 
-const IndexPage = () => {
+const HomePage = () => {
     return (
-        <Layout>
-            <SEO title="PyK-Ar | Potassium-Argon dating software" />
-            <Banner />
-        </Layout>
+        <main className={center}>
+            <SEO title="PyK-Ar" description="Potassium-Argon dating project open-source by Carlos Eduardo Sanchez Torres and CICESE" />
+            <div className={container}>
+                <h1 className={title}>Potassium-Argon Dating with PyK-Ar web</h1>
+                <Link className={button} to="/admin/">Sign in free</Link>
+            </div>
+        </main>
     )
 };
 
-export default IndexPage
+export default HomePage
