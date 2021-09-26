@@ -1,33 +1,30 @@
 import * as React from "react";
 import {
-    Datagrid,
-    List,
-    Show,
     Create,
+    Datagrid,
+    DeleteButton,
     Edit,
     Filter,
-    SimpleShowLayout,
+    List,
+    Show,
     SimpleForm,
+    SimpleShowLayout,
     TextField,
     TextInput,
-    ShowButton,
-    EditButton,
-    DeleteButton,
-    RichTextField,
 } from "react-admin";
 
 const PotassiumArgonAgeCalculationFilter = (props: any) => {
     return (<Filter {...props}>
-        <TextInput label="Search" source="title" alwaysOn />
+        <TextInput label="Search" source="title" alwaysOn/>
     </Filter>);
 };
 
 export const PotassiumArgonAgeCalculationList = (props: any) => (
-    <List {...props} filters={<PotassiumArgonAgeCalculationFilter />}>
+    <List {...props} filters={<PotassiumArgonAgeCalculationFilter/>}>
         <Datagrid rowClick="edit">
-            <TextField source="age" />
-            <TextField source="standard" />
-            <DeleteButton label="" />
+            <TextField source="age"/>
+            <TextField source="standard"/>
+            <DeleteButton label=""/>
         </Datagrid>
     </List>
 );
@@ -35,8 +32,8 @@ export const PotassiumArgonAgeCalculationList = (props: any) => (
 export const PotassiumArgonAgeCalculationShow = (props: any) => (
     <Show {...props}>
         <SimpleShowLayout>
-            <TextField source="age" />
-            <TextField source="standard" />
+            <TextField source="age"/>
+            <TextField source="standard"/>
         </SimpleShowLayout>
     </Show>
 );
@@ -44,8 +41,8 @@ export const PotassiumArgonAgeCalculationShow = (props: any) => (
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="age" />
-            <TextInput source="standard" />
+            <TextInput source="age"/>
+            <TextInput source="standard"/>
         </SimpleForm>
     </Create>
 );
@@ -53,8 +50,8 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => (
 export const PotassiumArgonCalculationsEdit = (props: any) => (
     <Edit {...props}>
         <SimpleForm>
-            <TextInput source="age" />
-            <TextInput source="standard" />
+            <TextInput source="age"/>
+            <TextInput source="standard"/>
         </SimpleForm>
     </Edit>
 );
