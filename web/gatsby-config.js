@@ -4,7 +4,7 @@ module.exports = {
         title: "PyK-Ar",
     },
     plugins: [
-        "gatsby-plugin-image",
+        `gatsby-plugin-theme-ui`,
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-sitemap",
         {
@@ -14,6 +14,7 @@ module.exports = {
             },
         },
         "gatsby-plugin-mdx",
+        "gatsby-plugin-image",
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
         {
@@ -40,11 +41,22 @@ module.exports = {
                 start_url: `/admin`,
                 icon: 'src/images/icon.png',
                 cache_busting_mode: 'none',
-                background_color: "#0c0a59",
-                theme_color: "#0c0a59",
+                background_color: `#663399`,
+                theme_color: `#663399`,
                 description: "Potassium-Argon Dating.",
                 display: `standalone`
             }
+        },
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `DM Sans`,
+                        variants: [`400`, `500`, `700`],
+                    },
+                ],
+            },
         }
     ]
 };

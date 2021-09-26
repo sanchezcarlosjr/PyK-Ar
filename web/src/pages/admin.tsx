@@ -3,7 +3,7 @@ import loadable from "@loadable/component"
 
 import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
-import {PotassiumArgonAgeCalculationList, PotassiumArgonAgeCalculationShow, PotassiumArgonAgeCalculationsCreate,PotassiumArgonCalculationsEdit} from "../components/PotassiumArgonAgeCalculation";
+import {PotassiumArgonAgeCalculationList, PotassiumArgonAgeCalculationsCreate,PotassiumArgonCalculationsEdit} from "../components/PotassiumArgonAgeCalculation";
 import {Helmet} from "react-helmet";
 import PotassiumArgonAgeCalculationsIcon from '@material-ui/icons/InsertChart';
 
