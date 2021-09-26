@@ -4,6 +4,7 @@ import loadable from "@loadable/component"
 import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
 import {PostList, PostShow, PostCreate,PostEdit} from "../components/Post";
+import {Helmet} from "react-helmet";
 
 const options: RAFirebaseOptions = {
     logging: process.env.NODE_ENV === "development",
@@ -39,6 +40,10 @@ const IndexPage = () => (<GoogleReCaptchaProvider
         nonce: undefined
     }}
 >
+    <Helmet>
+        <title>PyK-Ar | Potassium-Argon Dating CICESE</title>
+        <meta name="description" content="Potassium-Argon Dating (K-Ar) CICESE | Carlos Eduardo Sanchez Torres" />
+    </Helmet>
     <Firebase>
         {({default: firebase}) =>
             <Admin
