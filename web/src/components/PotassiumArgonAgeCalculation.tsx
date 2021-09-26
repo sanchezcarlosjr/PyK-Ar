@@ -7,9 +7,11 @@ import {
     Filter,
     List,
     Show,
+    FileField,
     SimpleForm,
     SimpleShowLayout,
     TextField,
+    FileInput,
     TextInput,
 } from "react-admin";
 
@@ -41,8 +43,9 @@ export const PotassiumArgonAgeCalculationShow = (props: any) => (
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="age"/>
-            <TextInput source="standard"/>
+            <FileInput accept=".csv" source="files_multiple" multiple label="Mass spectrometer measurements">
+                <FileField source="src" title="title" />
+            </FileInput>
         </SimpleForm>
     </Create>
 );
