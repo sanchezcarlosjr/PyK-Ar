@@ -3,15 +3,18 @@ import loadable from "@loadable/component"
 
 import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
-import {PostList, PostShow, PostCreate,PostEdit} from "../components/Post";
+import {PotassiumArgonAgeCalculationList, PotassiumArgonAgeCalculationShow, PotassiumArgonAgeCalculationsCreate,PotassiumArgonCalculationsEdit} from "../components/PotassiumArgonAgeCalculation";
 import {Helmet} from "react-helmet";
+import PotassiumArgonAgeCalculationsIcon from '@material-ui/icons/InsertChart';
 
 const options: RAFirebaseOptions = {
     logging: process.env.NODE_ENV === "development",
     lazyLoading: {
-        enabled: true,
+        enabled: false
     },
-    persistence: 'session'
+    softDelete: true,
+    persistence: 'local',
+    associateUsersById: true
 };
 
 const Firebase = loadable.lib(() => import('react-admin-firebase'));
@@ -51,7 +54,7 @@ const IndexPage = () => (<GoogleReCaptchaProvider
                 authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             >
-                <Resource name="posts" list={PostList} show={PostShow} create={PostCreate} edit={PostEdit}/>
+                <Resource name="potassium-argon-age-calculations" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'K-Ar' }} list={PotassiumArgonAgeCalculationList} create={PotassiumArgonAgeCalculationsCreate} edit={PotassiumArgonCalculationsEdit}/>
             </Admin>
         }
     </Firebase>
