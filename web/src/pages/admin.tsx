@@ -3,16 +3,18 @@ import loadable from "@loadable/component"
 
 import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
-import {PostList, PostShow, PostCreate,PostEdit} from "../components/Post";
-import {i18nProvider} from "../components/i18";
-import PostIcon from '@material-ui/icons/Book';
+import {PotassiumArgonAgeCalculationList, PotassiumArgonAgeCalculationShow, PotassiumArgonAgeCalculationsCreate,PotassiumArgonCalculationsEdit} from "../components/PotassiumArgonAgeCalculation";
+import {Helmet} from "react-helmet";
+import PotassiumArgonAgeCalculationsIcon from '@material-ui/icons/InsertChart';
 
 const options: RAFirebaseOptions = {
     logging: process.env.NODE_ENV === "development",
     lazyLoading: {
-        enabled: true,
+        enabled: false
     },
+    softDelete: true,
     persistence: 'local',
+    associateUsersById: true
 };
 
 const Firebase = loadable.lib(() => import('react-admin-firebase'));
@@ -35,22 +37,24 @@ const firebaseConfig = {
 const IndexPage = () => (<GoogleReCaptchaProvider
     reCaptchaKey="6LcuZowcAAAAAGqrmumerjhdJFu6Gfwa-2kWZUAg"
     scriptProps={{
-        async: false, // optional, default to false,
-        defer: false, // optional, default to false
-        appendTo: 'head', // optional, default to "head", can be "head" or "body",
-        nonce: undefined // optional, default undefined
+        async: true,
+        defer: true,
+        appendTo: 'body',
+        nonce: undefined
     }}
 >
+    <Helmet>
+        <title>PyK-Ar | Potassium-Argon Dating CICESE</title>
+        <meta name="description" content="Potassium-Argon Dating (K-Ar) CICESE | Carlos Eduardo Sanchez Torres" />
+    </Helmet>
     <Firebase>
         {({default: firebase}) =>
             <Admin
-                locale="es"
-                i18nProvider={i18nProvider}
                 loginPage={CustomLoginPage}
                 authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             >
-                <Resource name="content" icon={PostIcon} list={PostList} show={PostShow} create={PostCreate} edit={PostEdit}/>
+                <Resource name="potassium-argon-age-calculations" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'K-Ar' }} list={PotassiumArgonAgeCalculationList} create={PotassiumArgonAgeCalculationsCreate} edit={PotassiumArgonCalculationsEdit}/>
             </Admin>
         }
     </Firebase>

@@ -6,8 +6,8 @@ const IndexPage = () => {
     return (
         <main>
             <Helmet>
-                <title>My Title</title>
-                <meta name="description" content="Helmet application" />
+                <title>PyK-Ar | Potassium-Argon Dating CICESE</title>
+                <meta name="description" content="Potassium-Argon Dating (K-Ar) CICESE | Carlos Eduardo Sanchez Torres" />
             </Helmet>
             <p>Landing page</p>
             <Link to="/admin/">Admin</Link>

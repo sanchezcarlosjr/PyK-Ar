@@ -11,6 +11,7 @@
     "start": "cross-env PORT=9998 gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "pwa": "npm run build && http-server -S -C cert.pem -o",
     "clean": "gatsby clean"
   },
   "dependencies": {

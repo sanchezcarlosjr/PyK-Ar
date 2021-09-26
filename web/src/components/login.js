@@ -1,16 +1,12 @@
-// LoginPage.js
 import React from "react";
 import { Login, LoginForm } from "react-admin";
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
+import {Helmet} from "react-helmet";
 
-// Configure FirebaseUI.
 const uiConfig = {
-    // Popup signin flow rather than redirect flow.
     signInFlow: 'redirect',
-    // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    signInSuccessUrl: '/admin/#/login',
-    // We will display Google and Facebook as auth providers.
+    signInSuccessUrl: '/admin/#/',
     signInOptions: [
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
@@ -28,9 +24,15 @@ const CustomLoginForm = props => (
 );
 
 const CustomLoginPage = props => (
-    <Login {...props}>
-        <CustomLoginForm {...props}/>
-    </Login>
+    <main>
+        <Helmet>
+            <title>Login | Potassium-Argon Dating CICESE</title>
+            <meta name="description" content="Potassium-Argon Dating (K-Ar) CICESE | Carlos Eduardo Sanchez Torres" />
+        </Helmet>
+        <Login {...props}>
+            <CustomLoginForm {...props}/>
+        </Login>
+    </main>
 );
 
 export default CustomLoginPage;
