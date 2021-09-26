@@ -1,18 +1,19 @@
 import * as React from "react";
+import SEO from "../components/core/seo";
+import "../components/layout.css";
+import { center, container, title, button } from './index.module.css';
 import {Link} from "gatsby";
-import {Helmet} from "react-helmet";
 
-const IndexPage = () => {
+const HomePage = () => {
     return (
-        <main>
-            <Helmet>
-                <title>PyK-Ar | Potassium-Argon Dating CICESE</title>
-                <meta name="description" content="Potassium-Argon Dating (K-Ar) CICESE | Carlos Eduardo Sanchez Torres" />
-            </Helmet>
-            <p>Landing page</p>
-            <Link to="/admin/">Admin</Link>
+        <main className={center}>
+            <SEO title="PyK-Ar" description="Potassium-Argon dating project open-source by Carlos Eduardo Sanchez Torres and CICESE" />
+            <div className={container}>
+                <h1 className={title}>Potassium-Argon Dating with PyK-Ar web</h1>
+                <Link className={button} to="/admin/">Sign in free</Link>
+            </div>
         </main>
     )
 };
 
-export default IndexPage
+export default HomePage
