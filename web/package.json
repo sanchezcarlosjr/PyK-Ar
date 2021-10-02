@@ -12,7 +12,9 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "pwa": "npm run build && http-server -S -C cert.pem -o",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test start http://localhost:9998 cy:open"
   },
   "dependencies": {
     "@blackbox-vision/ra-language-spanish": "^3.16.2",
@@ -48,6 +50,8 @@
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "babel-eslint": "^10.1.0",
+    "cypress": "^8.5.0",
+    "cypress-xpath": "^1.6.2",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-react-app": "^6.0.0",
@@ -56,6 +60,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "start-server-and-test": "^1.14.0",
     "typescript": "^4.4.3"
   },
   "eslintConfig": {
