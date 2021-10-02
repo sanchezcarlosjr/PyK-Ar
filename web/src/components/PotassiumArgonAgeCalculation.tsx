@@ -62,8 +62,9 @@ const ChartPotassiumArgonAgeMeasurement = (props: JSX.IntrinsicAttributes) => {
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
     const save = useCallback(
         async (values) => {
+            console.log(values);
             const functions = firebase.app().functions('us-west4');
-            const calculateAgeByPotassiumArgon = functions.httpsCallable('calculateAgeByPotassiumArgon');
+            const calculateAgeByPotassiumArgon = functions.httpsCallable('calculate_age_by_potassium_argon');
             calculateAgeByPotassiumArgon({value: ''})
                 .then((result: any) => {
                     const sanitizedMessage = result.data.text;

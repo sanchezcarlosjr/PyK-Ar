@@ -1,7 +1,7 @@
-from flask import escape
+from flask import jsonify
 
 
-def calculateAgeByPotassiumArgon(request):
+def calculate_age_by_potassium_argon(request):
     """HTTP Cloud Function.
     Args:
         request (flask.Request): The request object.
@@ -18,20 +18,20 @@ def calculateAgeByPotassiumArgon(request):
         # Allows GET requests from any origin with the Content-Type
         # header and caches preflight response for an 3600s
         headers = {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
-            'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Max-Age': '3600',
+            'Access-Control-Allow-Origin': 'https://pykar.sanchezcarlosjr.com',
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers': 'authorization,content-type',
+            'Access-Control-Max-Age': '3600'
         }
 
-        return ('', 204, headers)
+        return '', 204, headers
 
     # Set CORS headers for the main request
 
     headers = {
-        'Access-Control-Allow-Origin': '*',
-               'Access-Control-Allow-Methods': 'POST',
-               'Access-Control-Allow-Headers': 'Content-Type'
+        'Access-Control-Allow-Origin': 'https://pykar.sanchezcarlosjr.com',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Headers': 'authorization,content-type'
     }
 
-    return ('Hello World!', 200, headers)
+    return jsonify({"ok": "Great Day 2"}), 200, headers
