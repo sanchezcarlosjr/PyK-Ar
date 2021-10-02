@@ -17,9 +17,8 @@ import {
 } from "react-admin";
 import {useFormState} from 'react-final-form';
 import {CartesianGrid, Line, LineChart, XAxis, YAxis} from 'recharts';
-import loadable from "@loadable/component";
+import firebase from "gatsby-plugin-firebase"
 
-const Firebase = loadable.lib(() => import('firebase'));
 const PotassiumArgonAgeCalculationFilters = [
     <TextInput source="age" label="Search" alwaysOn/>,
     <TextInput source="uncertainty" label="Uncertainty"/>
@@ -61,11 +60,10 @@ const ChartPotassiumArgonAgeMeasurement = (props: JSX.IntrinsicAttributes) => {
 };
 
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
-    let firebaseRef = React.createRef();
     const save = useCallback(
         async (values) => {
-            // @ts-ignore
-            const calculateAgeByPotassiumArgon = firebaseRef.current.functions().httpsCallable('calculateAgeByPotassiumArgon');
+            const functions = firebase.app().functions('us-west4');
+            const calculateAgeByPotassiumArgon = functions.httpsCallable('calculateAgeByPotassiumArgon');
             calculateAgeByPotassiumArgon()
                 .then((result: any) => {
                     const sanitizedMessage = result.data.text;
@@ -73,12 +71,11 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
                 });
             return true;
         },
-        [firebaseRef],
+        [firebase],
     );
     return (
         <Create {...props}>
             <SimpleForm save={save}>
-                <Firebase ref={firebaseRef}/>
                 <FileInput accept=".csv" source="experiments" multiple label="Mass spectrometer measurements">
                     <FileField source="src" title="title"/>
                 </FileInput>

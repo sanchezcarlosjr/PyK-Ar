@@ -1,3 +1,5 @@
+require('dotenv').config({path: './.env.development'});
+
 module.exports = {
     siteMetadata: {
         siteUrl: "https://pykar.sanchezcarlosjr.com",
@@ -31,6 +33,21 @@ module.exports = {
                 path: "./src/pages/",
             },
             __key: "pages",
+        },
+        {
+            resolve: "gatsby-plugin-firebase",
+            options: {
+                credentials: {
+                    apiKey: process.env.GATSBY_API_KEY,
+                    authDomain: process.env.GATSBY_AUTH_DOMAIN,
+                    databaseURL: process.env.GATSBY_DATABASE_URL,
+                    projectId: process.env.GATSBY_PROJECT_ID,
+                    storageBucket: process.env.GATSBY_STORAGE_BUCKET,
+                    messagingSenderId: process.env.GATSBY_MESSAGING_SEND_ID,
+                    appId: process.env.GATSBY_APP_ID,
+                    measurementId: process.env.GATSBY_MEASUREMENT_ID
+                }
+            }
         },
         {
             resolve: `gatsby-plugin-manifest`,
