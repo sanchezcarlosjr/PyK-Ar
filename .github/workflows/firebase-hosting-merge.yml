@@ -30,7 +30,7 @@ jobs:
         id: deploy-function
         uses: google-github-actions/deploy-cloud-functions@main
         with:
-          name: fibbonaci
+          name: calculateAgeByPotassiumArgon
           runtime: python39
           region: us-west4
           source_dir: apps
