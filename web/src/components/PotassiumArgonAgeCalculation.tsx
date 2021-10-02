@@ -10,6 +10,7 @@ import {
     FormDataConsumer,
     List,
     Show,
+    useRedirect,
     SimpleForm,
     SimpleShowLayout,
     TextField,
@@ -60,6 +61,7 @@ const ChartPotassiumArgonAgeMeasurement = (props: JSX.IntrinsicAttributes) => {
 };
 
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
+    const redirect = useRedirect();
     const save = useCallback(
         async (values) => {
             console.log(values);
@@ -67,8 +69,8 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
             const calculateAgeByPotassiumArgon = functions.httpsCallable('calculate_age_by_potassium_argon');
             calculateAgeByPotassiumArgon({value: ''})
                 .then((result: any) => {
-                    const sanitizedMessage = result.data.text;
-                    console.log(sanitizedMessage);
+                    console.log(result);
+                    redirect('/admin/#/potassium-argon-age-calculations/');
                 });
             return true;
         },
