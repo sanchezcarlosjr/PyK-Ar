@@ -64,7 +64,7 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
         async (values) => {
             const functions = firebase.app().functions('us-west4');
             const calculateAgeByPotassiumArgon = functions.httpsCallable('calculateAgeByPotassiumArgon');
-            calculateAgeByPotassiumArgon()
+            calculateAgeByPotassiumArgon({value: ''})
                 .then((result: any) => {
                     const sanitizedMessage = result.data.text;
                     console.log(sanitizedMessage);
