@@ -6,7 +6,7 @@ import {Helmet} from "react-helmet";
 
 const uiConfig = {
     signInFlow: 'redirect',
-    signInSuccessUrl: '/admin/#/',
+    signInSuccessUrl: '/admin/#/potassium-argon-age-calculations',
     signInOptions: [
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
         firebase.auth.FacebookAuthProvider.PROVIDER_ID,
@@ -16,14 +16,14 @@ const uiConfig = {
 
 const SignInScreen = () => <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>;
 
-const CustomLoginForm = props => (
+const CustomLoginForm = (props: any) => (
     <div>
         <LoginForm {...props} />
         <SignInScreen />
     </div>
 );
 
-const CustomLoginPage = props => (
+const CustomLoginPage = (props: any) => (
     <main>
         <Helmet>
             <title>Login | Potassium-Argon Dating CICESE</title>

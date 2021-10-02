@@ -4,3 +4,4 @@ public
 FIREBASE_CONFIG.json
 .env
 .env.development
+cypress.env.json

@@ -19,9 +19,9 @@ const options: RAFirebaseOptions = {
 
 const Firebase = loadable.lib(() => import('react-admin-firebase'));
 
-const Admin = loadable(() => import("../components/Admin"))
-const Resource = loadable(() => import("../components/Resource"))
-const CustomLoginPage = loadable(() => import("../components/login"))
+const Admin = loadable(() => import("../components/Admin"));
+const Resource = loadable(() => import("../components/Resource"));
+const CustomLoginPage = loadable(() => import("../components/Login"));
 
 const firebaseConfig = {
     apiKey: process.env.GATSBY_API_KEY,
@@ -54,7 +54,7 @@ const IndexPage = () => (<GoogleReCaptchaProvider
                 authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             >
-                <Resource name="potassium-argon-age-calculations" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'K-Ar' }} list={PotassiumArgonAgeCalculationList} create={PotassiumArgonAgeCalculationsCreate} edit={PotassiumArgonCalculationsEdit}/>
+                <Resource name="potassium-argon-age-calculations" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'K-Ar Blog' }} list={PotassiumArgonAgeCalculationList} create={PotassiumArgonAgeCalculationsCreate} edit={PotassiumArgonCalculationsEdit}/>
             </Admin>
         }
     </Firebase>
