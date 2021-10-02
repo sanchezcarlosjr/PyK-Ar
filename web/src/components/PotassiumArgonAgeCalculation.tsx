@@ -4,7 +4,6 @@ import {
     Datagrid,
     DeleteButton,
     Edit,
-    Filter,
     List,
     Show,
     FileField,
@@ -15,17 +14,17 @@ import {
     TextInput,
 } from "react-admin";
 
-const PotassiumArgonAgeCalculationFilter = (props: any) => {
-    return (<Filter {...props}>
-        <TextInput label="Search" source="title" alwaysOn/>
-    </Filter>);
-};
+
+const PotassiumArgonAgeCalculationFilters = [
+    <TextInput source="age" label="Search" alwaysOn />,
+    <TextInput source="uncertainty" label="Uncertainty"  />
+];
 
 export const PotassiumArgonAgeCalculationList = (props: any) => (
-    <List {...props} filters={<PotassiumArgonAgeCalculationFilter/>}>
+    <List {...props} filters={PotassiumArgonAgeCalculationFilters}>
         <Datagrid rowClick="edit">
             <TextField source="age"/>
-            <TextField source="standard"/>
+            <TextField source="uncertainty"/>
             <DeleteButton label=""/>
         </Datagrid>
     </List>
@@ -35,7 +34,7 @@ export const PotassiumArgonAgeCalculationShow = (props: any) => (
     <Show {...props}>
         <SimpleShowLayout>
             <TextField source="age"/>
-            <TextField source="standard"/>
+            <TextField source="uncertainty"/>
         </SimpleShowLayout>
     </Show>
 );
@@ -54,7 +53,7 @@ export const PotassiumArgonCalculationsEdit = (props: any) => (
     <Edit {...props}>
         <SimpleForm>
             <TextInput source="age"/>
-            <TextInput source="standard"/>
+            <TextInput source="uncertainty"/>
         </SimpleForm>
     </Edit>
 );
