@@ -18,7 +18,7 @@ def calculate_age_by_potassium_argon(request):
         # Allows GET requests from any origin with the Content-Type
         # header and caches preflight response for an 3600s
         headers = {
-            'Access-Control-Allow-Origin': 'https://pykar.sanchezcarlosjr.com',
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'authorization,content-type',
             'Access-Control-Max-Age': '3600'
@@ -29,9 +29,9 @@ def calculate_age_by_potassium_argon(request):
     # Set CORS headers for the main request
 
     headers = {
-        'Access-Control-Allow-Origin': 'https://pykar.sanchezcarlosjr.com',
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST',
         'Access-Control-Allow-Headers': 'authorization,content-type'
     }
 
-    return jsonify({"ok": "Great Day 2"}), 200, headers
+    return jsonify({"data": {"H": "A"}}), 200, headers

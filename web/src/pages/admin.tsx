@@ -3,9 +3,11 @@ import loadable from "@loadable/component"
 
 import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
-import {PotassiumArgonAgeCalculationList, PotassiumArgonAgeCalculationShow, PotassiumArgonAgeCalculationsCreate,PotassiumArgonCalculationsEdit} from "../components/PotassiumArgonAgeCalculation";
 import {Helmet} from "react-helmet";
 import PotassiumArgonAgeCalculationsIcon from '@material-ui/icons/InsertChart';
+import {PotassiumArgonAgeCalculationList} from "../components/potassium-argon-age-calculation/PotassiumArgonAgeCalculationList";
+import {PotassiumArgonAgeCalculationsCreate} from "../components/potassium-argon-age-calculation/PotassiumArgonAgeCalculationsCreate";
+import {PotassiumArgonCalculationsEdit} from "../components/potassium-argon-age-calculation/PotassiumArgonCalculationsEdit";
 
 const options: RAFirebaseOptions = {
     logging: process.env.NODE_ENV === "development",
