@@ -1,4 +1,8 @@
 from flask import jsonify
+import firebase_admin
+from firebase_admin import initialize_app, firestore, auth
+
+app = initialize_app()
 
 
 def calculate_age_by_potassium_argon(request):
@@ -18,7 +22,7 @@ def calculate_age_by_potassium_argon(request):
         # Allows GET requests from any origin with the Content-Type
         # header and caches preflight response for an 3600s
         headers = {
-            'Access-Control-Allow-Origin': 'https://pykar.sanchezcarlosjr.com',
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'POST',
             'Access-Control-Allow-Headers': 'authorization,content-type',
             'Access-Control-Max-Age': '3600'
@@ -29,9 +33,20 @@ def calculate_age_by_potassium_argon(request):
     # Set CORS headers for the main request
 
     headers = {
-        'Access-Control-Allow-Origin': 'https://pykar.sanchezcarlosjr.com',
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST',
         'Access-Control-Allow-Headers': 'authorization,content-type'
     }
 
-    return jsonify({"ok": "Great Day 2"}), 200, headers
+    firestore_db = firebase_admin.firestore.client()
+    measurement = {'age': 120,
+                   'createdate': 'John Lennon',
+                   'createdby': '',
+                   'deleted': False,
+                   'id': '',
+                   'lastupdate': '',
+                   'uncertainty': 1,
+                   'updatedby': ''
+                   }
+    firestore_db.collection(u'potassium-argon-age-calculations').add(measurement)
+    return jsonify({"data": measurement}), 200, headers

@@ -9,7 +9,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }: {description: string, lang: string, meta: any, title: string}) {
+function Seo({ description, lang, meta, title }: {description: string, lang: string, meta: any, title: string}) {
     const { site } = useStaticQuery(
         graphql`
       query {
@@ -70,10 +70,10 @@ function SEO({ description, lang, meta, title }: {description: string, lang: str
 );
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
     lang: `en`,
     meta: [],
     description: ``,
 };
 
-export default SEO;
+export default Seo;

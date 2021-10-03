@@ -1,48 +1,9 @@
 import * as React from "react";
 import {useCallback} from "react";
-import {
-    Create,
-    Datagrid,
-    DeleteButton,
-    Edit,
-    FileField,
-    FileInput,
-    FormDataConsumer,
-    List,
-    Show,
-    useRedirect,
-    SimpleForm,
-    SimpleShowLayout,
-    TextField,
-    TextInput,
-} from "react-admin";
+import {Create, FileField, useNotify, FileInput, FormDataConsumer, SimpleForm, useRedirect,} from "react-admin";
 import {useFormState} from 'react-final-form';
 import {CartesianGrid, Line, LineChart, XAxis, YAxis} from 'recharts';
 import firebase from "gatsby-plugin-firebase"
-
-const PotassiumArgonAgeCalculationFilters = [
-    <TextInput source="age" label="Search" alwaysOn/>,
-    <TextInput source="uncertainty" label="Uncertainty"/>
-];
-
-export const PotassiumArgonAgeCalculationList = (props: any) => (
-    <List {...props} filters={PotassiumArgonAgeCalculationFilters}>
-        <Datagrid rowClick="edit">
-            <TextField source="age"/>
-            <TextField source="uncertainty"/>
-            <DeleteButton label=""/>
-        </Datagrid>
-    </List>
-);
-
-export const PotassiumArgonAgeCalculationShow = (props: any) => (
-    <Show {...props}>
-        <SimpleShowLayout>
-            <TextField source="age"/>
-            <TextField source="uncertainty"/>
-        </SimpleShowLayout>
-    </Show>
-);
 
 const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}, {name: 'Page B', uv: 300, pv: 2300, amt: 2800}];
 
@@ -62,24 +23,22 @@ const ChartPotassiumArgonAgeMeasurement = (props: JSX.IntrinsicAttributes) => {
 
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
     const redirect = useRedirect();
+    const notify = useNotify();
     const save = useCallback(
         async (values) => {
-            console.log(values);
             const functions = firebase.app().functions('us-west4');
             const calculateAgeByPotassiumArgon = functions.httpsCallable('calculate_age_by_potassium_argon');
-            calculateAgeByPotassiumArgon({value: ''})
-                .then((result: any) => {
-                    console.log(result);
-                    redirect('/admin/#/potassium-argon-age-calculations/');
-                });
-            return true;
+            return calculateAgeByPotassiumArgon({value: ''})
+                .then((result: any) =>
+                    redirect('/potassium-argon-age-calculations')
+                ).catch(() => notify("Oops! Something went wrong. Please try again later.", "error"));
         },
         [firebase],
     );
     return (
         <Create {...props}>
             <SimpleForm save={save}>
-                <FileInput accept=".csv" source="experiments" multiple label="Mass spectrometer measurements">
+                <FileInput accept=".csv,.asc" source="experiments" multiple label="Mass spectrometer measurements">
                     <FileField source="src" title="title"/>
                 </FileInput>
                 <FormDataConsumer>
@@ -94,12 +53,3 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
         </Create>
     )
 };
-
-export const PotassiumArgonCalculationsEdit = (props: any) => (
-    <Edit {...props}>
-        <SimpleForm>
-            <TextInput source="age"/>
-            <TextInput source="uncertainty"/>
-        </SimpleForm>
-    </Edit>
-);
