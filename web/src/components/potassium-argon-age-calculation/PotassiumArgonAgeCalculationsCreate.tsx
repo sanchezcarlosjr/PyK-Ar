@@ -30,7 +30,7 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
             const calculateAgeByPotassiumArgon = functions.httpsCallable('calculate_age_by_potassium_argon');
             return calculateAgeByPotassiumArgon({value: ''})
                 .then((result: any) =>
-                    redirect('/admin/#/potassium-argon-age-calculations/')
+                    redirect('/potassium-argon-age-calculations')
                 ).catch(() => notify("Oops! Something went wrong. Please try again later.", "error"));
         },
         [firebase],
