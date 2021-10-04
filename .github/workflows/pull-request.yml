@@ -7,8 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-            fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Install dependencies
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Install python dependencies
         run: |
           cd apps
           python -m pip install --upgrade pip
@@ -16,11 +16,18 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
-            cd apps
-            pytest tests
+          cd apps
+          pytest tests
+      - name: Install npm dependencies
+        run: |
+            cd web
+            npm i
+      - name: Test with jest
+        run: |
+            cd web
+            npm test
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
-
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
