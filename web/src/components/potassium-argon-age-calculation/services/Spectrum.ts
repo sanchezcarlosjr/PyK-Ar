@@ -1,4 +1,3 @@
-import {File} from "./File";
 
 interface Subscriber {
     next: (t: any) => any
@@ -12,8 +11,7 @@ export class Spectrum {
     private subscribers: Subscriber[] = [];
     private mapFunctions: MapFunction[] = [];
 
-    async next(...files: File[]) {
-        let acc: any = files;
+    async next(...acc: any[]) {
         for (const mapFunctions of this.mapFunctions) {
             acc = mapFunctions(acc);
         }

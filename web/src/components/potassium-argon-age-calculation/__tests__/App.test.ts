@@ -3,6 +3,7 @@ import path from 'path';
 import {Spectrum} from "../services/Spectrum";
 import {File} from "../services/File";
 import {ascToExperimentPipe} from "../services/AscToJson";
+import {Experiment} from "../services/Experiment";
 
 export class NodeFile extends File {
     read(): Promise<string> {
@@ -28,25 +29,6 @@ test('it should map new files', async () => {
         (files) => files.map((file: NodeFile) => file.read())
     ).next(new NodeFile("7A.asc"), new NodeFile("7B.asc"));
 });
-
-interface Cycle {
-    cycle: string;
-    mass: string;
-    peak: string;
-    measure: string;
-    inty: string;
-    time: string;
-}
-
-interface Experiment {
-    cycles: Cycle[];
-    analysis_date: string;
-    spectrum: string;
-    sample_id: string;
-    type: string;
-    spectrum_user_name: string;
-    file_name: string;
-}
 
 test('it should be transform from ASC to Json', async () => {
     const spectrum = new Spectrum();
