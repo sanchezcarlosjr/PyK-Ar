@@ -1,4 +1,4 @@
-export const ascToJsonPipe = (files: Promise<string>[]) => files.map(async (promise) => {
+export const ascToExperimentPipe = (files: Promise<string>[]) => files.map(async (promise) => {
     const file = await promise;
     let csvLine = 0;
     let matcher = "-\r";

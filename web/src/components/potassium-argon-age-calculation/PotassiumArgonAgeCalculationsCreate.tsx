@@ -38,7 +38,7 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
     return (
         <Create {...props}>
             <SimpleForm save={save}>
-                <FileInput accept=".csv,.asc" source="experiments" multiple label="Mass spectrometer measurements">
+                <FileInput accept=".asc" source="experiments" multiple label="Mass spectrometer measurements">
                     <FileField source="src" title="title"/>
                 </FileInput>
                 <FormDataConsumer>

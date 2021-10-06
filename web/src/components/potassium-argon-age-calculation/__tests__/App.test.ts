@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import {Spectrum} from "../services/Spectrum";
 import {File} from "../services/File";
-import {ascToJsonPipe} from "../services/AscToJson";
+import {ascToExperimentPipe} from "../services/AscToJson";
 
 export class NodeFile extends File {
     read(): Promise<string> {
@@ -67,8 +67,6 @@ test('it should be transform from ASC to Json', async () => {
     });
     await spectrum.map(
         (files: File[]) => files.map((file: NodeFile) => file.read()),
-        ascToJsonPipe
+        ascToExperimentPipe
     ).next(new NodeFile("7A.asc"));
 });
-
-test('it should be ')
