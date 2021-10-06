@@ -21,6 +21,15 @@ const ChartPotassiumArgonAgeMeasurement = (props: JSX.IntrinsicAttributes) => {
     );
 };
 
+const validateExperimentCreation = (values: { experiments: File[]}) => {
+    const errors = {};
+    if (values.experiments && values.experiments.length % 2 != 0) {
+        // @ts-ignore
+        errors.experiments = 'The number of experiments should be even.';
+    }
+    return errors;
+};
+
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
     const redirect = useRedirect();
     const notify = useNotify();
@@ -37,7 +46,7 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
     );
     return (
         <Create {...props}>
-            <SimpleForm save={save}>
+            <SimpleForm save={save} validate={validateExperimentCreation}>
                 <FileInput accept=".asc" source="experiments" multiple label="Mass spectrometer measurements">
                     <FileField source="src" title="title"/>
                 </FileInput>
