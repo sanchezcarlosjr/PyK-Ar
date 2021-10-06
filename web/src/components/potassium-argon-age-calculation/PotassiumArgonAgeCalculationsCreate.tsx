@@ -1,6 +1,5 @@
 import * as React from "react";
-import {Component, useCallback} from "react";
-import {Create, FileField, useNotify, FileInput, FormDataConsumer, SimpleForm, useRedirect,} from "react-admin";
+import {Create, FileField, FileInput, FormDataConsumer, SimpleForm, useNotify, useRedirect,} from "react-admin";
 import {useFormState} from 'react-final-form';
 import {CartesianGrid, Line, LineChart, XAxis, YAxis} from 'recharts';
 import {Spectrum} from "./services/Spectrum";

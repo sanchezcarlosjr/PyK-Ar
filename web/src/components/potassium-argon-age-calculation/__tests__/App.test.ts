@@ -1,9 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 import {Spectrum} from "../services/Spectrum";
-import {File} from "../services/File";
 import {ascToExperimentPipe} from "../services/AscToJson";
 import {Experiment} from "../services/Experiment";
+
+export abstract class File {
+    constructor(protected file: string) {
+    }
+
+    abstract read(): Promise<string>;
+}
 
 export class NodeFile extends File {
     read(): Promise<string> {
