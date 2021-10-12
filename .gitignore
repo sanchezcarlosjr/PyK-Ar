@@ -9,6 +9,7 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
+**/.pytest_cache/**
 
 # Firebase config
 

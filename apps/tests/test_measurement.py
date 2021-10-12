@@ -1,8 +1,11 @@
-from dataclasses import asdict
-from potassium_argon_age_calculation_mock_repository import PotassiumArgonAgeCalculationMockRepository
 import sys
+from dataclasses import asdict
+
+from potassium_argon_age_calculation_mock_repository import PotassiumArgonAgeCalculationMockRepository
+
 sys.path.append('../apps')
-from measurement import Measurement
+from domain.measurement import Measurement
+
 
 def test_set_measurement_id():
     measurement = Measurement()

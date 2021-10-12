@@ -1,3 +1,4 @@
 Makefile
 .idea/**
 tests/**
+**/.pytest_cache/**

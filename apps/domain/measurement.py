@@ -15,3 +15,4 @@ class Measurement:
     lastupdate: str = None
     uncertainty: float = random()
     updatedby: str = ""
+    createdby: str = ""
