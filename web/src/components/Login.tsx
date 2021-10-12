@@ -18,7 +18,7 @@ const SignInScreen = () => <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth=
 
 const CustomLoginForm = (props: any) => (
     <div>
-        <LoginForm {...props} />
+        <LoginForm redirect="/admin/#/potassium-argon-age-calculations"  {...props} />
         <SignInScreen />
     </div>
 );
