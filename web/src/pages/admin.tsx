@@ -35,6 +35,25 @@ const firebaseConfig = {
     appId: process.env.GATSBY_APP_ID,
     measurementId: process.env.GATSBY_MEASUREMENT_ID
 };
+import { createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+          main: '#446C8E'
+        },
+        secondary: {
+            main: '#2a5578',
+        },
+        // Used by `getContrastText()` to maximize the contrast between
+        // the background and the text.
+        contrastThreshold: 1.2,
+        // Used by the functions below to shift a color's luminance by approximately
+        // two indexes within its tonal palette.
+        // E.g., shift from Red 500 to Red 300 or Red 700.
+        tonalOffset: 0.2,
+    },
+});
 
 const IndexPage = () => (<GoogleReCaptchaProvider
     reCaptchaKey="6LcuZowcAAAAAGqrmumerjhdJFu6Gfwa-2kWZUAg"
@@ -52,6 +71,7 @@ const IndexPage = () => (<GoogleReCaptchaProvider
     <Firebase>
         {({default: firebase}) =>
             <Admin
+                theme={theme}
                 loginPage={CustomLoginPage}
                 authProvider={firebase.FirebaseAuthProvider(firebaseConfig, options)}
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
