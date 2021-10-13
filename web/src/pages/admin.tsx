@@ -38,20 +38,32 @@ const firebaseConfig = {
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
+    typography: {
+        fontFamily: '"IBM Plex Sans Regular", Roboto, "Helvetica Neue", Arial, sans-serif',
+    },
     palette: {
         primary: {
-          main: '#446C8E'
+            main: '#0E4471',
         },
         secondary: {
             main: '#2a5578',
         },
+        error: {
+            main: '#af3c0b',
+        },
+        warning: {
+            main: '#AF870B',
+        },
+        info: {
+            main: '#47a7f5',
+        },
         // Used by `getContrastText()` to maximize the contrast between
         // the background and the text.
-        contrastThreshold: 1.2,
+        contrastThreshold: 1.4,
         // Used by the functions below to shift a color's luminance by approximately
         // two indexes within its tonal palette.
         // E.g., shift from Red 500 to Red 300 or Red 700.
-        tonalOffset: 0.2,
+        tonalOffset: 0.5,
     },
 });
 
