@@ -6,7 +6,7 @@ import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
 import {Helmet} from "react-helmet";
 import PotassiumArgonAgeCalculationsIcon from '@material-ui/icons/InsertChart';
 import {PotassiumArgonAgeCalculationList} from "../components/potassium-argon-age-calculation/PotassiumArgonAgeCalculationList";
-import {PotassiumArgonAgeCalculationsCreate} from "../components/potassium-argon-age-calculation/PotassiumArgonAgeCalculationsCreate";
+import {PotassiumArgonAgeCalculationsCreate} from "../components/potassium-argon-age-calculation/create/PotassiumArgonAgeCalculationsCreate";
 import {PotassiumArgonCalculationsEdit} from "../components/potassium-argon-age-calculation/PotassiumArgonCalculationsEdit";
 
 const options: RAFirebaseOptions = {
@@ -56,14 +56,7 @@ const theme = createMuiTheme({
         },
         info: {
             main: '#47a7f5',
-        },
-        // Used by `getContrastText()` to maximize the contrast between
-        // the background and the text.
-        contrastThreshold: 1.4,
-        // Used by the functions below to shift a color's luminance by approximately
-        // two indexes within its tonal palette.
-        // E.g., shift from Red 500 to Red 300 or Red 700.
-        tonalOffset: 0.5,
+        }
     },
 });
 
