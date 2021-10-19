@@ -1,4 +1,4 @@
-interface Cycle {
+export interface Cycle {
     cycle: string;
     mass: string;
     peak: string;

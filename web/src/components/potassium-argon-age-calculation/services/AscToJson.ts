@@ -20,7 +20,7 @@ export const ascToExperimentPipe = (files: Promise<string>[]) => files.map(async
         sample_id,
         type,
         cycles: csv.filter((t) => t.length > 0).map((t) => {
-            const [,time, ,inty] = t[4].split(" ");
+            const [,inty, ,time] = t[4].split(" ");
             return {
                 [`${tokens[4][0].toLowerCase()}`]: t[0].replaceAll(" ", ""),
                 [`${tokens[4][1].toLowerCase()}`]: t[1].replaceAll(" ", ""),

@@ -6,7 +6,7 @@ import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
 import {Helmet} from "react-helmet";
 import PotassiumArgonAgeCalculationsIcon from '@material-ui/icons/InsertChart';
 import {PotassiumArgonAgeCalculationList} from "../components/potassium-argon-age-calculation/PotassiumArgonAgeCalculationList";
-import {PotassiumArgonAgeCalculationsCreate} from "../components/potassium-argon-age-calculation/PotassiumArgonAgeCalculationsCreate";
+import {PotassiumArgonAgeCalculationsCreate} from "../components/potassium-argon-age-calculation/create/PotassiumArgonAgeCalculationsCreate";
 import {PotassiumArgonCalculationsEdit} from "../components/potassium-argon-age-calculation/PotassiumArgonCalculationsEdit";
 
 const options: RAFirebaseOptions = {
@@ -38,20 +38,25 @@ const firebaseConfig = {
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
+    typography: {
+        fontFamily: '"IBM Plex Sans Regular", Roboto, "Helvetica Neue", Arial, sans-serif',
+    },
     palette: {
         primary: {
-          main: '#446C8E'
+            main: '#0E4471',
         },
         secondary: {
             main: '#2a5578',
         },
-        // Used by `getContrastText()` to maximize the contrast between
-        // the background and the text.
-        contrastThreshold: 1.2,
-        // Used by the functions below to shift a color's luminance by approximately
-        // two indexes within its tonal palette.
-        // E.g., shift from Red 500 to Red 300 or Red 700.
-        tonalOffset: 0.2,
+        error: {
+            main: '#af3c0b',
+        },
+        warning: {
+            main: '#AF870B',
+        },
+        info: {
+            main: '#47a7f5',
+        }
     },
 });
 
