@@ -14,7 +14,7 @@ export const ascToExperimentPipe = (files: Promise<string>[]) => files.map(async
     const [, file_name] = tokens[2];
     const [, sample_id] = tokens[3];
     return {
-        analysis_date: new Date(analysis_date),
+        analysis_date: new Date(analysis_date).toISOString(),
         spectrum,
         file_name,
         sample_id,
