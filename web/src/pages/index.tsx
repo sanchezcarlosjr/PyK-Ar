@@ -1,6 +1,6 @@
 import * as React from "react";
-import Seo from "../components/core/Seo";
-import "../components/Layout.css";
+import Seo from "../core/Seo";
+import "../css/Layout.css";
 import { center, container, title, button } from './index.module.css';
 import {Link} from "gatsby";
 
