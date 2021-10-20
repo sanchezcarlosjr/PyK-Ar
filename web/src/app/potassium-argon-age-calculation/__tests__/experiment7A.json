@@ -4,6 +4,7 @@
   "file_name": "7A",
   "sample_id": "BCO AIRE ",
   "type": "Sample Analysis",
+  "spectrum_user_name": "miguel",
   "cycles": [
     {
       "cycle": "1",

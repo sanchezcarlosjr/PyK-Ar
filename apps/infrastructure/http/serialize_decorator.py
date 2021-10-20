@@ -21,7 +21,7 @@ def serialize(func):
         if content_type != 'application/json':
             return jsonify({"error": "JSON is invalid."}), 400, headers
         try:
-            data = func(request.get_json(silent=True), request)
+            data = func(request.get_json(silent=True)['data'], request)
             return jsonify({"data": data}), 200, headers
         except KeyError as err:
             logger.exception(err)
