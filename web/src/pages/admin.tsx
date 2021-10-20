@@ -5,9 +5,9 @@ import {RAFirebaseOptions} from "react-admin-firebase";
 import {GoogleReCaptchaProvider} from 'react-google-recaptcha-v3';
 import {Helmet} from "react-helmet";
 import PotassiumArgonAgeCalculationsIcon from '@material-ui/icons/InsertChart';
-import {PotassiumArgonAgeCalculationList} from "../components/potassium-argon-age-calculation/PotassiumArgonAgeCalculationList";
-import {PotassiumArgonAgeCalculationsCreate} from "../components/potassium-argon-age-calculation/create/PotassiumArgonAgeCalculationsCreate";
-import {PotassiumArgonCalculationsEdit} from "../components/potassium-argon-age-calculation/PotassiumArgonCalculationsEdit";
+import {PotassiumArgonAgeCalculationList} from "../app/potassium-argon-age-calculation/PotassiumArgonAgeCalculationList";
+import {PotassiumArgonAgeCalculationsCreate} from "../app/potassium-argon-age-calculation/create/PotassiumArgonAgeCalculationsCreate";
+import {PotassiumArgonCalculationsEdit} from "../app/potassium-argon-age-calculation/PotassiumArgonCalculationsEdit";
 
 const options: RAFirebaseOptions = {
     logging: process.env.NODE_ENV === "development",
@@ -21,9 +21,9 @@ const options: RAFirebaseOptions = {
 
 const Firebase = loadable.lib(() => import('react-admin-firebase'));
 
-const Admin = loadable(() => import("../components/Admin"));
-const Resource = loadable(() => import("../components/Resource"));
-const CustomLoginPage = loadable(() => import("../components/Login"));
+const Admin = loadable(() => import("../app/Admin"));
+const Resource = loadable(() => import("../app/Resource"));
+const CustomLoginPage = loadable(() => import("../app/Login"));
 
 const firebaseConfig = {
     apiKey: process.env.GATSBY_API_KEY,

@@ -21,7 +21,7 @@ export class Spectrum {
         return this;
     }
 
-    async execute<T>(...acc: { rawFile: File }[]) {
+    async execute<T>(...acc: { rawFile: File }[]| any[]) {
         for (const mapFunctions of this.mapFunctions) {
             acc =  await mapFunctions(acc);
         }

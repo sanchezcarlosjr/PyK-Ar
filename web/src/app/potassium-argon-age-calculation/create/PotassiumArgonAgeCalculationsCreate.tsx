@@ -23,9 +23,8 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
     const save = async (t: { experiments: { rawFile: File }[] }) => {
         const experiments = await new Spectrum().map(readWebFilesPipe, ascToExperimentPipe).execute<Experiment[]>(...t.experiments);
         const service = new PotassiumArgonAgeCalculationCloudFunctionService();
-        return service.call(experiments)
-            .then(() => redirect('/potassium-argon-age-calculations')
-            ).catch(() => notify("Oops! Something went wrong. Please try again later.", "error"));
+        return service.call(experiments).then(() => redirect('/potassium-argon-age-calculations')
+        ).catch(() => notify("Oops! Something went wrong. Please try again later.", "error"));
     };
     return (
         <Create {...props}>
@@ -35,11 +34,10 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
                 </FileInput>
                 <FormDataConsumer>
                     {({
-                          formData,
-                          ...rest
+                          formData
                       }) => !!formData.experiments && formData.experiments.length > 0 && formData.experiments.length % 2 == 0 &&
                         formData.experiments.map((experiment: FileInputFormat) =>
-                            <Box css={{ m: "2rem" }}>
+                            <Box css={{m: "2rem"}}>
                                 <ChartPotassiumArgonAgeMeasurement experiment={experiment}/>
                             </Box>
                         )

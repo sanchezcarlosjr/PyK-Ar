@@ -1,4 +1,4 @@
-@import "../css/typography.css";
+@import "typography.css";
 
 html {
     line-height: 1.15; /* 1 */
