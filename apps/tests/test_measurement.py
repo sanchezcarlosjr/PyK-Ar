@@ -24,8 +24,38 @@ experiments = [{
         "measure": "RawData",
         "inty": "1.73016000E-006",
         "time": "7.79375000E+001"
+    }, {
+        "cycle": "1",
+        "mass": "3.54675500E+001",
+        "peak": "ZERO1",
+        "measure": "Corrected",
+        "inty": "1.73016000E-006",
+        "time": "7.79375000E+001"
     }]
-}
+},
+    {
+        "analysis_date": "1",
+        "spectrum": "",
+        "sample_id": "",
+        "type": "",
+        "spectrum_user_name": "",
+        "file_name": "",
+        "cycles": [{
+            "cycle": "1",
+            "mass": "3.54675500E+001",
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "inty": "1.73016000E-006",
+            "time": "7.79375000E+001"
+        }, {
+            "cycle": "1",
+            "mass": "3.54675500E+001",
+            "peak": "ZERO1",
+            "measure": "Corrected",
+            "inty": "1.73016000E-006",
+            "time": "7.79375000E+001"
+        }]
+    }
 ]
 
 
@@ -45,3 +75,10 @@ def test_experiments():
 def test_raw_mass_spectrometry_to_measurements():
     x = raw_mass_spectrometry_to_measurements(lambda m: m)(experiments, {'user_id': 'A'})
     assert x.experiments[0].cycles[0].cycle == "1"
+
+
+def test_filter_corrected_cycles():
+    measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(experiments, {'user_id': 'A'})
+    cycles = measurement.filter_corrected_cycles()
+    assert cycles[0].measure == "Corrected"
+    assert cycles[1].measure == "Corrected"

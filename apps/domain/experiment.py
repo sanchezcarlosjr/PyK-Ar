@@ -18,6 +18,9 @@ class Cycle:
         self.finty = float(self.inty)
         self.ftime = float(self.time)
 
+    def is_corrected(self):
+        return self.measure == "Corrected"
+
 
 @dataclass
 class Experiment:
