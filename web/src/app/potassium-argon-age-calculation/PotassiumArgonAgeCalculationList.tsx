@@ -10,7 +10,8 @@ export const PotassiumArgonAgeCalculationList = (props: any) => (
     <List {...props} filters={PotassiumArgonAgeCalculationFilters}>
         <Datagrid rowClick="edit">
             <TextField source="age"/>
-            <TextField source="uncertainty"/>
+            <TextField source="york_fit_error"/>
+            <TextField source="dalrymple_error"/>
             <DeleteButton label=""/>
         </Datagrid>
     </List>
