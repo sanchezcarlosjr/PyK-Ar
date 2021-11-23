@@ -2,7 +2,8 @@ from dataclasses import dataclass
 
 from dacite import from_dict
 
-from domain.experiment import Experiment, Cycle
+from domain.experiment import Experiment
+from domain.cycle import Cycle
 
 
 @dataclass
