@@ -1,5 +1,3 @@
-from dataclasses import asdict
-
 from firebase_admin import initialize_app
 
 from application.raw_mass_spectrometry_to_measurements_decorator import raw_mass_spectrometry_to_measurements
@@ -18,4 +16,4 @@ initialize_app()
 @raw_mass_spectrometry_to_measurements
 @store_age
 def calculate_age_by_potassium_argon(measurement: Measurement):
-    return asdict(measurement)
+    return measurement.calculate()

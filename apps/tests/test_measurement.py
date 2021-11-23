@@ -1,14 +1,13 @@
 import sys
-from dataclasses import asdict
-
-from dacite import from_dict
-
+from firebase_admin import initialize_app
 from potassium_argon_age_calculation_mock_repository import PotassiumArgonAgeCalculationMockRepository
+initialize_app()
 
 sys.path.append('../apps')
-from domain.experiment import Experiment
+from domain.experiments import Experiments
 from domain.measurement import Measurement
 from application.raw_mass_spectrometry_to_measurements_decorator import raw_mass_spectrometry_to_measurements
+from infrastructure.potassium_argon_age_calculation_repository import PotassiumArgonAgeCalculationRepository
 
 experiments = [{
     "analysis_date": "1",
@@ -60,25 +59,36 @@ experiments = [{
 
 
 def test_set_measurement_id():
-    measurement = Measurement(experiments=[
-        from_dict(data_class=Experiment, data=experiment) for experiment in experiments])
+    measurement = Measurement(experiments=Experiments(experiments))
     mock = PotassiumArgonAgeCalculationMockRepository()
-    m = mock.save(asdict(measurement))
-    assert 0 <= float(m['id']) <= 1, "Dict should set id"
-
-
-def test_experiments():
-    experiment = from_dict(data_class=Experiment, data=experiments[0])
-    assert experiment.cycles[0].cycle == "1"
-
-
-def test_raw_mass_spectrometry_to_measurements():
-    x = raw_mass_spectrometry_to_measurements(lambda m: m)(experiments, {'user_id': 'A'})
-    assert x.experiments[0].cycles[0].cycle == "1"
+    m = mock.save(measurement)
+    assert 0 <= float(m.id) <= 1, "Dict should set id"
 
 
 def test_filter_corrected_cycles():
-    measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(experiments, {'user_id': 'A'})
-    cycles = measurement.filter_corrected_cycles()
-    assert cycles[0].measure == "Corrected"
-    assert cycles[1].measure == "Corrected"
+    e = Experiments(experiments)
+    cycles = e.filter_corrected_cycles()
+    for cycle in cycles:
+        assert cycle.measure == "Corrected"
+
+
+def test_equals_experiments():
+    def test_raw_mass_spectrometry_to_measurements():
+        x = raw_mass_spectrometry_to_measurements(lambda m: m)(experiments, {'user_id': 'A'})
+        assert x.experiments == experiments
+
+    test_raw_mass_spectrometry_to_measurements()
+
+
+def test_convert_to_dict():
+    def test_raw_mass_spectrometry_to_measurements():
+        x: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(experiments, {'user_id': 'A'})
+        measurement, experiments_to_save = x.to_dict()
+        assert 'experiments' not in measurement
+        assert experiments == experiments_to_save
+
+    test_raw_mass_spectrometry_to_measurements()
+
+
+def test_measurement_saver():
+    repository = PotassiumArgonAgeCalculationRepository()

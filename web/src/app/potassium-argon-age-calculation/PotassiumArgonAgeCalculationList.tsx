@@ -3,7 +3,7 @@ import * as React from "react";
 
 const PotassiumArgonAgeCalculationFilters = [
     <TextInput source="age" label="Search" alwaysOn/>,
-    <TextInput source="uncertainty" label="Uncertainty"/>
+    <TextInput source="york_fit_error" label="Uncertainty"/>
 ];
 
 export const PotassiumArgonAgeCalculationList = (props: any) => (
