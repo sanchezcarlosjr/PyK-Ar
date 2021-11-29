@@ -1,3 +1,4 @@
+import random
 from dataclasses import dataclass, asdict
 from datetime import datetime
 
@@ -8,9 +9,9 @@ from domain.experiments import Experiments
 class Measurement:
     experiments: Experiments
     id: str = ""
-    age: float = 0
-    york_fit_error: float = 0
-    dalrymple_error: float = 0
+    age: float = random.uniform(100, 1000)
+    york_fit_error: float = random.uniform(10, 20)
+    dalrymple_error: float = random.uniform(10, 20)
     createdate: datetime = datetime.now()
     deleted: bool = False
     lastupdate: datetime = datetime.now()

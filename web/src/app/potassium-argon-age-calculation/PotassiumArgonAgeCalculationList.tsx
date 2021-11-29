@@ -9,9 +9,9 @@ const PotassiumArgonAgeCalculationFilters = [
 export const PotassiumArgonAgeCalculationList = (props: any) => (
     <List {...props} filters={PotassiumArgonAgeCalculationFilters}>
         <Datagrid rowClick="edit">
-            <TextField source="age"/>
-            <TextField source="york_fit_error"/>
-            <TextField source="dalrymple_error"/>
+            <TextField source="age" label="Age x 10^6 (Million years ago)"/>
+            <TextField source="york_fit_error" label="+- York Fit Error (Million years ago)"/>
+            <TextField source="dalrymple_error" label="+- Dalrymple Error (Million years ago)"/>
             <DeleteButton label=""/>
         </Datagrid>
     </List>
