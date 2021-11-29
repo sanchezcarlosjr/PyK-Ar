@@ -9,13 +9,13 @@ module.exports = {
         "gatsby-plugin-image",
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-sitemap",
+        "gatsby-plugin-remove-console",
         {
             resolve: "gatsby-plugin-manifest",
             options: {
                 icon: "src/images/icon.png",
             },
         },
-        "gatsby-plugin-mdx",
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
         {

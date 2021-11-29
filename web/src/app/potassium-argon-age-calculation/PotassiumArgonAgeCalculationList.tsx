@@ -3,14 +3,15 @@ import * as React from "react";
 
 const PotassiumArgonAgeCalculationFilters = [
     <TextInput source="age" label="Search" alwaysOn/>,
-    <TextInput source="uncertainty" label="Uncertainty"/>
+    <TextInput source="york_fit_error" label="Uncertainty"/>
 ];
 
 export const PotassiumArgonAgeCalculationList = (props: any) => (
     <List {...props} filters={PotassiumArgonAgeCalculationFilters}>
         <Datagrid rowClick="edit">
-            <TextField source="age"/>
-            <TextField source="uncertainty"/>
+            <TextField source="age" label="Age x 10^6 (Million years ago)"/>
+            <TextField source="york_fit_error" label="+- York Fit Error (Million years ago)"/>
+            <TextField source="dalrymple_error" label="+- Dalrymple Error (Million years ago)"/>
             <DeleteButton label=""/>
         </Datagrid>
     </List>

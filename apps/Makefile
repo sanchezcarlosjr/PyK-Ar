@@ -1,5 +1,6 @@
 test:
-	python ~/.local/lib/python3.9/site-packages/pytest tests
+	export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/service-account-credentials.json"
+	pytest tests
 
 deploy:
 	gcloud functions deploy calculate_age_by_potassium_argon --memory=1024MB \
