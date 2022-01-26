@@ -1,17 +1,22 @@
 from dataclasses import asdict
 
-from domain.measurement import Measurement
-
 from firebase_admin import firestore
+
+from domain.measurement import Measurement
 
 
 class FirestoreRepository:
     def save(self, collection: str, data: dict):
         firestore_db = firestore.client()
-        doc_ref = firestore_db.collection(collection).document()
-        data['id'] = doc_ref.id
+        if hasattr(data, 'id'):
+            doc_ref = firestore_db.collection(collection).document()
+            data['id'] = doc_ref.id
         firestore_db.collection(collection).document(data['id']).set(data)
         return data
+
+    def read(self, collection, document):
+        firestore_db = firestore.client()
+        return firestore_db.collection(collection).document(document).get()
 
 
 class PotassiumArgonAgeCalculationRepository:

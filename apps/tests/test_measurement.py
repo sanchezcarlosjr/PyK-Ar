@@ -1,13 +1,16 @@
 import sys
 from firebase_admin import initialize_app
+
 from potassium_argon_age_calculation_mock_repository import PotassiumArgonAgeCalculationMockRepository
 initialize_app()
 
 sys.path.append('../apps')
 from domain.experiments import Experiments
 from domain.measurement import Measurement
+from domain.T0 import T0
 from application.raw_mass_spectrometry_to_measurements_decorator import raw_mass_spectrometry_to_measurements
-from infrastructure.potassium_argon_age_calculation_repository import PotassiumArgonAgeCalculationRepository
+from infrastructure.potassium_argon_age_calculation_repository import PotassiumArgonAgeCalculationRepository, \
+    FirestoreRepository
 
 experiments = [{
     "analysis_date": "1",
@@ -90,5 +93,12 @@ def test_convert_to_dict():
     test_raw_mass_spectrometry_to_measurements()
 
 
-def test_measurement_saver():
-    repository = PotassiumArgonAgeCalculationRepository()
+def test_should_create_a_object_value_constant():
+    t0_value = 9
+    f = FirestoreRepository()
+    f.save(u'potassium-argon-age-constants', {
+        "id": "T0",
+        "value": t0_value,
+    })
+    t0 = T0()
+    assert t0 == t0_value
