@@ -62,11 +62,20 @@ def test_convert_to_dict():
 
     test_raw_mass_spectrometry_to_measurements()
 
+
 def test_calculate_moles_of_K40():
     measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
     assert measurement.moles_of_K40 == 0
     measurement.calculate_moles_of_K40()
     assert measurement.moles_of_K40 == 5.787E-8
+
+
+def test_calculate_moles_A38_in_tracer():
+    measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+    assert measurement.moles_A38_in_tracer == 0
+    measurement.calculate_moles_A38_in_tracer()
+    assert measurement.moles_A38_in_tracer == 2.976E-10
+
 
 def test_should_create_a_object_value_constant():
     t0_value = 9
