@@ -100,6 +100,18 @@ def test_should_calculate_cycles_mean():
     assert measurement.Ar36 == 0.000114046680375
 
 
+def test_should_calculate_Ar40_Ar38_ratios_in_the_gas_mixture():
+    measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+    measurement.Ar38 = 1
+    measurement.Ar40 = 0.743
+    measurement.calculate_Ar40_Ar38_ratio()
+    assert measurement.Ar40_Ar38_ratio == 0.743
+    assert measurement.Ar40_Ar38_ratios_in_the_gas_mixture == 0
+    measurement.calculate_Ar40_Ar38_ratios_in_the_gas_mixture()
+    assert measurement.Ar40_Ar38_ratios_in_the_gas_mixture == 1.485
+
+
+
 def test_should_create_a_object_value_constant():
     t0_value = 3.086E-10
     f = FirestoreRepository()

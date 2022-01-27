@@ -20,6 +20,7 @@ class Measurement:
     ar36_divides_ar38_t: float = 0
     Ar40_Ar38_ratio: float = 0
     Ar38_Ar36_ratio: float = 0
+    Ar40_Ar38_ratios_in_the_gas_mixture: float = 0
     Ar36: float = 0
     Ar38: float = 0
     Ar40: float = 0
@@ -105,3 +106,9 @@ class Measurement:
 
     def calculate_Ar38_Ar36_ratio(self):
         self.Ar38_Ar36_ratio = self.Ar38 / self.Ar36
+
+    def calculate_Ar40_Ar38_ratios_in_the_gas_mixture(self):
+        d = 0.999
+        spectrometer_scale_factors = 2
+        Ar40_Ar38_ratios_in_the_gas_mixture = self.Ar40_Ar38_ratio * d * spectrometer_scale_factors
+        self.Ar40_Ar38_ratios_in_the_gas_mixture = round(Ar40_Ar38_ratios_in_the_gas_mixture, 3)
