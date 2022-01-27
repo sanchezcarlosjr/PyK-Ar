@@ -1,5 +1,6 @@
 import random
-from dataclasses import dataclass, asdict, field
+import re
+from dataclasses import dataclass, asdict
 from datetime import datetime
 
 from domain.experiments import Experiments
@@ -25,6 +26,14 @@ class Measurement:
     lastupdate: datetime = datetime.now()
     updatedby: str = ""
     createdby: str = ""
+    aux_variables = {}
+
+    def __init__(self):
+        blank_regex = re.compile(r'BCO')
+        match_blank = blank_regex.search(self.experiments[0].sample_id) is not None
+        self.aux_variables['BLANK'] = int(match_blank)
+        self.aux_variables['SAMPLE'] = int(not match_blank)
+        self.id = self.experiments[self.aux_variables['SAMPLE']].sample_id
 
     def calculate(self):
         return self
@@ -32,4 +41,5 @@ class Measurement:
     def to_dict(self):
         measurement = asdict(self)
         del measurement['experiments']
-        return measurement, self.experiments.original_experiments
+        del measurement['aux_variables']
+        return measurement

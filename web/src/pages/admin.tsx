@@ -83,7 +83,7 @@ const IndexPage = () => (<GoogleReCaptchaProvider
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             >
                 <Resource name="potassium-argon-age-calculations" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'List K-Ar Samples' }} list={PotassiumArgonAgeCalculationList} create={PotassiumArgonAgeCalculationsCreate} edit={PotassiumArgonCalculationsEdit}/>
-                <Resource name="potassium-argon-age-constants" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'List K-Ar Constants' }} list={PotassiumArgonAgeConstantList}/>
+                <Resource name="potassium-argon-age-constants" options={{ label: 'List K-Ar Constants' }} list={PotassiumArgonAgeConstantList}/>
             </Admin>
         }
     </Firebase>

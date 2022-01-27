@@ -11,6 +11,7 @@ class FirestoreRepository:
         if hasattr(data, 'id'):
             doc_ref = firestore_db.collection(collection).document()
             data['id'] = doc_ref.id
+        print(data)
         firestore_db.collection(collection).document(data['id']).set(data)
         return data
 
