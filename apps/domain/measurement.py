@@ -168,4 +168,7 @@ class Measurement:
         return self.Ar40_rad
 
     def calculate_percentage_of_Ar40_rad_in_the_analysis(self):
-        self.percentage_of_Ar40_rad_in_the_analysis = 80.8
+        self.calculate_total_Ar40()
+        self.calculate_Ar40_rad()
+        percentage_of_Ar40_rad_in_the_analysis = 100*self.Ar40_rad/self.total_Ar40
+        self.percentage_of_Ar40_rad_in_the_analysis = round(percentage_of_Ar40_rad_in_the_analysis, 1)

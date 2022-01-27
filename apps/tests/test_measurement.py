@@ -150,6 +150,7 @@ def test_should_calculate_percentage_of_Ar40_rad_in_the_analysis():
     measurement.calculate_percentage_of_Ar40_rad_in_the_analysis()
     assert measurement.percentage_of_Ar40_rad_in_the_analysis == 80.8
 
+
 def test_should_create_a_object_value_constant():
     t0_value = 3.086E-10
     f = FirestoreRepository()
