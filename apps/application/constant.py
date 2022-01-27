@@ -1,4 +1,4 @@
-from infrastructure.potassium_argon_age_calculation_repository import FirestoreRepository
+from infrastructure.firestore_repository import FirestoreRepository
 
 
 class Constant(float):
