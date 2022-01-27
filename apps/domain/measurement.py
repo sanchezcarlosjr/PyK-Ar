@@ -4,6 +4,10 @@ from dataclasses import dataclass, asdict
 from datetime import datetime
 from math import exp
 
+from domain.Ar36_Ar38_composition_of_atmospheric import Ar36Ar38CompositionOfAtmospheric
+from domain.Ar36_Ar38_ratio_for_tracer import Ar36Ar38RatioForTracer
+from domain.Ar40_Ar38_composition_of_atmospheric import Ar40Ar38CompositionOfAtmospheric
+from domain.Ar40_Ar38_ratio_for_tracer import Ar40Ar38RatioForTracer
 from domain.D import D
 from domain.T0 import T0
 from domain.atoms_K40_divides_atomsK import AtomsK40DividesAtomsK
@@ -137,10 +141,10 @@ class Measurement:
         self.calculate_Ar40_Ar38_ratios_in_the_gas_mixture()
         self.calculate_Ar38_Ar36_ratios_in_the_gas_mixture()
         self.calculate_moles_Ar38_in_tracer()
-        Ar40_Ar38_ratio_for_tracer = 0.0012
-        Ar36_Ar38_ratio_for_tracer = 2.67E-5
-        Ar36_Ar38_composition_of_atmospheric = 5.35
-        Ar40_Ar38_composition_of_atmospheric = 1581
+        Ar40_Ar38_ratio_for_tracer = Ar40Ar38RatioForTracer()
+        Ar36_Ar38_ratio_for_tracer = Ar36Ar38RatioForTracer()
+        Ar36_Ar38_composition_of_atmospheric = Ar36Ar38CompositionOfAtmospheric()
+        Ar40_Ar38_composition_of_atmospheric = Ar40Ar38CompositionOfAtmospheric()
         Ar40_rad = self.moles_Ar38_in_tracer \
                    * (
                            self.Ar40_Ar38_ratios_in_the_gas_mixture
