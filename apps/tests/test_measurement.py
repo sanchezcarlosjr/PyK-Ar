@@ -78,7 +78,7 @@ def test_calculate_moles_A38_in_tracer():
 
 
 def test_should_create_a_object_value_constant():
-    t0_value = 9
+    t0_value = 3.086E-10
     f = FirestoreRepository()
     f.save(u'potassium-argon-age-constants', {
         "id": "T0",
