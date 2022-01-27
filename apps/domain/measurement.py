@@ -28,7 +28,7 @@ class Measurement:
     createdby: str = ""
     aux_variables = {}
 
-    def __init__(self):
+    def __post_init__(self):
         blank_regex = re.compile(r'BCO')
         match_blank = blank_regex.search(self.experiments[0].sample_id) is not None
         self.aux_variables['BLANK'] = int(match_blank)
@@ -41,5 +41,4 @@ class Measurement:
     def to_dict(self):
         measurement = asdict(self)
         del measurement['experiments']
-        del measurement['aux_variables']
         return measurement

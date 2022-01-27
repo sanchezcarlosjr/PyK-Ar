@@ -1,0 +1,3103 @@
+{
+  "data": {
+    "delta": 1,
+    "weight": 1,
+    "gramsOfK": 1,
+    "ar40_divides_ar38_t": 1,
+    "ar36_divides_ar38_t": 1,
+    "experiments": [
+      {
+        "analysis_date": "2019-01-08T08:00:00.000Z",
+        "spectrum": "MCAT 5400 ",
+        "file_name": "7A",
+        "sample_id": "BCO AIRE ",
+        "type": "Sample Analysis",
+        "spectrum_user_name": "miguel",
+        "cycles": [
+          {
+            "cycle": "1",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.00000173016,
+            "time": 77.9375
+          },
+          {
+            "cycle": "1",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002188332,
+            "time": 84.5625
+          },
+          {
+            "cycle": "1",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001483452,
+            "time": 96.1875
+          },
+          {
+            "cycle": "1",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.0000016821,
+            "time": 102.875
+          },
+          {
+            "cycle": "1",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001662876,
+            "time": 109.5
+          },
+          {
+            "cycle": "1",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001653264,
+            "time": 121.125
+          },
+          {
+            "cycle": "1",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001672488,
+            "time": 127.8125
+          },
+          {
+            "cycle": "1",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000093451068,
+            "time": 134.4375
+          },
+          {
+            "cycle": "1",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.00000163404,
+            "time": 146.0625
+          },
+          {
+            "cycle": "1",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 5.81526e-7,
+            "time": 84.5625
+          },
+          {
+            "cycle": "1",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": -4.806e-9,
+            "time": 109.5
+          },
+          {
+            "cycle": "1",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000091797804,
+            "time": 134.4375
+          },
+          {
+            "cycle": "2",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001608408,
+            "time": 156.75
+          },
+          {
+            "cycle": "2",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.0000023229,
+            "time": 163.375
+          },
+          {
+            "cycle": "2",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001435392,
+            "time": 175
+          },
+          {
+            "cycle": "2",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001557144,
+            "time": 181.6875
+          },
+          {
+            "cycle": "2",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001741374,
+            "time": 188.3125
+          },
+          {
+            "cycle": "2",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.00000155394,
+            "time": 199.9375
+          },
+          {
+            "cycle": "2",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001576368,
+            "time": 206.625
+          },
+          {
+            "cycle": "2",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000093000906,
+            "time": 213.25
+          },
+          {
+            "cycle": "2",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001733364,
+            "time": 224.875
+          },
+          {
+            "cycle": "2",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 8.01e-7,
+            "time": 163.375
+          },
+          {
+            "cycle": "2",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 1.85832e-7,
+            "time": 188.3125
+          },
+          {
+            "cycle": "2",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.00009134604,
+            "time": 213.25
+          },
+          {
+            "cycle": "3",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001595592,
+            "time": 235.5625
+          },
+          {
+            "cycle": "3",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002244402,
+            "time": 242.1875
+          },
+          {
+            "cycle": "3",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001678896,
+            "time": 253.8125
+          },
+          {
+            "cycle": "3",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001672488,
+            "time": 260.5
+          },
+          {
+            "cycle": "3",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001736568,
+            "time": 267.125
+          },
+          {
+            "cycle": "3",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001688508,
+            "time": 278.75
+          },
+          {
+            "cycle": "3",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001518696,
+            "time": 285.4375
+          },
+          {
+            "cycle": "3",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000093814722,
+            "time": 292.0625
+          },
+          {
+            "cycle": "3",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001541124,
+            "time": 303.6875
+          },
+          {
+            "cycle": "3",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 6.07158e-7,
+            "time": 242.1875
+          },
+          {
+            "cycle": "3",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 5.607e-8,
+            "time": 267.125
+          },
+          {
+            "cycle": "3",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000092284812,
+            "time": 292.0625
+          },
+          {
+            "cycle": "4",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001525104,
+            "time": 314.375
+          },
+          {
+            "cycle": "4",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002117844,
+            "time": 321
+          },
+          {
+            "cycle": "4",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001643652,
+            "time": 332.625
+          },
+          {
+            "cycle": "4",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001608408,
+            "time": 339.3125
+          },
+          {
+            "cycle": "4",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001747782,
+            "time": 345.9375
+          },
+          {
+            "cycle": "4",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001563552,
+            "time": 357.5625
+          },
+          {
+            "cycle": "4",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.00000166608,
+            "time": 364.25
+          },
+          {
+            "cycle": "4",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000093411018,
+            "time": 370.875
+          },
+          {
+            "cycle": "4",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001637244,
+            "time": 382.5
+          },
+          {
+            "cycle": "4",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 5.33466e-7,
+            "time": 321
+          },
+          {
+            "cycle": "4",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 1.61802e-7,
+            "time": 345.9375
+          },
+          {
+            "cycle": "4",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000091759356,
+            "time": 370.875
+          },
+          {
+            "cycle": "5",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001656468,
+            "time": 393.1875
+          },
+          {
+            "cycle": "5",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002175516,
+            "time": 399.8125
+          },
+          {
+            "cycle": "5",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001467432,
+            "time": 411.4375
+          },
+          {
+            "cycle": "5",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001627632,
+            "time": 418.125
+          },
+          {
+            "cycle": "5",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001672488,
+            "time": 424.75
+          },
+          {
+            "cycle": "5",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.00000165006,
+            "time": 436.375
+          },
+          {
+            "cycle": "5",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.00000174618,
+            "time": 443.0625
+          },
+          {
+            "cycle": "5",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000093886812,
+            "time": 449.6875
+          },
+          {
+            "cycle": "5",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001598796,
+            "time": 461.3125
+          },
+          {
+            "cycle": "5",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 6.13566e-7,
+            "time": 399.8125
+          },
+          {
+            "cycle": "5",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 3.3642e-8,
+            "time": 424.75
+          },
+          {
+            "cycle": "5",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000092214324,
+            "time": 449.6875
+          },
+          {
+            "cycle": "6",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.0000016821,
+            "time": 472
+          },
+          {
+            "cycle": "6",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002229984,
+            "time": 478.625
+          },
+          {
+            "cycle": "6",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001694916,
+            "time": 490.25
+          },
+          {
+            "cycle": "6",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.00000177822,
+            "time": 496.9375
+          },
+          {
+            "cycle": "6",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001656468,
+            "time": 503.5625
+          },
+          {
+            "cycle": "6",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.00000155394,
+            "time": 515.1875
+          },
+          {
+            "cycle": "6",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001726956,
+            "time": 521.875
+          },
+          {
+            "cycle": "6",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000093947688,
+            "time": 528.5
+          },
+          {
+            "cycle": "6",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001742976,
+            "time": 540.125
+          },
+          {
+            "cycle": "6",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 5.41476e-7,
+            "time": 478.625
+          },
+          {
+            "cycle": "6",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": -9.612e-9,
+            "time": 503.5625
+          },
+          {
+            "cycle": "6",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000092212722,
+            "time": 528.5
+          },
+          {
+            "cycle": "7",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001662876,
+            "time": 550.8125
+          },
+          {
+            "cycle": "7",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002141874,
+            "time": 557.4375
+          },
+          {
+            "cycle": "7",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001563552,
+            "time": 569.0625
+          },
+          {
+            "cycle": "7",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001710936,
+            "time": 575.75
+          },
+          {
+            "cycle": "7",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001728558,
+            "time": 582.375
+          },
+          {
+            "cycle": "7",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001742976,
+            "time": 594
+          },
+          {
+            "cycle": "7",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001528308,
+            "time": 600.6875
+          },
+          {
+            "cycle": "7",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000094953744,
+            "time": 607.3125
+          },
+          {
+            "cycle": "7",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001608408,
+            "time": 618.9375
+          },
+          {
+            "cycle": "7",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 5.2866e-7,
+            "time": 557.4375
+          },
+          {
+            "cycle": "7",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 1.602e-9,
+            "time": 582.375
+          },
+          {
+            "cycle": "7",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000093385386,
+            "time": 607.3125
+          },
+          {
+            "cycle": "8",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001566756,
+            "time": 629.625
+          },
+          {
+            "cycle": "8",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002252412,
+            "time": 636.25
+          },
+          {
+            "cycle": "8",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001646856,
+            "time": 647.875
+          },
+          {
+            "cycle": "8",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001563552,
+            "time": 654.5625
+          },
+          {
+            "cycle": "8",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001779822,
+            "time": 661.1875
+          },
+          {
+            "cycle": "8",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001704528,
+            "time": 672.8125
+          },
+          {
+            "cycle": "8",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001742976,
+            "time": 679.5
+          },
+          {
+            "cycle": "8",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000094932918,
+            "time": 686.125
+          },
+          {
+            "cycle": "8",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001659672,
+            "time": 697.75
+          },
+          {
+            "cycle": "8",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 6.45606e-7,
+            "time": 636.25
+          },
+          {
+            "cycle": "8",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 1.45782e-7,
+            "time": 661.1875
+          },
+          {
+            "cycle": "8",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000093231594,
+            "time": 686.125
+          },
+          {
+            "cycle": "9",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001672488,
+            "time": 708.4375
+          },
+          {
+            "cycle": "9",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002310084,
+            "time": 715.0625
+          },
+          {
+            "cycle": "9",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001621224,
+            "time": 726.6875
+          },
+          {
+            "cycle": "9",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001496268,
+            "time": 733.375
+          },
+          {
+            "cycle": "9",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001627632,
+            "time": 740
+          },
+          {
+            "cycle": "9",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001627632,
+            "time": 751.625
+          },
+          {
+            "cycle": "9",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001541124,
+            "time": 758.3125
+          },
+          {
+            "cycle": "9",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.00009499059,
+            "time": 764.9375
+          },
+          {
+            "cycle": "9",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001640448,
+            "time": 776.5625
+          },
+          {
+            "cycle": "9",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 6.63228e-7,
+            "time": 715.0625
+          },
+          {
+            "cycle": "9",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 6.5682e-8,
+            "time": 740
+          },
+          {
+            "cycle": "9",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000093399804,
+            "time": 764.9375
+          },
+          {
+            "cycle": "10",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001550736,
+            "time": 787.25
+          },
+          {
+            "cycle": "10",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002215566,
+            "time": 793.875
+          },
+          {
+            "cycle": "10",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000156996,
+            "time": 805.5
+          },
+          {
+            "cycle": "10",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.00000173016,
+            "time": 812.1875
+          },
+          {
+            "cycle": "10",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001718946,
+            "time": 818.8125
+          },
+          {
+            "cycle": "10",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.00000165006,
+            "time": 830.4375
+          },
+          {
+            "cycle": "10",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001608408,
+            "time": 837.125
+          },
+          {
+            "cycle": "10",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.00009511875,
+            "time": 843.75
+          },
+          {
+            "cycle": "10",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001576368,
+            "time": 855.375
+          },
+          {
+            "cycle": "10",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 6.55218e-7,
+            "time": 793.875
+          },
+          {
+            "cycle": "10",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 2.8836e-8,
+            "time": 818.8125
+          },
+          {
+            "cycle": "10",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000093526362,
+            "time": 843.75
+          },
+          {
+            "cycle": "11",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001749384,
+            "time": 866.0625
+          },
+          {
+            "cycle": "11",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002217168,
+            "time": 872.6875
+          },
+          {
+            "cycle": "11",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001550736,
+            "time": 884.3125
+          },
+          {
+            "cycle": "11",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001688508,
+            "time": 891
+          },
+          {
+            "cycle": "11",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001718946,
+            "time": 897.625
+          },
+          {
+            "cycle": "11",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001576368,
+            "time": 909.25
+          },
+          {
+            "cycle": "11",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.00000161802,
+            "time": 915.9375
+          },
+          {
+            "cycle": "11",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000095554494,
+            "time": 922.5625
+          },
+          {
+            "cycle": "11",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001509084,
+            "time": 934.1875
+          },
+          {
+            "cycle": "11",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 5.67108e-7,
+            "time": 872.6875
+          },
+          {
+            "cycle": "11",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 8.6508e-8,
+            "time": 897.625
+          },
+          {
+            "cycle": "11",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000093990942,
+            "time": 922.5625
+          },
+          {
+            "cycle": "12",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001509084,
+            "time": 944.875
+          },
+          {
+            "cycle": "12",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002177118,
+            "time": 951.5
+          },
+          {
+            "cycle": "12",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000147384,
+            "time": 963.125
+          },
+          {
+            "cycle": "12",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.00000161802,
+            "time": 969.8125
+          },
+          {
+            "cycle": "12",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001702926,
+            "time": 976.4375
+          },
+          {
+            "cycle": "12",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001621224,
+            "time": 988.0625
+          },
+          {
+            "cycle": "12",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001685304,
+            "time": 994.75
+          },
+          {
+            "cycle": "12",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.00009514278,
+            "time": 1001.375
+          },
+          {
+            "cycle": "12",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001659672,
+            "time": 1013
+          },
+          {
+            "cycle": "12",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 6.85656e-7,
+            "time": 951.5
+          },
+          {
+            "cycle": "12",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 8.3304e-8,
+            "time": 976.4375
+          },
+          {
+            "cycle": "12",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000093470292,
+            "time": 1001.375
+          },
+          {
+            "cycle": "13",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001653264,
+            "time": 1023.6875
+          },
+          {
+            "cycle": "13",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002189934,
+            "time": 1030.3125
+          },
+          {
+            "cycle": "13",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001451412,
+            "time": 1041.9375
+          },
+          {
+            "cycle": "13",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001675692,
+            "time": 1048.625
+          },
+          {
+            "cycle": "13",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.00000169812,
+            "time": 1055.25
+          },
+          {
+            "cycle": "13",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001646856,
+            "time": 1066.875
+          },
+          {
+            "cycle": "13",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001541124,
+            "time": 1073.5625
+          },
+          {
+            "cycle": "13",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000096180876,
+            "time": 1080.1875
+          },
+          {
+            "cycle": "13",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001627632,
+            "time": 1091.8125
+          },
+          {
+            "cycle": "13",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 6.37596e-7,
+            "time": 1030.3125
+          },
+          {
+            "cycle": "13",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 3.6846e-8,
+            "time": 1055.25
+          },
+          {
+            "cycle": "13",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000094596498,
+            "time": 1080.1875
+          },
+          {
+            "cycle": "14",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001598796,
+            "time": 1102.5
+          },
+          {
+            "cycle": "14",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002143476,
+            "time": 1109.125
+          },
+          {
+            "cycle": "14",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000156996,
+            "time": 1120.75
+          },
+          {
+            "cycle": "14",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001605204,
+            "time": 1127.4375
+          },
+          {
+            "cycle": "14",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001581174,
+            "time": 1134.0625
+          },
+          {
+            "cycle": "14",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001621224,
+            "time": 1145.6875
+          },
+          {
+            "cycle": "14",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001656468,
+            "time": 1152.375
+          },
+          {
+            "cycle": "14",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.00009673677,
+            "time": 1159
+          },
+          {
+            "cycle": "14",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001675692,
+            "time": 1170.625
+          },
+          {
+            "cycle": "14",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 5.59098e-7,
+            "time": 1109.125
+          },
+          {
+            "cycle": "14",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": -3.204e-8,
+            "time": 1134.0625
+          },
+          {
+            "cycle": "14",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.00009507069,
+            "time": 1159
+          },
+          {
+            "cycle": "15",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001534716,
+            "time": 1181.3125
+          },
+          {
+            "cycle": "15",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000002284452,
+            "time": 1187.9375
+          },
+          {
+            "cycle": "15",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001579572,
+            "time": 1199.5625
+          },
+          {
+            "cycle": "15",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001566756,
+            "time": 1206.25
+          },
+          {
+            "cycle": "15",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001600398,
+            "time": 1212.875
+          },
+          {
+            "cycle": "15",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001557144,
+            "time": 1224.5
+          },
+          {
+            "cycle": "15",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001557144,
+            "time": 1231.1875
+          },
+          {
+            "cycle": "15",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000096746382,
+            "time": 1237.8125
+          },
+          {
+            "cycle": "15",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001656468,
+            "time": 1249.4375
+          },
+          {
+            "cycle": "15",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 7.27308e-7,
+            "time": 1187.9375
+          },
+          {
+            "cycle": "15",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 3.8448e-8,
+            "time": 1212.875
+          },
+          {
+            "cycle": "15",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000095139576,
+            "time": 1237.8125
+          },
+          {
+            "cycle": "16",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001624428,
+            "time": 1260.125
+          },
+          {
+            "cycle": "16",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.00000215469,
+            "time": 1266.75
+          },
+          {
+            "cycle": "16",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001509084,
+            "time": 1278.375
+          },
+          {
+            "cycle": "16",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001512288,
+            "time": 1285.0625
+          },
+          {
+            "cycle": "16",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000001672488,
+            "time": 1291.6875
+          },
+          {
+            "cycle": "16",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001422576,
+            "time": 1303.3125
+          },
+          {
+            "cycle": "16",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001525104,
+            "time": 1310
+          },
+          {
+            "cycle": "16",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.000096579774,
+            "time": 1316.625
+          },
+          {
+            "cycle": "16",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001592388,
+            "time": 1328.25
+          },
+          {
+            "cycle": "16",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 5.87934e-7,
+            "time": 1266.75
+          },
+          {
+            "cycle": "16",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 2.05056e-7,
+            "time": 1291.6875
+          },
+          {
+            "cycle": "16",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.000095021028,
+            "time": 1316.625
+          }
+        ]
+      },
+      {
+        "analysis_date": "2019-01-08T08:00:00.000Z",
+        "spectrum": "MCAT 5400 ",
+        "file_name": "7B",
+        "sample_id": "AIRE ",
+        "type": "Sample Analysis",
+        "spectrum_user_name": "miguel",
+        "cycles": [
+          {
+            "cycle": "1",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001845504,
+            "time": 147.6875
+          },
+          {
+            "cycle": "1",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000118975734,
+            "time": 154.3125
+          },
+          {
+            "cycle": "1",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000156996,
+            "time": 165.9375
+          },
+          {
+            "cycle": "1",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001694916,
+            "time": 172.625
+          },
+          {
+            "cycle": "1",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.00002340522,
+            "time": 179.25
+          },
+          {
+            "cycle": "1",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.00000155394,
+            "time": 190.875
+          },
+          {
+            "cycle": "1",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001544328,
+            "time": 197.5625
+          },
+          {
+            "cycle": "1",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0295557498,
+            "time": 204.1875
+          },
+          {
+            "cycle": "1",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001525104,
+            "time": 215.8125
+          },
+          {
+            "cycle": "1",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000117268002,
+            "time": 154.3125
+          },
+          {
+            "cycle": "1",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021780792,
+            "time": 179.25
+          },
+          {
+            "cycle": "1",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.029554215,
+            "time": 204.1875
+          },
+          {
+            "cycle": "2",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001736568,
+            "time": 226.5
+          },
+          {
+            "cycle": "2",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000119603718,
+            "time": 233.125
+          },
+          {
+            "cycle": "2",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000177822,
+            "time": 244.75
+          },
+          {
+            "cycle": "2",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001707732,
+            "time": 251.4375
+          },
+          {
+            "cycle": "2",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000023602266,
+            "time": 258.0625
+          },
+          {
+            "cycle": "2",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001717344,
+            "time": 269.6875
+          },
+          {
+            "cycle": "2",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001582776,
+            "time": 276.375
+          },
+          {
+            "cycle": "2",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0295866523,
+            "time": 283
+          },
+          {
+            "cycle": "2",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001694916,
+            "time": 294.625
+          },
+          {
+            "cycle": "2",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000117846324,
+            "time": 233.125
+          },
+          {
+            "cycle": "2",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021889728,
+            "time": 258.0625
+          },
+          {
+            "cycle": "2",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0295850135,
+            "time": 283
+          },
+          {
+            "cycle": "3",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001707732,
+            "time": 305.3125
+          },
+          {
+            "cycle": "3",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.00011925288,
+            "time": 311.9375
+          },
+          {
+            "cycle": "3",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001672488,
+            "time": 323.5625
+          },
+          {
+            "cycle": "3",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.00000165006,
+            "time": 330.25
+          },
+          {
+            "cycle": "3",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000023411628,
+            "time": 336.875
+          },
+          {
+            "cycle": "3",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001701324,
+            "time": 348.5
+          },
+          {
+            "cycle": "3",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001755792,
+            "time": 355.1875
+          },
+          {
+            "cycle": "3",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0295501251,
+            "time": 361.8125
+          },
+          {
+            "cycle": "3",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001758996,
+            "time": 373.4375
+          },
+          {
+            "cycle": "3",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.00011756277,
+            "time": 311.9375
+          },
+          {
+            "cycle": "3",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021735936,
+            "time": 336.875
+          },
+          {
+            "cycle": "3",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0295483677,
+            "time": 361.8125
+          },
+          {
+            "cycle": "4",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001630836,
+            "time": 384.125
+          },
+          {
+            "cycle": "4",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.00011872422,
+            "time": 390.75
+          },
+          {
+            "cycle": "4",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.0000017622,
+            "time": 402.375
+          },
+          {
+            "cycle": "4",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001768608,
+            "time": 409.0625
+          },
+          {
+            "cycle": "4",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000023488524,
+            "time": 415.6875
+          },
+          {
+            "cycle": "4",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001678896,
+            "time": 427.3125
+          },
+          {
+            "cycle": "4",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001816668,
+            "time": 434
+          },
+          {
+            "cycle": "4",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0294792671,
+            "time": 440.625
+          },
+          {
+            "cycle": "4",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001496268,
+            "time": 452.25
+          },
+          {
+            "cycle": "4",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000117027702,
+            "time": 390.75
+          },
+          {
+            "cycle": "4",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021764772,
+            "time": 415.6875
+          },
+          {
+            "cycle": "4",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0294776106,
+            "time": 440.625
+          },
+          {
+            "cycle": "5",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001733364,
+            "time": 462.9375
+          },
+          {
+            "cycle": "5",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000118560816,
+            "time": 469.5625
+          },
+          {
+            "cycle": "5",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001723752,
+            "time": 481.1875
+          },
+          {
+            "cycle": "5",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001637244,
+            "time": 487.875
+          },
+          {
+            "cycle": "5",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.00002334114,
+            "time": 494.5
+          },
+          {
+            "cycle": "5",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001903176,
+            "time": 506.125
+          },
+          {
+            "cycle": "5",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001948032,
+            "time": 512.8125
+          },
+          {
+            "cycle": "5",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0293778909,
+            "time": 519.4375
+          },
+          {
+            "cycle": "5",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001726956,
+            "time": 531.0625
+          },
+          {
+            "cycle": "5",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000116832258,
+            "time": 469.5625
+          },
+          {
+            "cycle": "5",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.00002157093,
+            "time": 494.5
+          },
+          {
+            "cycle": "5",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0293760534,
+            "time": 519.4375
+          },
+          {
+            "cycle": "6",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001592388,
+            "time": 541.75
+          },
+          {
+            "cycle": "6",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.00011768292,
+            "time": 548.375
+          },
+          {
+            "cycle": "6",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001678896,
+            "time": 560
+          },
+          {
+            "cycle": "6",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001550736,
+            "time": 566.6875
+          },
+          {
+            "cycle": "6",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000023478912,
+            "time": 573.3125
+          },
+          {
+            "cycle": "6",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001867932,
+            "time": 584.9375
+          },
+          {
+            "cycle": "6",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001848708,
+            "time": 591.625
+          },
+          {
+            "cycle": "6",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0292881132,
+            "time": 598.25
+          },
+          {
+            "cycle": "6",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001669284,
+            "time": 609.875
+          },
+          {
+            "cycle": "6",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000116047278,
+            "time": 548.375
+          },
+          {
+            "cycle": "6",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021769578,
+            "time": 573.3125
+          },
+          {
+            "cycle": "6",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0292863542,
+            "time": 598.25
+          },
+          {
+            "cycle": "7",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.0000017622,
+            "time": 620.5625
+          },
+          {
+            "cycle": "7",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000117521118,
+            "time": 627.1875
+          },
+          {
+            "cycle": "7",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001726956,
+            "time": 638.8125
+          },
+          {
+            "cycle": "7",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001797444,
+            "time": 645.5
+          },
+          {
+            "cycle": "7",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000023233806,
+            "time": 652.125
+          },
+          {
+            "cycle": "7",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001832688,
+            "time": 663.75
+          },
+          {
+            "cycle": "7",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001845504,
+            "time": 670.4375
+          },
+          {
+            "cycle": "7",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0291854106,
+            "time": 677.0625
+          },
+          {
+            "cycle": "7",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001704528,
+            "time": 688.6875
+          },
+          {
+            "cycle": "7",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.00011577654,
+            "time": 627.1875
+          },
+          {
+            "cycle": "7",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.00002141874,
+            "time": 652.125
+          },
+          {
+            "cycle": "7",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0291836356,
+            "time": 677.0625
+          },
+          {
+            "cycle": "8",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001672488,
+            "time": 699.375
+          },
+          {
+            "cycle": "8",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000116779392,
+            "time": 706
+          },
+          {
+            "cycle": "8",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001749384,
+            "time": 717.625
+          },
+          {
+            "cycle": "8",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001797444,
+            "time": 724.3125
+          },
+          {
+            "cycle": "8",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000023302692,
+            "time": 730.9375
+          },
+          {
+            "cycle": "8",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.00000177822,
+            "time": 742.5625
+          },
+          {
+            "cycle": "8",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.00000174618,
+            "time": 749.25
+          },
+          {
+            "cycle": "8",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0290787927,
+            "time": 755.875
+          },
+          {
+            "cycle": "8",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001819872,
+            "time": 767.5
+          },
+          {
+            "cycle": "8",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000115068456,
+            "time": 706
+          },
+          {
+            "cycle": "8",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.00002151486,
+            "time": 730.9375
+          },
+          {
+            "cycle": "8",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0290770097,
+            "time": 755.875
+          },
+          {
+            "cycle": "9",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001871136,
+            "time": 778.1875
+          },
+          {
+            "cycle": "9",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000116822646,
+            "time": 784.8125
+          },
+          {
+            "cycle": "9",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000166608,
+            "time": 796.4375
+          },
+          {
+            "cycle": "9",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.00000145782,
+            "time": 803.125
+          },
+          {
+            "cycle": "9",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000022953456,
+            "time": 809.75
+          },
+          {
+            "cycle": "9",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.0000018423,
+            "time": 821.375
+          },
+          {
+            "cycle": "9",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001579572,
+            "time": 828.0625
+          },
+          {
+            "cycle": "9",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0289734997,
+            "time": 834.6875
+          },
+          {
+            "cycle": "9",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001768608,
+            "time": 846.3125
+          },
+          {
+            "cycle": "9",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000115054038,
+            "time": 784.8125
+          },
+          {
+            "cycle": "9",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021303396,
+            "time": 809.75
+          },
+          {
+            "cycle": "9",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0289718256,
+            "time": 834.6875
+          },
+          {
+            "cycle": "10",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.00000179424,
+            "time": 857
+          },
+          {
+            "cycle": "10",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000116428554,
+            "time": 863.625
+          },
+          {
+            "cycle": "10",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000169812,
+            "time": 875.25
+          },
+          {
+            "cycle": "10",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.0000016821,
+            "time": 881.9375
+          },
+          {
+            "cycle": "10",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000022846122,
+            "time": 888.5625
+          },
+          {
+            "cycle": "10",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.00000173016,
+            "time": 900.1875
+          },
+          {
+            "cycle": "10",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001723752,
+            "time": 906.875
+          },
+          {
+            "cycle": "10",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0288431401,
+            "time": 913.5
+          },
+          {
+            "cycle": "10",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001733364,
+            "time": 925.125
+          },
+          {
+            "cycle": "10",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000114682374,
+            "time": 863.625
+          },
+          {
+            "cycle": "10",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021139992,
+            "time": 888.5625
+          },
+          {
+            "cycle": "10",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0288414116,
+            "time": 913.5
+          },
+          {
+            "cycle": "11",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001621224,
+            "time": 935.8125
+          },
+          {
+            "cycle": "11",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000114892236,
+            "time": 942.4375
+          },
+          {
+            "cycle": "11",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001755792,
+            "time": 954.0625
+          },
+          {
+            "cycle": "11",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001813464,
+            "time": 960.75
+          },
+          {
+            "cycle": "11",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000023083218,
+            "time": 967.375
+          },
+          {
+            "cycle": "11",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001688508,
+            "time": 979
+          },
+          {
+            "cycle": "11",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001579572,
+            "time": 985.6875
+          },
+          {
+            "cycle": "11",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0287053521,
+            "time": 992.3125
+          },
+          {
+            "cycle": "11",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001765404,
+            "time": 1003.9375
+          },
+          {
+            "cycle": "11",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000113203728,
+            "time": 942.4375
+          },
+          {
+            "cycle": "11",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000021332232,
+            "time": 967.375
+          },
+          {
+            "cycle": "11",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0287036796,
+            "time": 992.3125
+          },
+          {
+            "cycle": "12",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001867932,
+            "time": 1014.625
+          },
+          {
+            "cycle": "12",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000114804126,
+            "time": 1021.25
+          },
+          {
+            "cycle": "12",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.00000169812,
+            "time": 1032.875
+          },
+          {
+            "cycle": "12",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001787832,
+            "time": 1039.5625
+          },
+          {
+            "cycle": "12",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000022711554,
+            "time": 1046.1875
+          },
+          {
+            "cycle": "12",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001800648,
+            "time": 1057.8125
+          },
+          {
+            "cycle": "12",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001726956,
+            "time": 1064.5
+          },
+          {
+            "cycle": "12",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0285795166,
+            "time": 1071.125
+          },
+          {
+            "cycle": "12",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001784628,
+            "time": 1082.75
+          },
+          {
+            "cycle": "12",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.0001130211,
+            "time": 1021.25
+          },
+          {
+            "cycle": "12",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000020917314,
+            "time": 1046.1875
+          },
+          {
+            "cycle": "12",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0285777608,
+            "time": 1071.125
+          },
+          {
+            "cycle": "13",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.00000174618,
+            "time": 1093.4375
+          },
+          {
+            "cycle": "13",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000113996718,
+            "time": 1100.0625
+          },
+          {
+            "cycle": "13",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001637244,
+            "time": 1111.6875
+          },
+          {
+            "cycle": "13",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001749384,
+            "time": 1118.375
+          },
+          {
+            "cycle": "13",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000022317462,
+            "time": 1125
+          },
+          {
+            "cycle": "13",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001768608,
+            "time": 1136.625
+          },
+          {
+            "cycle": "13",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001819872,
+            "time": 1143.3125
+          },
+          {
+            "cycle": "13",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0284524251,
+            "time": 1149.9375
+          },
+          {
+            "cycle": "13",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001704528,
+            "time": 1161.5625
+          },
+          {
+            "cycle": "13",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000112305006,
+            "time": 1100.0625
+          },
+          {
+            "cycle": "13",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000020558466,
+            "time": 1125
+          },
+          {
+            "cycle": "13",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0284506629,
+            "time": 1149.9375
+          },
+          {
+            "cycle": "14",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001864728,
+            "time": 1172.25
+          },
+          {
+            "cycle": "14",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000113291838,
+            "time": 1178.875
+          },
+          {
+            "cycle": "14",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001819872,
+            "time": 1190.5
+          },
+          {
+            "cycle": "14",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001771812,
+            "time": 1197.1875
+          },
+          {
+            "cycle": "14",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000022394358,
+            "time": 1203.8125
+          },
+          {
+            "cycle": "14",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001739772,
+            "time": 1215.4375
+          },
+          {
+            "cycle": "14",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001919196,
+            "time": 1222.125
+          },
+          {
+            "cycle": "14",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0283296479,
+            "time": 1228.75
+          },
+          {
+            "cycle": "14",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.00000158598,
+            "time": 1240.375
+          },
+          {
+            "cycle": "14",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000111449538,
+            "time": 1178.875
+          },
+          {
+            "cycle": "14",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000020638566,
+            "time": 1203.8125
+          },
+          {
+            "cycle": "14",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0283278953,
+            "time": 1228.75
+          },
+          {
+            "cycle": "15",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.000001823076,
+            "time": 1251.0625
+          },
+          {
+            "cycle": "15",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.00011273274,
+            "time": 1257.6875
+          },
+          {
+            "cycle": "15",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001851912,
+            "time": 1269.3125
+          },
+          {
+            "cycle": "15",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001807056,
+            "time": 1276
+          },
+          {
+            "cycle": "15",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.00002254014,
+            "time": 1282.625
+          },
+          {
+            "cycle": "15",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001637244,
+            "time": 1294.25
+          },
+          {
+            "cycle": "15",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001803852,
+            "time": 1300.9375
+          },
+          {
+            "cycle": "15",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0281878548,
+            "time": 1307.5625
+          },
+          {
+            "cycle": "15",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001791036,
+            "time": 1319.1875
+          },
+          {
+            "cycle": "15",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.000110895246,
+            "time": 1257.6875
+          },
+          {
+            "cycle": "15",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.00002081799,
+            "time": 1282.625
+          },
+          {
+            "cycle": "15",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0281860574,
+            "time": 1307.5625
+          },
+          {
+            "cycle": "16",
+            "mass": 35.46755,
+            "peak": "ZERO1",
+            "measure": "RawData",
+            "intensity": 0.00000182628,
+            "time": 1329.875
+          },
+          {
+            "cycle": "16",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "RawData",
+            "intensity": 0.000112495644,
+            "time": 1336.5
+          },
+          {
+            "cycle": "16",
+            "mass": 36.26755,
+            "peak": "ZERO2",
+            "measure": "RawData",
+            "intensity": 0.000001880748,
+            "time": 1348.125
+          },
+          {
+            "cycle": "16",
+            "mass": 37.46678,
+            "peak": "ZERO3",
+            "measure": "RawData",
+            "intensity": 0.000001909584,
+            "time": 1354.8125
+          },
+          {
+            "cycle": "16",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "RawData",
+            "intensity": 0.000022689126,
+            "time": 1361.4375
+          },
+          {
+            "cycle": "16",
+            "mass": 38.46273,
+            "peak": "ZERO4",
+            "measure": "RawData",
+            "intensity": 0.000001755792,
+            "time": 1373.0625
+          },
+          {
+            "cycle": "16",
+            "mass": 39.46431,
+            "peak": "ZERO5",
+            "measure": "RawData",
+            "intensity": 0.000001755792,
+            "time": 1379.75
+          },
+          {
+            "cycle": "16",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "RawData",
+            "intensity": 0.0280343047,
+            "time": 1386.375
+          },
+          {
+            "cycle": "16",
+            "mass": 40.46238,
+            "peak": "ZERO6",
+            "measure": "RawData",
+            "intensity": 0.000001685304,
+            "time": 1398
+          },
+          {
+            "cycle": "16",
+            "mass": 35.96755,
+            "peak": "M36",
+            "measure": "Corrected",
+            "intensity": 0.00011064213,
+            "time": 1336.5
+          },
+          {
+            "cycle": "16",
+            "mass": 37.96273,
+            "peak": "M38",
+            "measure": "Corrected",
+            "intensity": 0.000020856438,
+            "time": 1361.4375
+          },
+          {
+            "cycle": "16",
+            "mass": 39.96238,
+            "peak": "M40",
+            "measure": "Corrected",
+            "intensity": 0.0280325842,
+            "time": 1386.375
+          }
+        ]
+      }
+    ]
+  }
+}
