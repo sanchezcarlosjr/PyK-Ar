@@ -9,6 +9,7 @@ from domain.T0 import T0
 from domain.atoms_K40_divides_atomsK import AtomsK40DividesAtomsK
 from domain.experiments import Experiments
 from domain.gramsK_divides_moleK import GramsKDividesMoleK
+from domain.spectometeter_scale40_scale38_factors import SpectrometerScale40Scale38
 from domain.x import X
 
 
@@ -110,6 +111,6 @@ class Measurement:
 
     def calculate_Ar40_Ar38_ratios_in_the_gas_mixture(self):
         d = D()
-        spectrometer_scale_factors = 2
+        spectrometer_scale_factors = SpectrometerScale40Scale38()
         Ar40_Ar38_ratios_in_the_gas_mixture = self.Ar40_Ar38_ratio * d * spectrometer_scale_factors
         self.Ar40_Ar38_ratios_in_the_gas_mixture = round(Ar40_Ar38_ratios_in_the_gas_mixture, 3)
