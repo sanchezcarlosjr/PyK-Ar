@@ -19,7 +19,7 @@ class Measurement:
     file_name: str = ""
     ar36_divides_ar38_t: float = 0
     ar40_divides_ar38_t: float = 0
-    moles_A38_in_tracer: float = 0
+    moles_Ar38_in_tracer: float = 0
     delta: float = 0
     analysis_date: datetime = datetime.now()
     spectrum: str = ""
@@ -68,8 +68,8 @@ class Measurement:
         moles_of_K40 = (atoms_K40_divides_atomsK * self.gramsOfK) / gramsK_divides_moleK
         self.moles_of_K40 = round(moles_of_K40, 12)
 
-    def calculate_moles_A38_in_tracer(self):
+    def calculate_moles_Ar38_in_tracer(self):
         x = X()
         t0 = T0()
-        moles_A38_in_tracer = t0*exp(-self.delta*x)
-        self.moles_A38_in_tracer = round(moles_A38_in_tracer, 13)
+        moles_Ar38_in_tracer = t0*exp(-self.delta*x)
+        self.moles_Ar38_in_tracer = round(moles_Ar38_in_tracer, 13)
