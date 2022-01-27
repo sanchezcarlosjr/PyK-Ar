@@ -10,7 +10,7 @@
         "analysis_date": "2019-01-08T08:00:00.000Z",
         "spectrum": "MCAT 5400 ",
         "file_name": "7A",
-        "sample_id": "BCO AIRE ",
+        "sample_id": "BCO AIRE",
         "type": "Sample Analysis",
         "spectrum_user_name": "miguel",
         "cycles": [
@@ -1556,7 +1556,7 @@
         "analysis_date": "2019-01-08T08:00:00.000Z",
         "spectrum": "MCAT 5400 ",
         "file_name": "7B",
-        "sample_id": "AIRE ",
+        "sample_id": "AIRE",
         "type": "Sample Analysis",
         "spectrum_user_name": "miguel",
         "cycles": [
