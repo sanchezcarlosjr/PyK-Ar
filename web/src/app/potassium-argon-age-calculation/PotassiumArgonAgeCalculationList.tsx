@@ -1,9 +1,9 @@
-import {Datagrid, DeleteButton, List, TextField, TextInput} from "react-admin";
+import {Datagrid, DeleteButton, List, TextField, TextInput, BooleanInput} from "react-admin";
 import * as React from "react";
 
 const PotassiumArgonAgeCalculationFilters = [
-    <TextInput source="age" label="Search" alwaysOn/>,
-    <TextInput source="york_fit_error" label="Uncertainty"/>
+    <TextInput source="id" label="Search by Sample ID" alwaysOn/>,
+    <BooleanInput source="deleted" label="Deleted" defaultValue={false}/>,
 ];
 
 export const PotassiumArgonAgeCalculationList = (props: any) => (

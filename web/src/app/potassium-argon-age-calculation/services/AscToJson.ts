@@ -30,7 +30,7 @@ export const ascToExperimentPipe = (files: Promise<string>[]) => files.map(async
                 mass: t[1].replaceAll(" ", ""),
                 peak: t[2].replaceAll(" ", ""),
                 measure: t[3].replaceAll(" ", ""),
-                inty,
+                intensity: inty,
                 time
             }
         })

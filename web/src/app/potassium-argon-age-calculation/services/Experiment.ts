@@ -3,7 +3,7 @@ export interface Cycle {
     mass: string;
     peak: string;
     measure: string;
-    inty: string;
+    intensity: string;
     time: string;
 }
 
