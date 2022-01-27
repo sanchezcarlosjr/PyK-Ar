@@ -110,7 +110,15 @@ def test_should_calculate_Ar40_Ar38_ratios_in_the_gas_mixture():
     measurement.calculate_Ar40_Ar38_ratios_in_the_gas_mixture()
     assert measurement.Ar40_Ar38_ratios_in_the_gas_mixture == 1.485
 
-
+def test_should_calculate_Ar38_Ar36_ratios_in_the_gas_mixture():
+    measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+    measurement.Ar38 = 1
+    measurement.Ar36 = 0.98814229249
+    measurement.calculate_Ar38_Ar36_ratio()
+    assert measurement.Ar38_Ar36_ratio == 1.012
+    assert measurement.Ar38_Ar36_ratios_in_the_gas_mixture == 0
+    measurement.calculate_Ar38_Ar36_ratios_in_the_gas_mixture()
+    assert measurement.Ar38_Ar36_ratios_in_the_gas_mixture == 1011
 
 def test_should_create_a_object_value_constant():
     t0_value = 3.086E-10
