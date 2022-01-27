@@ -1,14 +1,14 @@
 {
   "data": {
-    "delta": 1,
-    "weight": 1,
-    "gramsOfK": 1,
-    "ar40_divides_ar38_t": 1,
-    "ar36_divides_ar38_t": 1,
+    "delta": 0.826,
+    "weight": 3.1814,
+    "gramsOfK": 0.019014337008,
+    "ar40_divides_ar38_t": 0.0012,
+    "ar36_divides_ar38_t": 0.0000267,
     "experiments": [
       {
         "analysis_date": "2019-01-08T08:00:00.000Z",
-        "spectrum": "MCAT 5400 ",
+        "spectrum": "MCAT 5400",
         "file_name": "7A",
         "sample_id": "BCO AIRE",
         "type": "Sample Analysis",
@@ -1554,7 +1554,7 @@
       },
       {
         "analysis_date": "2019-01-08T08:00:00.000Z",
-        "spectrum": "MCAT 5400 ",
+        "spectrum": "MCAT 5400",
         "file_name": "7B",
         "sample_id": "AIRE",
         "type": "Sample Analysis",

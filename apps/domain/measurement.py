@@ -19,6 +19,7 @@ class Measurement:
     spectrum: str = ""
     spectrum_user_name: str = ""
     gramsOfK: float = 0
+    moles_of_K40: float = 0
     weight: float = 0
     age: float = random.uniform(100, 1000)
     york_fit_error: float = random.uniform(10, 20)
@@ -54,3 +55,9 @@ class Measurement:
         measurement = asdict(self)
         del measurement['experiments']
         return measurement
+
+    def calculate_moles_of_K40(self):
+        atoms_K40 = 1.19E-4
+        gramsK_divides_moleK40 = 39.1
+        moles_of_K40 = (atoms_K40 * self.gramsOfK) / gramsK_divides_moleK40
+        self.moles_of_K40 = round(moles_of_K40, 12)
