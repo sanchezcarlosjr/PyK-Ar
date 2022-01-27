@@ -4,6 +4,7 @@ from dataclasses import dataclass, asdict
 from datetime import datetime
 from math import exp
 
+from domain.D import D
 from domain.T0 import T0
 from domain.atoms_K40_divides_atomsK import AtomsK40DividesAtomsK
 from domain.experiments import Experiments
@@ -108,7 +109,7 @@ class Measurement:
         self.Ar38_Ar36_ratio = self.Ar38 / self.Ar36
 
     def calculate_Ar40_Ar38_ratios_in_the_gas_mixture(self):
-        d = 0.999
+        d = D()
         spectrometer_scale_factors = 2
         Ar40_Ar38_ratios_in_the_gas_mixture = self.Ar40_Ar38_ratio * d * spectrometer_scale_factors
         self.Ar40_Ar38_ratios_in_the_gas_mixture = round(Ar40_Ar38_ratios_in_the_gas_mixture, 3)
