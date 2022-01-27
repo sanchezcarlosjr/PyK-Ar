@@ -1,5 +1,6 @@
 import sys
 import json
+from datetime import datetime
 
 from firebase_admin import initialize_app
 
@@ -13,7 +14,6 @@ from domain.measurement import Measurement
 from domain.T0 import T0
 from application.raw_mass_spectrometry_to_measurements_decorator import raw_mass_spectrometry_to_measurements
 from infrastructure.potassium_argon_age_calculation_repository import FirestoreRepository
-
 
 with open('tests/example_request.json') as f:
     sample = json.load(f)['data']
@@ -46,7 +46,19 @@ def test_convert_to_dict():
         x: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
         measurement = x.to_dict()
         assert 'experiments' not in measurement
+        assert 'blank_index' not in measurement
+        assert 'sample_index' not in measurement
         assert measurement['id'] == sample['experiments'][1]['sample_id']
+        keys_to_check = [
+            'spectrum_user_name',
+            'spectrum',
+            'type',
+            'file_name',
+        ]
+        for key in keys_to_check:
+            assert measurement[key] == sample['experiments'][1][key]
+        analysis_date = sample['experiments'][1]["analysis_date"]
+        assert measurement["analysis_date"] == datetime.strptime(analysis_date, '%Y-%m-%dT%H:%M:%S.%fZ')
 
     test_raw_mass_spectrometry_to_measurements()
 
