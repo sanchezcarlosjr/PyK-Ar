@@ -18,6 +18,11 @@ class Measurement:
     type: str = ""
     file_name: str = ""
     ar36_divides_ar38_t: float = 0
+    Ar40_Ar38_ratio: float = 0
+    Ar38_Ar36_ratio: float = 0
+    Ar36: float = 0
+    Ar38: float = 0
+    Ar40: float = 0
     ar40_divides_ar38_t: float = 0
     moles_Ar38_in_tracer: float = 0
     delta: float = 0
@@ -71,5 +76,32 @@ class Measurement:
     def calculate_moles_Ar38_in_tracer(self):
         x = X()
         t0 = T0()
-        moles_Ar38_in_tracer = t0*exp(-self.delta*x)
+        moles_Ar38_in_tracer = t0 * exp(-self.delta * x)
         self.moles_Ar38_in_tracer = round(moles_Ar38_in_tracer, 13)
+
+    def calculate_Ar36(self):
+        blank_ar36 = self.experiments[self.blank_index].filter_corrected_cycles().filter_byAr36().mean()
+        self.Ar36 = self.experiments[self.sample_index] \
+            .filter_corrected_cycles() \
+            .filter_byAr36() \
+            .mean(removing_blank_mean=blank_ar36)
+
+    def calculate_Ar38(self):
+        blank_ar38 = self.experiments[self.blank_index].filter_corrected_cycles().filter_byAr38().mean()
+        self.Ar38 = self.experiments[self.sample_index] \
+            .filter_corrected_cycles() \
+            .filter_byAr38() \
+            .mean(removing_blank_mean=blank_ar38)
+
+    def calculate_Ar40(self):
+        blank_ar40 = self.experiments[self.blank_index].filter_corrected_cycles().filter_byAr40().mean()
+        self.Ar40 = self.experiments[self.sample_index] \
+            .filter_corrected_cycles() \
+            .filter_byAr40() \
+            .mean(removing_blank_mean=blank_ar40)
+
+    def calculate_Ar40_Ar38_ratio(self):
+        self.Ar40_Ar38_ratio = self.Ar40 / self.Ar38
+
+    def calculate_Ar38_Ar36_ratio(self):
+        self.Ar38_Ar36_ratio = self.Ar38 / self.Ar36

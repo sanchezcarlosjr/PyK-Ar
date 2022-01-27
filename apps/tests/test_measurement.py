@@ -77,6 +77,29 @@ def test_calculate_moles_Ar38_in_tracer():
     assert measurement.moles_Ar38_in_tracer == 2.976E-10
 
 
+def test_calculate_Ar40_Ar38_ratio():
+    measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+    assert measurement.Ar40_Ar38_ratio == 0
+    measurement.calculate_Ar38()
+    measurement.calculate_Ar40()
+    measurement.calculate_Ar40_Ar38_ratio()
+    assert measurement.Ar40_Ar38_ratio == 1358.1974700151454
+
+
+def test_clone_experiment():
+    measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+    old = measurement.experiments[0]
+    new = measurement.experiments[0].filter_corrected_cycles()
+    assert old != new
+    assert old is not new
+
+
+def test_should_calculate_cycles_mean():
+    measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+    measurement.calculate_Ar36()
+    assert measurement.Ar36 == 0.000114046680375
+
+
 def test_should_create_a_object_value_constant():
     t0_value = 3.086E-10
     f = FirestoreRepository()
