@@ -15,7 +15,7 @@ class Cycle:
 
     def __post_init__(self):
         self.fmass = float(self.mass)
-        self.finty = float(self.inty)
+        self.finty = float(self.intensity)
         self.ftime = float(self.time)
 
     def is_corrected(self):
