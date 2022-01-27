@@ -3,7 +3,9 @@ import re
 from dataclasses import dataclass, asdict
 from datetime import datetime
 
+from domain.atoms_K40_divides_atomsK import AtomsK40DividesAtomsK
 from domain.experiments import Experiments
+from domain.gramsK_divides_moleK import GramsKDividesMoleK
 
 
 @dataclass
@@ -57,7 +59,7 @@ class Measurement:
         return measurement
 
     def calculate_moles_of_K40(self):
-        atoms_K40 = 1.19E-4
-        gramsK_divides_moleK40 = 39.1
-        moles_of_K40 = (atoms_K40 * self.gramsOfK) / gramsK_divides_moleK40
+        atoms_K40_divides_atomsK = AtomsK40DividesAtomsK()
+        gramsK_divides_moleK = GramsKDividesMoleK()
+        moles_of_K40 = (atoms_K40_divides_atomsK * self.gramsOfK) / gramsK_divides_moleK
         self.moles_of_K40 = round(moles_of_K40, 12)

@@ -13,7 +13,7 @@ from domain.experiments import Experiments
 from domain.measurement import Measurement
 from domain.T0 import T0
 from application.raw_mass_spectrometry_to_measurements_decorator import raw_mass_spectrometry_to_measurements
-from infrastructure.potassium_argon_age_calculation_repository import FirestoreRepository
+from infrastructure.firestore_repository import FirestoreRepository
 
 with open('tests/example_request.json') as f:
     sample = json.load(f)['data']
