@@ -2,7 +2,7 @@ import random
 import re
 from dataclasses import dataclass, asdict
 from datetime import datetime
-from math import exp
+from math import exp, log
 
 from domain.Ar36_Ar38_composition_of_atmospheric import Ar36Ar38CompositionOfAtmospheric
 from domain.Ar36_Ar38_ratio_for_tracer import Ar36Ar38RatioForTracer
@@ -72,7 +72,10 @@ class Measurement:
         self.sample_index = int(not match_blank)
 
     def calculate_age(self):
-        self.age = 102.6E6
+        self.calculate_moles_of_K40()
+        self.calculate_Ar40_rad()
+        age = 1.885E9*log(9.068*self.Ar40_rad/self.moles_of_K40 + 1)
+        self.age = round(age, 2)
         return self
 
     def to_dict(self):

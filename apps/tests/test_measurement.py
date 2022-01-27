@@ -157,7 +157,7 @@ def test_should_calculate_age():
     measurement.Ar40 = 0.743
     assert measurement.age == 0
     measurement.calculate_age()
-    assert measurement.age == 102.6E6
+    assert measurement.age == 102603993.84
 
 def test_should_create_a_object_value_constant():
     t0_value = 3.086E-10
