@@ -3,7 +3,7 @@ import * as React from "react";
 
 const PotassiumArgonAgeCalculationFilters = [
     <TextInput source="id" label="Search by Sample ID" alwaysOn/>,
-    <TextInput source="spectrum_user_name" label="User" alwaysOn/>,
+    <TextInput source="spectrum_user_name" label="User" />,
     <BooleanInput source="deleted" label="Deleted" defaultValue={false}/>,
 ];
 
