@@ -37,6 +37,10 @@ const firebaseConfig = {
 };
 import { createMuiTheme } from '@material-ui/core/styles';
 import {PotassiumArgonAgeConstantList} from "../app/potassium-argon-age-constant/PotassiumArgonAgeConstantList";
+import {
+    PotassiumArgonConstantCreate,
+    PotassiumArgonConstantEdit
+} from "../app/potassium-argon-age-constant/PotassiumArgonAgeConstantUpsert";
 
 const theme = createMuiTheme({
     typography: {
@@ -83,7 +87,7 @@ const IndexPage = () => (<GoogleReCaptchaProvider
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             >
                 <Resource name="potassium-argon-age-calculations" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'List K-Ar Samples' }} list={PotassiumArgonAgeCalculationList} create={PotassiumArgonAgeCalculationsCreate} edit={PotassiumArgonCalculationsEdit}/>
-                <Resource name="potassium-argon-age-constants" options={{ label: 'List K-Ar Constants' }} list={PotassiumArgonAgeConstantList}/>
+                <Resource name="potassium-argon-age-constants" options={{ label: 'List K-Ar Constants' }} list={PotassiumArgonAgeConstantList} create={PotassiumArgonConstantCreate} edit={PotassiumArgonConstantEdit}/>
             </Admin>
         }
     </Firebase>
