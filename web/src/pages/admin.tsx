@@ -36,6 +36,7 @@ const firebaseConfig = {
     measurementId: process.env.GATSBY_MEASUREMENT_ID
 };
 import { createMuiTheme } from '@material-ui/core/styles';
+import {PotassiumArgonAgeConstantList} from "../app/potassium-argon-age-constant/PotassiumArgonAgeConstantList";
 
 const theme = createMuiTheme({
     typography: {
@@ -82,6 +83,7 @@ const IndexPage = () => (<GoogleReCaptchaProvider
                 dataProvider={firebase.FirebaseDataProvider(firebaseConfig, options)}
             >
                 <Resource name="potassium-argon-age-calculations" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'List K-Ar Samples' }} list={PotassiumArgonAgeCalculationList} create={PotassiumArgonAgeCalculationsCreate} edit={PotassiumArgonCalculationsEdit}/>
+                <Resource name="potassium-argon-age-constants" icon={PotassiumArgonAgeCalculationsIcon} options={{ label: 'List K-Ar Constants' }} list={PotassiumArgonAgeConstantList}/>
             </Admin>
         }
     </Firebase>
