@@ -12,7 +12,7 @@ export const measureInTime = async (experiments: Promise<Cycle[]>[]) => experime
     return cycles.map((cycle: Cycle) => {
         return {
             time: Number(cycle.time),
-            [`${cycle.peak}`]: Number(cycle.inty)
+            [`${cycle.peak}`]: Number(cycle.intensity)
         } as Timeline
     });
 });

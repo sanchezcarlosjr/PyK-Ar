@@ -18,20 +18,20 @@ export const ascToExperimentPipe = (files: Promise<string>[]) => files.map(async
     const spectrum_user_name = (tokens[6] as string[]).join(" ");
     return {
         analysis_date: new Date(analysis_date).toISOString(),
-        spectrum,
-        file_name,
-        sample_id,
-        type,
-        spectrum_user_name,
+        spectrum: spectrum.trim(),
+        file_name: file_name.trim(),
+        sample_id: sample_id.trim(),
+        type: type.trim(),
+        spectrum_user_name: spectrum_user_name.trim(),
         cycles: csv.filter((t) => t.length > 0).map((t) => {
             const [,inty, ,time] = t[4].split(" ");
             return {
                 cycle: t[0].replaceAll(" ", ""),
-                mass: t[1].replaceAll(" ", ""),
+                mass: Number(t[1].replaceAll(" ", "")),
                 peak: t[2].replaceAll(" ", ""),
                 measure: t[3].replaceAll(" ", ""),
-                intensity: inty,
-                time
+                intensity: Number(inty),
+                time: Number(time)
             }
         })
     } as Experiment;

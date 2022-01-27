@@ -1,10 +1,10 @@
 export interface Cycle {
     cycle: string;
-    mass: string;
+    mass: number;
     peak: string;
     measure: string;
-    intensity: string;
-    time: string;
+    intensity: number;
+    time: number;
 }
 
 export interface Experiment {
@@ -15,4 +15,13 @@ export interface Experiment {
     type: string;
     spectrum_user_name: string;
     file_name: string;
+}
+
+export interface PotassiumArgonAgeParameter {
+    delta: number;
+    gramsOfK: number;
+    weight: number;
+    ar40_divides_ar38_t: number;
+    ar36_divides_ar38_t: number;
+    experiments: { rawFile: File } | Experiment [];
 }

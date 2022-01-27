@@ -1,22 +1,14 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 @dataclass
 class Cycle:
     cycle: str
-    mass: str
+    mass: float
     peak: str
     measure: str
-    intensity: str
-    time: str
-    fmass: float = field(init=False, default=0)
-    finty: float = field(init=False, default=0)
-    ftime: float = field(init=False, default=0)
-
-    def __post_init__(self):
-        self.fmass = float(self.mass)
-        self.finty = float(self.inty)
-        self.ftime = float(self.time)
+    intensity: float
+    time: float
 
     def is_corrected(self):
         return self.measure == "Corrected"

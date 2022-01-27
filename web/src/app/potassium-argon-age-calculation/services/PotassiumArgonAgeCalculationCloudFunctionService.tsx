@@ -1,5 +1,6 @@
 import firebase from "gatsby-plugin-firebase";
-import {PotassiumArgonAgeCalculationService, PotassiumArgonAgeParameter} from "./PotassiumArgonAgeCalculationService";
+import {PotassiumArgonAgeCalculationService} from "./PotassiumArgonAgeCalculationService";
+import {PotassiumArgonAgeParameter} from "./Experiment";
 
 
 export class PotassiumArgonAgeCalculationCloudFunctionService extends PotassiumArgonAgeCalculationService {
