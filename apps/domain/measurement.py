@@ -35,6 +35,7 @@ class Measurement:
     spectrum: str = ""
     spectrum_user_name: str = ""
     gramsOfK: float = 0
+    total_Ar40: float = 0
     moles_of_K40: float = 0
     weight: float = 0
     age: float = random.uniform(100, 1000)
@@ -112,13 +113,18 @@ class Measurement:
         self.Ar38_Ar36_ratio = round(self.Ar38 / self.Ar36, 4)
 
     def calculate_Ar40_Ar38_ratios_in_the_gas_mixture(self):
+        self.calculate_Ar40_Ar38_ratio()
         d = D()
         spectrometer_scale_factors = SpectrometerScale40Scale38()
         Ar40_Ar38_ratios_in_the_gas_mixture = self.Ar40_Ar38_ratio * d * spectrometer_scale_factors
         self.Ar40_Ar38_ratios_in_the_gas_mixture = round(Ar40_Ar38_ratios_in_the_gas_mixture, 3)
 
     def calculate_Ar38_Ar36_ratios_in_the_gas_mixture(self):
+        self.calculate_Ar38_Ar36_ratio()
         d = D()
         spectrometer_scale_factors = SpectrometerScale38Scale36()
         Ar38_Ar36_ratios_in_the_gas_mixture = self.Ar38_Ar36_ratio * d * spectrometer_scale_factors
         self.Ar38_Ar36_ratios_in_the_gas_mixture = round(Ar38_Ar36_ratios_in_the_gas_mixture, 1)
+
+    def calculate_total_Ar40(self):
+        self.total_Ar40 = 4.419E-10
