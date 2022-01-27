@@ -7,7 +7,7 @@ class Cycle:
     mass: str
     peak: str
     measure: str
-    inty: str
+    intensity: str
     time: str
     fmass: float = field(init=False, default=0)
     finty: float = field(init=False, default=0)

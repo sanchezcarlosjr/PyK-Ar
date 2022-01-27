@@ -102,3 +102,4 @@ def test_should_create_a_object_value_constant():
     })
     t0 = T0()
     assert t0 == t0_value
+
