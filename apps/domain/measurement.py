@@ -25,6 +25,7 @@ class Measurement:
     type: str = ""
     file_name: str = ""
     ar36_divides_ar38_t: float = 0
+    age_standard_deviation: float = 0
     Ar40_Ar38_ratio: float = 0
     Ar38_Ar36_ratio: float = 0
     Ar40_Ar38_ratios_in_the_gas_mixture: float = 0
@@ -74,9 +75,9 @@ class Measurement:
     def calculate_age(self):
         self.calculate_moles_of_K40()
         self.calculate_Ar40_rad()
-        age = 1.885E9*log(9.068*self.Ar40_rad/self.moles_of_K40 + 1)
+        age = 1.885E9 * log(9.068 * self.Ar40_rad / self.moles_of_K40 + 1)
         self.age = round(age, 2)
-        return self
+        return self.age
 
     def to_dict(self):
         measurement = asdict(self)
@@ -174,6 +175,6 @@ class Measurement:
     def calculate_percentage_of_Ar40_rad_in_the_analysis(self):
         self.calculate_total_Ar40()
         self.calculate_Ar40_rad()
-        percentage_of_Ar40_rad_in_the_analysis = 100*self.Ar40_rad/self.total_Ar40
+        percentage_of_Ar40_rad_in_the_analysis = 100 * self.Ar40_rad / self.total_Ar40
         self.percentage_of_Ar40_rad_in_the_analysis = round(percentage_of_Ar40_rad_in_the_analysis, 1)
         return self.percentage_of_Ar40_rad_in_the_analysis
