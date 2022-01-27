@@ -35,6 +35,7 @@ class Measurement:
     Ar40_rad: float = 0
     ar40_divides_ar38_t: float = 0
     moles_Ar38_in_tracer: float = 0
+    percentage_of_Ar40_rad_in_the_analysis: float = 0
     delta: float = 0
     analysis_date: datetime = datetime.now()
     spectrum: str = ""
@@ -165,3 +166,6 @@ class Measurement:
                    )
         self.Ar40_rad = round(Ar40_rad, 13)
         return self.Ar40_rad
+
+    def calculate_percentage_of_Ar40_rad_in_the_analysis(self):
+        self.percentage_of_Ar40_rad_in_the_analysis = 80.8
