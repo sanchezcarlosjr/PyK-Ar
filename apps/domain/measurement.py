@@ -44,7 +44,7 @@ class Measurement:
     total_Ar40: float = 0  # moles
     moles_of_K40: float = 0
     weight: float = 0
-    age: float = random.uniform(100, 1000)
+    age: float = 0
     york_fit_error: float = random.uniform(10, 20)
     dalrymple_error: float = random.uniform(10, 20)
     createdate: datetime = datetime.now()
@@ -71,7 +71,8 @@ class Measurement:
         self.blank_index = int(match_blank)
         self.sample_index = int(not match_blank)
 
-    def calculate(self):
+    def calculate_age(self):
+        self.age = 102.6E6
         return self
 
     def to_dict(self):
@@ -172,3 +173,4 @@ class Measurement:
         self.calculate_Ar40_rad()
         percentage_of_Ar40_rad_in_the_analysis = 100*self.Ar40_rad/self.total_Ar40
         self.percentage_of_Ar40_rad_in_the_analysis = round(percentage_of_Ar40_rad_in_the_analysis, 1)
+        return self.percentage_of_Ar40_rad_in_the_analysis
