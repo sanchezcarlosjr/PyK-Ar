@@ -134,4 +134,19 @@ class Measurement:
         self.total_Ar40 = round(total_Ar40, 13)
 
     def calculate_Ar40_rad(self):
-        self.Ar40_rad = 3.57E-10
+        self.calculate_Ar40_Ar38_ratios_in_the_gas_mixture()
+        self.calculate_Ar38_Ar36_ratios_in_the_gas_mixture()
+        self.calculate_moles_Ar38_in_tracer()
+        Ar40_Ar38_ratio_for_tracer = 0.0012
+        Ar36_Ar38_ratio_for_tracer = 2.67E-5
+        Ar36_Ar38_composition_of_atmospheric = 5.35
+        Ar40_Ar38_composition_of_atmospheric = 1581
+        Ar40_rad = self.moles_Ar38_in_tracer \
+                   * (
+                           self.Ar40_Ar38_ratios_in_the_gas_mixture
+                           - Ar40_Ar38_ratio_for_tracer
+                           - (1 - self.Ar38_Ar36_ratios_in_the_gas_mixture * Ar36_Ar38_ratio_for_tracer)
+                           / (self.Ar38_Ar36_ratios_in_the_gas_mixture * Ar36_Ar38_composition_of_atmospheric - 1)
+                           * (Ar40_Ar38_composition_of_atmospheric - self.Ar40_Ar38_ratios_in_the_gas_mixture)
+                   )
+        self.Ar40_rad = round(Ar40_rad, 13)
