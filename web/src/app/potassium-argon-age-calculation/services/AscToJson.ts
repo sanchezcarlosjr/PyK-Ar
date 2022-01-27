@@ -27,11 +27,11 @@ export const ascToExperimentPipe = (files: Promise<string>[]) => files.map(async
             const [,inty, ,time] = t[4].split(" ");
             return {
                 cycle: t[0].replaceAll(" ", ""),
-                mass: t[1].replaceAll(" ", ""),
+                mass: Number(t[1].replaceAll(" ", "")),
                 peak: t[2].replaceAll(" ", ""),
                 measure: t[3].replaceAll(" ", ""),
-                intensity: inty,
-                time
+                intensity: Number(inty),
+                time: Number(time)
             }
         })
     } as Experiment;
