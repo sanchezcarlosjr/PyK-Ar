@@ -35,7 +35,7 @@ class Measurement:
     spectrum: str = ""
     spectrum_user_name: str = ""
     gramsOfK: float = 0
-    total_Ar40: float = 0
+    total_Ar40: float = 0  # moles
     moles_of_K40: float = 0
     weight: float = 0
     age: float = random.uniform(100, 1000)
@@ -127,4 +127,7 @@ class Measurement:
         self.Ar38_Ar36_ratios_in_the_gas_mixture = round(Ar38_Ar36_ratios_in_the_gas_mixture, 1)
 
     def calculate_total_Ar40(self):
-        self.total_Ar40 = 4.419E-10
+        self.calculate_Ar40_Ar38_ratios_in_the_gas_mixture()
+        self.calculate_moles_Ar38_in_tracer()
+        total_Ar40 = self.Ar40_Ar38_ratios_in_the_gas_mixture * self.moles_Ar38_in_tracer
+        self.total_Ar40 = round(total_Ar40, 13)
