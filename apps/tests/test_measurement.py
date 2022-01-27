@@ -131,6 +131,16 @@ def test_should_calculate_total_Ar40():
     assert measurement.total_Ar40 == 4.419E-10
 
 
+def test_should_calculate_Ar40_rad():
+    measurement: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+    measurement.Ar36 = 0.98814229249
+    measurement.Ar38 = 1
+    measurement.Ar40 = 0.743
+    assert measurement.Ar40_rad == 0
+    measurement.calculate_Ar40_rad()
+    assert measurement.Ar40_rad == 3.57E-10
+
+
 def test_should_create_a_object_value_constant():
     t0_value = 3.086E-10
     f = FirestoreRepository()

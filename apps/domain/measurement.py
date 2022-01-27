@@ -28,6 +28,7 @@ class Measurement:
     Ar36: float = 0
     Ar38: float = 0
     Ar40: float = 0
+    Ar40_rad: float = 0
     ar40_divides_ar38_t: float = 0
     moles_Ar38_in_tracer: float = 0
     delta: float = 0
@@ -131,3 +132,6 @@ class Measurement:
         self.calculate_moles_Ar38_in_tracer()
         total_Ar40 = self.Ar40_Ar38_ratios_in_the_gas_mixture * self.moles_Ar38_in_tracer
         self.total_Ar40 = round(total_Ar40, 13)
+
+    def calculate_Ar40_rad(self):
+        self.Ar40_rad = 3.57E-10
