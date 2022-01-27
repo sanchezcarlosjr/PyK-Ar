@@ -46,6 +46,7 @@ def test_convert_to_dict():
         x: Measurement = raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
         measurement = x.to_dict()
         assert 'experiments' not in measurement
+        assert measurement['id'] == sample['experiments'][1]['sample_id']
 
     test_raw_mass_spectrometry_to_measurements()
 

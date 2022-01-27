@@ -30,7 +30,7 @@ class Measurement:
 
     def __post_init__(self):
         blank_regex = re.compile(r'BCO')
-        match_blank = blank_regex.search(self.experiments[0].sample_id) is not None
+        match_blank = blank_regex.search(self.experiments[0].sample_id) is None
         self.aux_variables['BLANK'] = int(match_blank)
         self.aux_variables['SAMPLE'] = int(not match_blank)
         self.id = self.experiments[self.aux_variables['SAMPLE']].sample_id
