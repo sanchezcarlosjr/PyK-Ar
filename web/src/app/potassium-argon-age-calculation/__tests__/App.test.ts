@@ -5,7 +5,7 @@ import {ascToExperimentPipe} from "../services/AscToJson";
 import {Experiment} from "../services/Experiment";
 import {flatCycles} from "../services/FlatCycles";
 import {ignoreRawData} from "../services/IgnoreRawData";
-import {makeChart, Timeline} from "../services/MakeChart";
+import {makeChart} from "../services/MakeChart";
 
 export abstract class File {
     constructor(protected file: string) {
@@ -74,19 +74,19 @@ test('it should be transform to chart', async () => {
         flatCycles,
         ignoreRawData,
         makeChart
-    ).execute<Timeline[][]>(new NodeFile("7A.asc")))[0];
+    ).execute<any>(new NodeFile("7A.asc")))[0];
     const expectedFile = new NodeFile(__dirname+"/experiment7A.json");
     const experiment: Experiment = await expectedFile.read().then((file) => JSON.parse(file));
     expect(timeline[0].time).toEqual(Number(experiment.cycles[9].time));
-    expect(timeline[0].M36).toEqual(Number(experiment.cycles[9].inty));
-    expect(timeline[1].time).toEqual(Number(experiment.cycles[10].time));
-    expect(timeline[1].M38).toEqual(Number(experiment.cycles[10].inty));
+    expect(timeline[0].M36).toEqual(Number(experiment.cycles[9].intensity));
+    expect(timeline[1].time).toEqual(Number(experiment.cycles[10].intensity));
+    expect(timeline[1].M38).toEqual(Number(experiment.cycles[10].intensity));
     expect(timeline[2].time).toEqual(Number(experiment.cycles[11].time));
-    expect(timeline[2].M40).toEqual(Number(experiment.cycles[11].inty));
+    expect(timeline[2].M40).toEqual(Number(experiment.cycles[11].intensity));
     expect(timeline[45].time).toEqual(Number(experiment.cycles[189].time));
-    expect(timeline[45].M36).toEqual(Number(experiment.cycles[189].inty));
+    expect(timeline[45].M36).toEqual(Number(experiment.cycles[189].intensity));
     expect(timeline[46].time).toEqual(Number(experiment.cycles[190].time));
-    expect(timeline[46].M38).toEqual(Number(experiment.cycles[190].inty));
+    expect(timeline[46].M38).toEqual(Number(experiment.cycles[190].intensity));
     expect(timeline[47].time).toEqual(Number(experiment.cycles[191].time));
-    expect(timeline[47].M40).toEqual(Number(experiment.cycles[191].inty));
+    expect(timeline[47].M40).toEqual(Number(experiment.cycles[191].intensity));
 });
