@@ -1,8 +1,6 @@
 import {Cycle} from "./Experiment";
 
-
-export const makeChart = async (experiments: Promise<Cycle[]>[]) => experiments.map(async (promise: Promise<Cycle[]>) => {
-    const cycles: Cycle[] = await promise;
+export function defaultChartState(cycles: Cycle[] = []) {
     return {
         labels: ['M36', 'M38', 'M40'],
         datasets: cycles.reduce((acc: any, cycle) => {
@@ -38,6 +36,11 @@ export const makeChart = async (experiments: Promise<Cycle[]>[]) => experiments.
                 borderColor: '#af3c0b',
                 backgroundColor: '#2a5578',
             }
-        ]),
-    } as {labels: any[], datasets: any[]};
+        ])
+    };
+}
+
+export const makeChart = async (experiments: Promise<Cycle[]>[]) => experiments.map(async (promise: Promise<Cycle[]>) => {
+    const cycles: Cycle[] = await promise;
+    return defaultChartState(cycles) as { labels: any[], datasets: any[] };
 });

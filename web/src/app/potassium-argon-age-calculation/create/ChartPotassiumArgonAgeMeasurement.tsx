@@ -6,7 +6,7 @@ import {Spectrum} from "../services/Spectrum";
 import {ascToExperimentPipe} from "../services/AscToJson";
 import {flatCycles} from "../services/FlatCycles";
 import {ignoreRawData} from "../services/IgnoreRawData";
-import {makeChart} from "../services/MakeChart";
+import {defaultChartState, makeChart} from "../services/MakeChart";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -43,29 +43,7 @@ export const options = {
 
 
 export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: FileInputFormat }) => {
-    const [state, setState] = useState({
-        labels: ['M36', 'M38', 'M40'],
-        datasets: [
-            {
-                label: 'M36',
-                data: [],
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            },
-            {
-                label: 'M38',
-                data: [],
-                borderColor: 'rgb(53, 162, 235)',
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
-            },
-            {
-                label: 'M38',
-                data: [],
-                borderColor: '#af3c0b',
-                backgroundColor: '#2a5578',
-            }
-        ],
-    });
+    const [state, setState] = useState(defaultChartState());
     const version = useVersion();
     const mapFiles = useCallback(async () => {
         const spectrum = new Spectrum();
