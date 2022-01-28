@@ -3,69 +3,20 @@ import * as React from "react";
 import {useCallback, useEffect, useState} from "react";
 import {useVersion} from "react-admin";
 import {Spectrum} from "../services/Spectrum";
+import {CartesianGrid, Label, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {ascToExperimentPipe} from "../services/AscToJson";
 import {flatCycles} from "../services/FlatCycles";
 import {ignoreRawData} from "../services/IgnoreRawData";
-import {makeChart} from "../services/MakeChart";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
-import { Line} from 'react-chartjs-2';
-
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
-
-export const options = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'top' as const,
-        },
-        title: {
-            display: false
-        },
-    },
-};
+import {measureInTime, Timeline} from "../services/measureInTime";
 
 
 export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: FileInputFormat }) => {
-    const [state, setState] = useState({
-        labels: ['M36', 'M38', 'M40'],
-        datasets: [
-            {
-                label: 'M36',
-                data: [],
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            },
-            {
-                label: 'M38',
-                data: [],
-                borderColor: 'rgb(53, 162, 235)',
-                backgroundColor: 'rgba(53, 162, 235, 0.5)',
-            },
-            {
-                label: 'M38',
-                data: [],
-                borderColor: '#af3c0b',
-                backgroundColor: '#2a5578',
-            }
-        ],
+    const [lineProps, setLineProps] = useState({
+        "M40": false,
+        "M38": false,
+        "M36": false
     });
+    const [state, setState] = useState([{}]);
     const version = useVersion();
     const mapFiles = useCallback(async () => {
         const spectrum = new Spectrum();
@@ -74,16 +25,41 @@ export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: Fi
             ascToExperimentPipe,
             flatCycles,
             ignoreRawData,
-            makeChart).execute<{labels: any[], datasets: any[]}[]>(experiment));
-        setState(timeline[0]);
+            measureInTime).execute<Timeline[][]>(experiment))[0];
+        setState(timeline);
     }, [experiment]);
+    const selectLine = (e: any) => {
+        setLineProps({
+            ...lineProps,
+            // @ts-ignore
+            [e.dataKey]: !lineProps[e.dataKey]
+        })
+    };
     useEffect(() => {
         mapFiles();
     }, [version]);
     return (
-        <div>
+        <div style={{ display: 'flex' }}>
             <h3>{experiment.rawFile.name}</h3>
-            <Line options={options} data={state} />
+            <ResponsiveContainer width="100%" aspect={2}>
+                <LineChart height={600} data={state}   margin={{
+                    top: 5,
+                    right: 30,
+                    left: 70,
+                    bottom: 10
+                }}>
+                    <Legend onClick={selectLine} verticalAlign="top" height={36}/>
+                    <Line hide={lineProps["M40"]} connectNulls type="monotone" dataKey="M40" stroke="#DC143C" strokeWidth={3}/>
+                    <Line hide={lineProps["M38"]} connectNulls type="monotone" dataKey="M38" stroke="#8884d8" strokeWidth={3}/>
+                    <Line hide={lineProps["M36"]} connectNulls type="monotone" dataKey="M36" stroke="#82ca9d" strokeWidth={3}/>
+                    <CartesianGrid strokeDasharray="2 2"/>
+                    <XAxis dataKey="time" type='number' padding={{left: 30, right: 30}}>
+                        <Label value="Time (milliseconds)" offset={-5} position="insideBottom"/>
+                    </XAxis>
+                    <YAxis label={{value: 'Intensity (volts)', angle: -90, position: 'insideLeft', offset: -40}}/>
+                    <Tooltip/>
+                </LineChart>
+            </ResponsiveContainer>
         </div>
     );
 };
