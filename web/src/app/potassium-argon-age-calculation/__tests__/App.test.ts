@@ -5,7 +5,7 @@ import {ascToExperimentPipe} from "../services/AscToJson";
 import {Experiment} from "../services/Experiment";
 import {flatCycles} from "../services/FlatCycles";
 import {ignoreRawData} from "../services/IgnoreRawData";
-import {measureInTime, Timeline} from "../services/MeasureInTime";
+import {makeChart, Timeline} from "../services/MakeChart";
 
 export abstract class File {
     constructor(protected file: string) {
@@ -73,7 +73,7 @@ test('it should be transform to chart', async () => {
         ascToExperimentPipe,
         flatCycles,
         ignoreRawData,
-        measureInTime
+        makeChart
     ).execute<Timeline[][]>(new NodeFile("7A.asc")))[0];
     const expectedFile = new NodeFile(__dirname+"/experiment7A.json");
     const experiment: Experiment = await expectedFile.read().then((file) => JSON.parse(file));

@@ -4,13 +4,68 @@ import {useCallback, useEffect, useState} from "react";
 import {useVersion} from "react-admin";
 import {Spectrum} from "../services/Spectrum";
 import {ascToExperimentPipe} from "../services/AscToJson";
-import {CartesianGrid, Label, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {flatCycles} from "../services/FlatCycles";
 import {ignoreRawData} from "../services/IgnoreRawData";
-import {measureInTime, Timeline} from "../services/MeasureInTime";
+import {makeChart} from "../services/MakeChart";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Line} from 'react-chartjs-2';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
+
+export const options = {
+    responsive: true,
+    plugins: {
+        legend: {
+            position: 'top' as const,
+        },
+        title: {
+            display: false
+        },
+    },
+};
+
 
 export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: FileInputFormat }) => {
-    const [state, setState] = useState([{}]);
+    const [state, setState] = useState({
+        labels: ['M36', 'M38', 'M40'],
+        datasets: [
+            {
+                label: 'M36',
+                data: [],
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            },
+            {
+                label: 'M38',
+                data: [],
+                borderColor: 'rgb(53, 162, 235)',
+                backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            },
+            {
+                label: 'M38',
+                data: [],
+                borderColor: '#af3c0b',
+                backgroundColor: '#2a5578',
+            }
+        ],
+    });
     const version = useVersion();
     const mapFiles = useCallback(async () => {
         const spectrum = new Spectrum();
@@ -19,8 +74,8 @@ export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: Fi
             ascToExperimentPipe,
             flatCycles,
             ignoreRawData,
-            measureInTime).execute<Timeline[][]>(experiment))[0];
-        setState(timeline);
+            makeChart).execute<{labels: any[], datasets: any[]}[]>(experiment));
+        setState(timeline[0]);
     }, [experiment]);
     useEffect(() => {
         mapFiles();
@@ -28,20 +83,7 @@ export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: Fi
     return (
         <div>
             <h3>{experiment.rawFile.name}</h3>
-            <ResponsiveContainer width="100%" aspect={2}>
-                <LineChart width={1300} height={600} data={state}>
-                    <Legend verticalAlign="top" height={36}/>
-                    <Line connectNulls type="monotone" dataKey="M40" stroke="#DC143C" strokeWidth={3}/>
-                    <Line connectNulls type="monotone" dataKey="M38" stroke="#8884d8" strokeWidth={3}/>
-                    <Line connectNulls type="monotone" dataKey="M36" stroke="#82ca9d" strokeWidth={3}/>
-                    <CartesianGrid strokeDasharray="2 2"/>
-                    <XAxis dataKey="time" type='number' padding={{left: 30, right: 30}}>
-                        <Label value="Time" offset={-5} position="insideBottom"/>
-                    </XAxis>
-                    <YAxis label={{value: 'Peak', angle: -90, position: 'insideLeft', offset: 0}}/>
-                    <Tooltip/>
-                </LineChart>
-            </ResponsiveContainer>
+            <Line options={options} data={state} />
         </div>
     );
 };

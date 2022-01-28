@@ -16,6 +16,7 @@ initialize_app()
 @raw_mass_spectrometry_to_measurements
 @store_age
 def calculate_age_by_potassium_argon(measurement: Measurement):
+    measurement.calculate_all_Ar()
     measurement.calculate_age()
     measurement.calculate_percentage_of_Ar40_rad_in_the_analysis()
     return measurement
