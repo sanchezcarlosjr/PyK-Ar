@@ -72,6 +72,11 @@ class Measurement:
         self.blank_index = int(match_blank)
         self.sample_index = int(not match_blank)
 
+    def calculate_all_Ar(self):
+        self.calculate_Ar36()
+        self.calculate_Ar38()
+        self.calculate_Ar40()
+
     def calculate_age(self):
         self.calculate_moles_of_K40()
         self.calculate_Ar40_rad()
