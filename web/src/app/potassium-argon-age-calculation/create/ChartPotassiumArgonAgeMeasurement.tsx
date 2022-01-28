@@ -3,47 +3,15 @@ import * as React from "react";
 import {useCallback, useEffect, useState} from "react";
 import {useVersion} from "react-admin";
 import {Spectrum} from "../services/Spectrum";
+import {CartesianGrid, Label, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {ascToExperimentPipe} from "../services/AscToJson";
 import {flatCycles} from "../services/FlatCycles";
 import {ignoreRawData} from "../services/IgnoreRawData";
-import {defaultChartState, makeChart} from "../services/MakeChart";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-} from 'chart.js';
-import { Line} from 'react-chartjs-2';
-
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
-
-export const options = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'top' as const,
-        },
-        title: {
-            display: false
-        },
-    },
-};
+import {measureInTime, Timeline} from "../services/measureInTime";
 
 
 export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: FileInputFormat }) => {
-    const [state, setState] = useState(defaultChartState());
+    const [state, setState] = useState([{}]);
     const version = useVersion();
     const mapFiles = useCallback(async () => {
         const spectrum = new Spectrum();
@@ -52,16 +20,34 @@ export const ChartPotassiumArgonAgeMeasurement = ({experiment}: { experiment: Fi
             ascToExperimentPipe,
             flatCycles,
             ignoreRawData,
-            makeChart).execute<{labels: any[], datasets: any[]}[]>(experiment));
-        setState(timeline[0]);
+            measureInTime).execute<Timeline[][]>(experiment))[0];
+        setState(timeline);
     }, [experiment]);
     useEffect(() => {
         mapFiles();
     }, [version]);
     return (
-        <div>
+        <div style={{ display: 'flex' }}>
             <h3>{experiment.rawFile.name}</h3>
-            <Line options={options} data={state} />
+            <ResponsiveContainer width="90%" aspect={2}>
+                <LineChart height={600} data={state}   margin={{
+                    top: 5,
+                    right: 30,
+                    left: 70,
+                    bottom: 5
+                }}>
+                    <Legend verticalAlign="top" height={36}/>
+                    <Line connectNulls type="monotone" dataKey="M40" stroke="#DC143C" strokeWidth={3}/>
+                    <Line connectNulls type="monotone" dataKey="M38" stroke="#8884d8" strokeWidth={3}/>
+                    <Line connectNulls type="monotone" dataKey="M36" stroke="#82ca9d" strokeWidth={3}/>
+                    <CartesianGrid strokeDasharray="2 2"/>
+                    <XAxis dataKey="time" type='number' padding={{left: 30, right: 30}}>
+                        <Label value="Time" offset={-5} position="insideBottom"/>
+                    </XAxis>
+                    <YAxis label={{value: 'Intensity', angle: -90, position: 'insideLeft', offset: -40}}/>
+                    <Tooltip/>
+                </LineChart>
+            </ResponsiveContainer>
         </div>
     );
 };
