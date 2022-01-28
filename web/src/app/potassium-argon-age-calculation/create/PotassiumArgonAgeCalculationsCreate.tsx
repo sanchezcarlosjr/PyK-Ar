@@ -99,7 +99,7 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
                 <FormDataConsumer>
                     {({
                           formData
-                      }) => !!formData.experiments && formData.experiments.length > 0 && formData.experiments.length % 2 == 0 &&
+                      }) => !!formData.experiments && formData.experiments.length > 0 && formData.experiments.length == 2 &&
                         formData.experiments.map((experiment: FileInputFormat) =>
                             <Box css={{m: "2rem"}}>
                                 <ChartPotassiumArgonAgeMeasurement experiment={experiment}/>
