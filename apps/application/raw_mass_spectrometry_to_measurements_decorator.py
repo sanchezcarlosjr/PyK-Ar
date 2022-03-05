@@ -8,8 +8,6 @@ def raw_mass_spectrometry_to_measurements(func):
             createdby=user['user_id'],
             updatedby=user['user_id'],
             experiments=Experiments(sample['experiments']),
-            ar36_divides_ar38_t=sample['ar36_divides_ar38_t'],
-            ar40_divides_ar38_t=sample['ar40_divides_ar38_t'],
             delta=sample['delta'],
             gramsOfK=sample['gramsOfK'],
             weight=sample['weight']

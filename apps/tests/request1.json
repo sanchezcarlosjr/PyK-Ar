@@ -3,8 +3,6 @@
     "delta": 0.826E-3,
     "weight": 3.1814,
     "gramsOfK": 0.019014337008,
-    "ar40_divides_ar38_t": 0.0012,
-    "ar36_divides_ar38_t": 0.0000267,
     "experiments": [
       {
         "analysis_date": "2019-01-08T08:00:00.000Z",

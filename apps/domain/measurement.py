@@ -24,7 +24,6 @@ class Measurement:
     id: str = ""
     type: str = ""
     file_name: str = ""
-    ar36_divides_ar38_t: float = 0
     age_standard_deviation: float = 0
     Ar40_Ar38_ratio: float = 0
     Ar38_Ar36_ratio: float = 0
@@ -34,7 +33,6 @@ class Measurement:
     Ar38: float = 0
     Ar40: float = 0
     Ar40_rad: float = 0
-    ar40_divides_ar38_t: float = 0
     moles_Ar38_in_tracer: float = 0
     percentage_of_Ar40_rad_in_the_analysis: float = 0
     delta: float = 0
