@@ -22,14 +22,14 @@ def load_measurement_from_json(file: str) -> Measurement:
 
 
 def test_set_measurement_id():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     mock = PotassiumArgonAgeCalculationMockRepository()
     m = mock.save(measurement)
     assert 0 <= float(m.id) <= 1, "Dict should set id"
 
 
 def test_filter_corrected_cycles():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     e = measurement.experiments
     cycles = e.filter_corrected_cycles()
     for cycle in cycles:
@@ -38,8 +38,8 @@ def test_filter_corrected_cycles():
 
 def test_equals_experiments():
     def test_raw_mass_spectrometry_to_measurements():
-        measurement = load_measurement_from_json("tests/example_request.json")
-        with open("tests/example_request.json") as f:
+        measurement = load_measurement_from_json("tests/request1.json")
+        with open("tests/request1.json") as f:
             sample = json.load(f)['data']
         assert measurement.experiments == sample['experiments']
 
@@ -48,12 +48,12 @@ def test_equals_experiments():
 
 def test_convert_to_dict():
     def test_raw_mass_spectrometry_to_measurements():
-        measurement_obj = load_measurement_from_json("tests/example_request.json")
+        measurement_obj = load_measurement_from_json("tests/request1.json")
         measurement = measurement_obj.to_dict()
         assert 'experiments' not in measurement
         assert 'blank_index' not in measurement
         assert 'sample_index' not in measurement
-        with open("tests/example_request.json") as f:
+        with open("tests/request1.json") as f:
             sample = json.load(f)['data']
         assert measurement['id'] == sample['experiments'][1]['sample_id']
         keys_to_check = [
@@ -71,21 +71,21 @@ def test_convert_to_dict():
 
 
 def test_calculate_moles_of_K40():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     assert measurement.moles_of_K40 == 0
     measurement.calculate_moles_of_K40()
     assert measurement.moles_of_K40 == 5.787E-8
 
 
 def test_calculate_moles_Ar38_in_tracer():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     assert measurement.moles_Ar38_in_tracer == 0
     measurement.calculate_moles_Ar38_in_tracer()
     assert measurement.moles_Ar38_in_tracer == 2.976E-10
 
 
 def test_calculate_Ar40_Ar38_ratio():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     assert measurement.Ar40_Ar38_ratio == 0
     measurement.calculate_Ar38()
     measurement.calculate_Ar40()
@@ -94,7 +94,7 @@ def test_calculate_Ar40_Ar38_ratio():
 
 
 def test_clone_experiment():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     old = measurement.experiments[0]
     new = measurement.experiments[0].filter_corrected_cycles()
     assert old != new
@@ -102,13 +102,13 @@ def test_clone_experiment():
 
 
 def test_should_calculate_cycles_mean():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     measurement.calculate_Ar36()
     assert measurement.Ar36 == 0.000114046680375
 
 
 def test_should_calculate_Ar40_Ar38_ratios_in_the_gas_mixture():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
     measurement.calculate_Ar40_Ar38_ratio()
@@ -119,7 +119,7 @@ def test_should_calculate_Ar40_Ar38_ratios_in_the_gas_mixture():
 
 
 def test_should_calculate_Ar38_Ar36_ratios_in_the_gas_mixture():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     measurement.Ar38 = 1
     measurement.Ar36 = 0.98814229249
     measurement.calculate_Ar38_Ar36_ratio()
@@ -130,7 +130,7 @@ def test_should_calculate_Ar38_Ar36_ratios_in_the_gas_mixture():
 
 
 def test_should_calculate_total_Ar40():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
     assert measurement.total_Ar40 == 0
@@ -139,7 +139,7 @@ def test_should_calculate_total_Ar40():
 
 
 def test_should_calculate_Ar40_rad():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     measurement.Ar36 = 0.98814229249
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
@@ -149,7 +149,7 @@ def test_should_calculate_Ar40_rad():
 
 
 def test_should_calculate_percentage_of_Ar40_rad_in_the_analysis():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     measurement.Ar36 = 0.98814229249
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
@@ -159,7 +159,7 @@ def test_should_calculate_percentage_of_Ar40_rad_in_the_analysis():
 
 
 def test_should_calculate_age():
-    measurement = load_measurement_from_json("tests/example_request.json")
+    measurement = load_measurement_from_json("tests/request1.json")
     measurement.Ar36 = 0.98814229249
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
