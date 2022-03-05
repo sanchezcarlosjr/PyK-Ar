@@ -10,12 +10,14 @@ import {
     useNotify,
     useRedirect
 } from "react-admin";
-import {useForm,useFormState} from 'react-final-form';
+import {useForm} from 'react-final-form';
 import {Spectrum} from "../services/Spectrum";
 import {ascToExperimentPipe} from "../services/AscToJson";
 import {FileInputFormat, readWebFilesPipe} from "../services/ReadWebFilesPipe";
 import {ChartPotassiumArgonAgeMeasurement} from "./ChartPotassiumArgonAgeMeasurement";
-import {PotassiumArgonAgeCalculationCloudFunctionService} from "../services/PotassiumArgonAgeCalculationCloudFunctionService";
+import {
+    PotassiumArgonAgeCalculationCloudFunctionService
+} from "../services/PotassiumArgonAgeCalculationCloudFunctionService";
 import {Experiment} from "../services/Experiment";
 import Box from '@material-ui/core/Box';
 import {useEffect} from "react";
@@ -37,12 +39,12 @@ function calculateGramsOfKFrom(K2O: number, W: number) {
     return (K2O * gramsKDividesGramsK2O * W) / 100;
 }
 
-const GramsOfK = ({K20, weight}: {K20: number, weight: number}) => {
+const GramsOfK = ({K20, weight}: { K20: number, weight: number }) => {
     const {change} = useForm();
     useEffect(() => {
         change("gramsOfK", calculateGramsOfKFrom(K20, weight));
     });
-    return <NumberInput source="gramsOfK" label="Grams of K (potassium)" fullWidth disabled />;
+    return <NumberInput source="gramsOfK" label="Grams of K (potassium)" fullWidth disabled/>;
 }
 
 export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
@@ -52,8 +54,6 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
                             delta: number,
                             weight: number,
                             gramsOfK: number,
-                            ar40_divides_ar38_t: number,
-                            ar36_divides_ar38_t: number,
                             experiments: { rawFile: File }[]
                         }
     ) => {
@@ -63,8 +63,6 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
             delta: t.delta,
             weight: t.weight,
             gramsOfK: t.gramsOfK,
-            ar40_divides_ar38_t: t.ar40_divides_ar38_t,
-            ar36_divides_ar38_t: t.ar36_divides_ar38_t,
             experiments
         }).then(() => redirect('/potassium-argon-age-calculations')
         ).catch(() => notify("Oops! Something went wrong. Please try again later.", "error"));
@@ -72,23 +70,25 @@ export const PotassiumArgonAgeCalculationsCreate = (props: any) => {
     return (
         <Create {...props}>
             <SimpleForm save={save} validate={validateExperimentCreation}>
-                <NumberInput source="delta" label="Delta" fullWidth helperText="If you need scientist notation, then you must use E notation"/>
-                <NumberInput source="weight" label="Weight (Grams)" fullWidth helperText="If you need scientist notation, then you must use E notation"/>
-                <NumberInput source="ar40_divides_ar38_t" label="(Ar40/Ar38)_t" fullWidth helperText="If you need scientist notation, then you must use E notation"/>
-                <NumberInput source="ar36_divides_ar38_t" label="(Ar36/Ar38)_t" fullWidth helperText="If you need scientist notation, then you must use E notation"/>
+                <NumberInput source="delta" label="Delta" fullWidth
+                             helperText="If you need scientist notation, then you must use E notation"/>
+                <NumberInput source="weight" label="Weight (Grams)" fullWidth
+                             helperText="If you need scientist notation, then you must use E notation"/>
                 <RadioButtonGroupInput source="k_type" defaultValue={"K"} choices={[
                     {id: 'K', name: 'Grams of K'},
                     {id: '%K2O', name: '%K2O'},
                 ]} fullWidth/>
                 <FormDataConsumer>
-                    {({formData, ...rest}) => {
+                    {({formData}) => {
                         if (formData.k_type === "K") {
-                            return <NumberInput source="gramsOfK" label="Grams of K (potassium)" fullWidth helperText="If you need scientist notation, then you must use E notation"/>;
+                            return <NumberInput source="gramsOfK" label="Grams of K (potassium)" fullWidth
+                                                helperText="If you need scientist notation, then you must use E notation"/>;
                         }
                         return (
                             <>
-                                <NumberInput source="K2O" label="%K2O" fullWidth helperText="If you need scientist notation, then you must use E notation"/>
-                                <GramsOfK K20={formData.K2O} weight={formData.weight} />
+                                <NumberInput source="K2O" label="%K2O" fullWidth
+                                             helperText="If you need scientist notation, then you must use E notation"/>
+                                <GramsOfK K20={formData.K2O} weight={formData.weight}/>
                             </>
                         );
                     }}
