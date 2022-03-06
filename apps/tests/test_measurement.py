@@ -80,7 +80,7 @@ def test_calculate_moles_of_K40():
 def test_calculate_moles_Ar38_in_tracer():
     measurement = load_measurement_from_json("tests/request1.json")
     assert measurement.moles_Ar38_in_tracer == 0
-    measurement.calculate_moles_Ar38_in_tracer()
+    measurement.calculate_moles_Ar38_in_tracer(x=44, t0=3.086e-10)
     assert measurement.moles_Ar38_in_tracer == 2.976E-10
 
 

@@ -96,9 +96,9 @@ class Measurement:
         self.moles_of_K40 = round(moles_of_K40, 12)
         return self.moles_of_K40
 
-    def calculate_moles_Ar38_in_tracer(self):
-        x = X()
-        t0 = T0()
+    def calculate_moles_Ar38_in_tracer(self, x=None, t0=None):
+        x = X(x)
+        t0 = T0(t0)
         moles_Ar38_in_tracer = t0 * exp(-self.delta * x)
         self.moles_Ar38_in_tracer = round(moles_Ar38_in_tracer, 13)
         return self.moles_Ar38_in_tracer
