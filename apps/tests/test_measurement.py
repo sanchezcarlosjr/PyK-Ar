@@ -73,7 +73,7 @@ def test_convert_to_dict():
 def test_calculate_moles_of_K40():
     measurement = load_measurement_from_json("tests/request1.json")
     assert measurement.moles_of_K40 == 0
-    measurement.calculate_moles_of_K40()
+    measurement.calculate_moles_of_K40(atoms_K40_divides_atomsK=0.000119, gramsK_divides_moleK=39.1)
     assert measurement.moles_of_K40 == 5.787E-8
 
 

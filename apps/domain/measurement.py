@@ -48,6 +48,8 @@ class Measurement:
     dalrymple_error: float = random.uniform(10, 20)
     createdate: datetime = datetime.now()
     deleted: bool = False
+    atoms_K40_divides_atomsK: float = 0
+    gramsK_divides_moleK: float = 0
     lastupdate: datetime = datetime.now()
     updatedby: str = ""
     createdby: str = ""
@@ -87,10 +89,10 @@ class Measurement:
         del measurement['experiments']
         return measurement
 
-    def calculate_moles_of_K40(self):
-        atoms_K40_divides_atomsK = AtomsK40DividesAtomsK()
-        gramsK_divides_moleK = GramsKDividesMoleK()
-        moles_of_K40 = (atoms_K40_divides_atomsK * self.gramsOfK) / gramsK_divides_moleK
+    def calculate_moles_of_K40(self, atoms_K40_divides_atomsK=None, gramsK_divides_moleK=None):
+        self.atoms_K40_divides_atomsK = AtomsK40DividesAtomsK(atoms_K40_divides_atomsK)
+        self.gramsK_divides_moleK = GramsKDividesMoleK(gramsK_divides_moleK)
+        moles_of_K40 = (self.atoms_K40_divides_atomsK * self.gramsOfK) / self.gramsK_divides_moleK
         self.moles_of_K40 = round(moles_of_K40, 12)
         return self.moles_of_K40
 
