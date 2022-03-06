@@ -68,7 +68,7 @@ class Measurement:
     def __post_init__(self):
         self.identify_sample_and_blank()
         self.id = self.experiments[self.sample_index].sample_id
-        self.spectrum_user_name = self.experiments[self.sample_index].spectrum_user_name
+        self.spectrum_user_name = self.experiments[self.sample_index].spectrum_user_name.title()
         self.spectrum = self.experiments[self.sample_index].spectrum
         self.type = self.experiments[self.sample_index].type
         self.file_name = self.experiments[self.sample_index].file_name

@@ -53,6 +53,11 @@ def test_set_measurement_id():
     assert 0 <= float(m.id) <= 1, "Dict should set id"
 
 
+def test_check_if_spectrum_user_name_is_formatted_as_title():
+    measurement = setup_measurement_request1()
+    assert measurement.spectrum_user_name == "Miguel"
+
+
 def test_filter_corrected_cycles():
     measurement = load_measurement_from_json("tests/request1.json")
     e = measurement.experiments
@@ -82,7 +87,6 @@ def test_convert_to_dict():
             sample = json.load(f)['data']
         assert measurement['id'] == sample['experiments'][1]['sample_id']
         keys_to_check = [
-            'spectrum_user_name',
             'spectrum',
             'type',
             'file_name',
