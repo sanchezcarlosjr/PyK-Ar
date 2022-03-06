@@ -4,21 +4,46 @@ from datetime import datetime
 
 from firebase_admin import initialize_app
 
+from domain.Ar36_Ar38_composition_of_atmospheric import Ar36Ar38CompositionOfAtmospheric
+from domain.Ar36_Ar38_ratio_for_tracer import Ar36Ar38RatioForTracer
+from domain.Ar40_Ar38_composition_of_atmospheric import Ar40Ar38CompositionOfAtmospheric
+from domain.Ar40_Ar38_ratio_for_tracer import Ar40Ar38RatioForTracer
+from domain.D import D
+from domain.T0 import T0
+from domain.atoms_K40_divides_atomsK import AtomsK40DividesAtomsK
+from domain.gramsK_divides_moleK import GramsKDividesMoleK
+from domain.spectometeter_scale38_scale36_factors import SpectrometerScale38Scale36
+from domain.spectometeter_scale40_scale38_factors import SpectrometerScale40Scale38
+from domain.x import X
 from potassium_argon_age_calculation_mock_repository import PotassiumArgonAgeCalculationMockRepository
 
 initialize_app()
 
 sys.path.append('../apps')
 from domain.measurement import Measurement
-from domain.T0 import T0
 from application.raw_mass_spectrometry_to_measurements_decorator import raw_mass_spectrometry_to_measurements
-from infrastructure.firestore_repository import FirestoreRepository
 
 
 def load_measurement_from_json(file: str) -> Measurement:
     with open(file) as f:
         sample = json.load(f)['data']
     return raw_mass_spectrometry_to_measurements(lambda m: m)(sample, {'user_id': 'A'})
+
+
+def setup_measurement_request1():
+    measurement = load_measurement_from_json("tests/request1.json")
+    measurement.atoms_K40_divides_atomsK = AtomsK40DividesAtomsK(0.000119)
+    measurement.gramsK_divides_moleK = GramsKDividesMoleK(39.1)
+    measurement.x = X(44)
+    measurement.t0 = T0(3.086e-10)
+    measurement.d = D(0.999)
+    measurement.spectrometer_scale38_scale36 = SpectrometerScale38Scale36(1000)
+    measurement.spectrometer_scale40_scale38 = SpectrometerScale40Scale38(2)
+    measurement.Ar40_Ar38_ratio_for_tracer = Ar40Ar38RatioForTracer(0.0012)
+    measurement.Ar36_Ar38_ratio_for_tracer = Ar36Ar38RatioForTracer(2.67e-05)
+    measurement.Ar36_Ar38_composition_of_atmospheric = Ar36Ar38CompositionOfAtmospheric(5.35)
+    measurement.Ar40_Ar38_composition_of_atmospheric = Ar40Ar38CompositionOfAtmospheric(1581)
+    return measurement
 
 
 def test_set_measurement_id():
@@ -71,21 +96,23 @@ def test_convert_to_dict():
 
 
 def test_calculate_moles_of_K40():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
+    assert measurement.atoms_K40_divides_atomsK == 0.000119
+    assert measurement.gramsK_divides_moleK == 39.1
     assert measurement.moles_of_K40 == 0
-    measurement.calculate_moles_of_K40(atoms_K40_divides_atomsK=0.000119, gramsK_divides_moleK=39.1)
+    measurement.calculate_moles_of_K40()
     assert measurement.moles_of_K40 == 5.787E-8
 
 
 def test_calculate_moles_Ar38_in_tracer():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     assert measurement.moles_Ar38_in_tracer == 0
-    measurement.calculate_moles_Ar38_in_tracer(x=44, t0=3.086e-10)
+    measurement.calculate_moles_Ar38_in_tracer()
     assert measurement.moles_Ar38_in_tracer == 2.976E-10
 
 
 def test_calculate_Ar40_Ar38_ratio():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     assert measurement.Ar40_Ar38_ratio == 0
     measurement.calculate_Ar38()
     measurement.calculate_Ar40()
@@ -94,7 +121,7 @@ def test_calculate_Ar40_Ar38_ratio():
 
 
 def test_clone_experiment():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     old = measurement.experiments[0]
     new = measurement.experiments[0].filter_corrected_cycles()
     assert old != new
@@ -102,13 +129,13 @@ def test_clone_experiment():
 
 
 def test_should_calculate_cycles_mean():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     measurement.calculate_Ar36()
     assert measurement.Ar36 == 0.000114046680375
 
 
 def test_should_calculate_Ar40_Ar38_ratios_in_the_gas_mixture():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
     measurement.calculate_Ar40_Ar38_ratio()
@@ -119,7 +146,7 @@ def test_should_calculate_Ar40_Ar38_ratios_in_the_gas_mixture():
 
 
 def test_should_calculate_Ar38_Ar36_ratios_in_the_gas_mixture():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     measurement.Ar38 = 1
     measurement.Ar36 = 0.98814229249
     measurement.calculate_Ar38_Ar36_ratio()
@@ -130,7 +157,7 @@ def test_should_calculate_Ar38_Ar36_ratios_in_the_gas_mixture():
 
 
 def test_should_calculate_total_Ar40():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
     assert measurement.total_Ar40 == 0
@@ -139,17 +166,12 @@ def test_should_calculate_total_Ar40():
 
 
 def test_should_calculate_Ar40_rad():
-    measurement = load_measurement_from_json("tests/request1.json")
-    measurement.Ar36 = 0.98814229249
-    measurement.Ar38 = 1
-    measurement.Ar40 = 0.743
-    assert measurement.Ar40_rad == 0
-    measurement.calculate_Ar40_rad()
-    assert measurement.Ar40_rad == 3.57E-10
+    measurement = setup_measurement_request1()
+    assert measurement.Ar36_Ar38_ratio_for_tracer == 2.67e-05
 
 
 def test_should_calculate_percentage_of_Ar40_rad_in_the_analysis():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     measurement.Ar36 = 0.98814229249
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
@@ -159,21 +181,10 @@ def test_should_calculate_percentage_of_Ar40_rad_in_the_analysis():
 
 
 def test_should_calculate_age():
-    measurement = load_measurement_from_json("tests/request1.json")
+    measurement = setup_measurement_request1()
     measurement.Ar36 = 0.98814229249
     measurement.Ar38 = 1
     measurement.Ar40 = 0.743
     assert measurement.age == 0
     measurement.calculate_age()
     assert measurement.age == 102603993.84
-
-
-def test_should_create_a_object_value_constant():
-    t0_value = 3.086E-10
-    f = FirestoreRepository()
-    f.save(u'potassium-argon-age-constants', {
-        "id": "T0",
-        "value": t0_value,
-    })
-    t0 = T0()
-    assert t0 == t0_value
