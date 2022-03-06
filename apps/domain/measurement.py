@@ -44,10 +44,21 @@ class Measurement:
     moles_of_K40: float = 0
     weight: float = 0
     age: float = 0
+    x: X = 0
+    t0: T0 = 0
+    d: D = 0
+    spectrometer_scale40_scale38: SpectrometerScale40Scale38 = 0
+    spectrometer_scale38_scale36: SpectrometerScale38Scale36 = 0
+    Ar40_Ar38_ratio_for_tracer: Ar40Ar38RatioForTracer = 0
+    Ar36_Ar38_ratio_for_tracer: Ar36Ar38RatioForTracer = 0
+    Ar36_Ar38_composition_of_atmospheric: Ar36Ar38CompositionOfAtmospheric = 0
+    Ar40_Ar38_composition_of_atmospheric: Ar40Ar38CompositionOfAtmospheric = 0
     york_fit_error: float = random.uniform(10, 20)
     dalrymple_error: float = random.uniform(10, 20)
     createdate: datetime = datetime.now()
     deleted: bool = False
+    atoms_K40_divides_atomsK: float = 0
+    gramsK_divides_moleK: float = 0
     lastupdate: datetime = datetime.now()
     updatedby: str = ""
     createdby: str = ""
@@ -57,7 +68,7 @@ class Measurement:
     def __post_init__(self):
         self.identify_sample_and_blank()
         self.id = self.experiments[self.sample_index].sample_id
-        self.spectrum_user_name = self.experiments[self.sample_index].spectrum_user_name
+        self.spectrum_user_name = self.experiments[self.sample_index].spectrum_user_name.title()
         self.spectrum = self.experiments[self.sample_index].spectrum
         self.type = self.experiments[self.sample_index].type
         self.file_name = self.experiments[self.sample_index].file_name
@@ -88,16 +99,12 @@ class Measurement:
         return measurement
 
     def calculate_moles_of_K40(self):
-        atoms_K40_divides_atomsK = AtomsK40DividesAtomsK()
-        gramsK_divides_moleK = GramsKDividesMoleK()
-        moles_of_K40 = (atoms_K40_divides_atomsK * self.gramsOfK) / gramsK_divides_moleK
+        moles_of_K40 = (self.atoms_K40_divides_atomsK * self.gramsOfK) / self.gramsK_divides_moleK
         self.moles_of_K40 = round(moles_of_K40, 12)
         return self.moles_of_K40
 
     def calculate_moles_Ar38_in_tracer(self):
-        x = X()
-        t0 = T0()
-        moles_Ar38_in_tracer = t0 * exp(-self.delta * x)
+        moles_Ar38_in_tracer = self.t0 * exp(-self.delta * self.x)
         self.moles_Ar38_in_tracer = round(moles_Ar38_in_tracer, 13)
         return self.moles_Ar38_in_tracer
 
@@ -135,17 +142,13 @@ class Measurement:
 
     def calculate_Ar40_Ar38_ratios_in_the_gas_mixture(self):
         self.calculate_Ar40_Ar38_ratio()
-        d = D()
-        spectrometer_scale_factors = SpectrometerScale40Scale38()
-        Ar40_Ar38_ratios_in_the_gas_mixture = self.Ar40_Ar38_ratio * d * spectrometer_scale_factors
+        Ar40_Ar38_ratios_in_the_gas_mixture = self.Ar40_Ar38_ratio * self.d * self.spectrometer_scale40_scale38
         self.Ar40_Ar38_ratios_in_the_gas_mixture = round(Ar40_Ar38_ratios_in_the_gas_mixture, 3)
         return self.Ar40_Ar38_ratios_in_the_gas_mixture
 
     def calculate_Ar38_Ar36_ratios_in_the_gas_mixture(self):
         self.calculate_Ar38_Ar36_ratio()
-        d = D()
-        spectrometer_scale_factors = SpectrometerScale38Scale36()
-        Ar38_Ar36_ratios_in_the_gas_mixture = self.Ar38_Ar36_ratio * d * spectrometer_scale_factors
+        Ar38_Ar36_ratios_in_the_gas_mixture = self.Ar38_Ar36_ratio * self.d * self.spectrometer_scale38_scale36
         self.Ar38_Ar36_ratios_in_the_gas_mixture = round(Ar38_Ar36_ratios_in_the_gas_mixture, 1)
         return self.Ar38_Ar36_ratios_in_the_gas_mixture
 
@@ -160,17 +163,13 @@ class Measurement:
         self.calculate_Ar40_Ar38_ratios_in_the_gas_mixture()
         self.calculate_Ar38_Ar36_ratios_in_the_gas_mixture()
         self.calculate_moles_Ar38_in_tracer()
-        Ar40_Ar38_ratio_for_tracer = Ar40Ar38RatioForTracer()
-        Ar36_Ar38_ratio_for_tracer = Ar36Ar38RatioForTracer()
-        Ar36_Ar38_composition_of_atmospheric = Ar36Ar38CompositionOfAtmospheric()
-        Ar40_Ar38_composition_of_atmospheric = Ar40Ar38CompositionOfAtmospheric()
         Ar40_rad = self.moles_Ar38_in_tracer \
                    * (
                            self.Ar40_Ar38_ratios_in_the_gas_mixture
-                           - Ar40_Ar38_ratio_for_tracer
-                           - (1 - self.Ar38_Ar36_ratios_in_the_gas_mixture * Ar36_Ar38_ratio_for_tracer)
-                           / (self.Ar38_Ar36_ratios_in_the_gas_mixture * Ar36_Ar38_composition_of_atmospheric - 1)
-                           * (Ar40_Ar38_composition_of_atmospheric - self.Ar40_Ar38_ratios_in_the_gas_mixture)
+                           - self.Ar40_Ar38_ratio_for_tracer
+                           - (1 - self.Ar38_Ar36_ratios_in_the_gas_mixture * self.Ar36_Ar38_ratio_for_tracer)
+                           / (self.Ar38_Ar36_ratios_in_the_gas_mixture * self.Ar36_Ar38_composition_of_atmospheric - 1)
+                           * (self.Ar40_Ar38_composition_of_atmospheric - self.Ar40_Ar38_ratios_in_the_gas_mixture)
                    )
         self.Ar40_rad = round(Ar40_rad, 13)
         return self.Ar40_rad
@@ -181,3 +180,16 @@ class Measurement:
         percentage_of_Ar40_rad_in_the_analysis = 100 * self.Ar40_rad / self.total_Ar40
         self.percentage_of_Ar40_rad_in_the_analysis = round(percentage_of_Ar40_rad_in_the_analysis, 1)
         return self.percentage_of_Ar40_rad_in_the_analysis
+
+    def init_constants(self):
+        self.atoms_K40_divides_atomsK = AtomsK40DividesAtomsK()
+        self.gramsK_divides_moleK = GramsKDividesMoleK()
+        self.x = X()
+        self.t0 = T0()
+        self.d = D()
+        self.spectrometer_scale38_scale36 = SpectrometerScale38Scale36()
+        self.spectrometer_scale40_scale38 = SpectrometerScale40Scale38()
+        self.Ar40_Ar38_ratio_for_tracer = Ar40Ar38RatioForTracer()
+        self.Ar36_Ar38_ratio_for_tracer = Ar36Ar38RatioForTracer()
+        self.Ar36_Ar38_composition_of_atmospheric = Ar36Ar38CompositionOfAtmospheric()
+        self.Ar40_Ar38_composition_of_atmospheric = Ar40Ar38CompositionOfAtmospheric()
